@@ -7,12 +7,22 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="T_EGRESADO")
+@NamedQueries({
+	@NamedQuery(name = Egresado.LISTA_EGRESADOS, query = "SELECT e FROM Egresado e")
+})
 public class Egresado implements Serializable{
+	
+	/**
+	 * Obtiene la lista de egresados registrados
+	 */
+	public static final String LISTA_EGRESADOS = "Egresado.listar";
 
 	@Id
 	@Column(name="ID_EGRESADO")

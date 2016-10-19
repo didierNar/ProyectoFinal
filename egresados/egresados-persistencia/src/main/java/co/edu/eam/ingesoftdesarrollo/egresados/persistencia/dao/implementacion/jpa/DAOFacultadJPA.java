@@ -27,4 +27,26 @@ public class DAOFacultadJPA implements IDAOFacultad{
 		return lista;
 	}
 
+	public void registrar(Facultad f) throws Exception {
+		// TODO Auto-generated method stub
+		EntityManager em = AdministradorEntityManager.getEntityManager();
+		em.getTransaction().begin();
+		em.persist(f);
+		em.getTransaction().commit();
+	}
+
+	public Facultad buscar(int cod) throws Exception {
+		// TODO Auto-generated method stub
+		EntityManager em = AdministradorEntityManager.getEntityManager();
+		return em.find(Facultad.class, cod);
+	}
+
+	public void editar(Facultad f) throws Exception {
+		// TODO Auto-generated method stub
+		EntityManager em = AdministradorEntityManager.getEntityManager();
+		em.getTransaction().begin();
+		em.merge(f);
+		em.getTransaction().commit();
+	}
+
 }

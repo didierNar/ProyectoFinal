@@ -1,6 +1,9 @@
 package co.edu.eam.ingesoftdesarrollo.egresados.persistencia.dao.implementacion.jpa;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.dao.definiciones.IDAOInformacionLaboral;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Egresado;
@@ -28,6 +31,14 @@ public class DAOInformacionLaboralJPA implements IDAOInformacionLaboral{
 		em.getTransaction().begin();
 		em.merge(infoLab);
 		em.getTransaction().commit();
+	}
+
+	public List<InformacionLaboral> informacionLaboralEgresado(Egresado e) throws Exception {
+		EntityManager em = AdministradorEntityManager.getEntityManager();
+		Query q = em.createNamedQuery(InformacionLaboral.EGRESADOS_EMPRESA);
+		q.setParameter(1, e);
+		List<InformacionLaboral> lista = q.getResultList();
+		return lista;
 	}
 
 }

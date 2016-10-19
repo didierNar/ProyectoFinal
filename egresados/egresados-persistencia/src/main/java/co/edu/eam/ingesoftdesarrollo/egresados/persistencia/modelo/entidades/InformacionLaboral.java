@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.MapsId;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -18,13 +20,21 @@ import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.enumeraciones.TipoEm
 
 @Entity
 @Table(name = "T_INFO_LABORAL")
+@NamedQueries({
+		@NamedQuery(name = InformacionLaboral.EGRESADOS_EMPRESA, query = "SELECT i FROM InformacionLaboral i WHERE i.egresado = ?1") })
 public class InformacionLaboral implements Serializable {
+
+	/**
+	 * Obtiene la información laboral de un egresado
+	 * ?1: EL egresado
+	 */
+	public static final String EGRESADOS_EMPRESA = "InformacionLaboral.egresadosEmpresa";
 
 	@Id
 	@Column(name = "ID_EGRESADO")
 	private int codEgresado;
-	
-	@JoinColumn(name = "ID_EGRESADO", insertable=false, updatable=false)
+
+	@JoinColumn(name = "ID_EGRESADO", insertable = false, updatable = false)
 	@OneToOne
 	@MapsId
 	private Egresado egresado;
@@ -44,7 +54,7 @@ public class InformacionLaboral implements Serializable {
 	@Column(name = "fecha_ingreso")
 	@Temporal(TemporalType.DATE)
 	private Date fechaIngreso;
-	
+
 	@Column(name = "cargo_empresa")
 	private String cargo;
 
@@ -65,8 +75,8 @@ public class InformacionLaboral implements Serializable {
 	 * @param fechaIngreso
 	 * @param fechaSalida
 	 */
-	public InformacionLaboral(Egresado egresado, SituacionActual situaActual, TipoEmpresa tipoEmpresa, String sectorLaboral,
-			String nombreEmpresa, Date fechaIngreso, Date fechaSalida, String cargo) {
+	public InformacionLaboral(Egresado egresado, SituacionActual situaActual, TipoEmpresa tipoEmpresa,
+			String sectorLaboral, String nombreEmpresa, Date fechaIngreso, Date fechaSalida, String cargo) {
 		super();
 		this.cargo = cargo;
 		this.egresado = egresado;
@@ -77,7 +87,7 @@ public class InformacionLaboral implements Serializable {
 		this.fechaIngreso = fechaIngreso;
 		this.fechaSalida = fechaSalida;
 	}
-	
+
 	/**
 	 * @return the cargo
 	 */
@@ -86,7 +96,8 @@ public class InformacionLaboral implements Serializable {
 	}
 
 	/**
-	 * @param cargo the cargo to set
+	 * @param cargo
+	 *            the cargo to set
 	 */
 	public void setCargo(String cargo) {
 		this.cargo = cargo;
@@ -197,7 +208,9 @@ public class InformacionLaboral implements Serializable {
 		this.egresado = egresado;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#hashCode()
 	 */
 	@Override
@@ -208,7 +221,9 @@ public class InformacionLaboral implements Serializable {
 		return result;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	@Override
@@ -227,7 +242,5 @@ public class InformacionLaboral implements Serializable {
 			return false;
 		return true;
 	}
-	
-	
 
 }

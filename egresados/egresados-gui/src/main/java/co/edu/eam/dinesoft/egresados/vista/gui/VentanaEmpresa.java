@@ -534,13 +534,8 @@ public class VentanaEmpresa extends javax.swing.JFrame implements ActionListener
 	}
 
 	public void actionPerformed(ActionEvent arg0) {
-
 		if (arg0.getSource() == jBInicio) {
-
 			this.dispose();
-			VentanaPrincipal ventana = new VentanaPrincipal();
-			ventana.setVisible(true);
-
 		}
 
 		if (arg0.getSource() == jBEditar) {

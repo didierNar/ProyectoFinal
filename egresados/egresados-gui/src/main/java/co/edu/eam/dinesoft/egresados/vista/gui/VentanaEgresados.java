@@ -828,11 +828,7 @@ public class VentanaEgresados extends javax.swing.JFrame implements ActionListen
 		}
 
 		if (arg0.getSource() == jBInicio) {
-
 			this.dispose();
-			VentanaPrincipal ventana = new VentanaPrincipal();
-			ventana.setVisible(true);
-
 		}
 
 		if (arg0.getSource() == jBRegistro) {

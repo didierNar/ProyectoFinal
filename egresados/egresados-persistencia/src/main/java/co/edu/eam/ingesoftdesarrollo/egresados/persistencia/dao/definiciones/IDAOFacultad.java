@@ -11,4 +11,10 @@ public interface IDAOFacultad {
 	
 	public List<Programa> programasFacultad(Facultad f) throws Exception;
 	
+	public void registrar (Facultad f) throws Exception;
+	
+	public Facultad buscar (int cod) throws Exception;
+	
+	public void editar (Facultad f) throws Exception;
+	
 }

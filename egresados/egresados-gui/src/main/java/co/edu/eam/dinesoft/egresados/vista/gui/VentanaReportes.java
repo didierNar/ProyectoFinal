@@ -382,11 +382,7 @@ public class VentanaReportes extends javax.swing.JFrame implements ActionListene
 
     public void actionPerformed(ActionEvent arg0) {
 		// TODO Auto-generated method stub
-
-        VentanaPrincipal ventana = new VentanaPrincipal();
-        ventana.setVisible(true);
         this.dispose();
-
     }
 
     public class jpColor extends javax.swing.JPanel {

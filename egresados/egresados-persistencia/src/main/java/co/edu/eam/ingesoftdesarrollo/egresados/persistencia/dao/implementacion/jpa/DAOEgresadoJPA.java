@@ -1,6 +1,9 @@
 package co.edu.eam.ingesoftdesarrollo.egresados.persistencia.dao.implementacion.jpa;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.dao.definiciones.IDAOEgresados;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Egresado;
@@ -39,6 +42,13 @@ public class DAOEgresadoJPA implements IDAOEgresados {
 		em.getTransaction().begin();
 		em.merge(e);
 		em.getTransaction().commit();
+	}
+
+	public List<Egresado> listar() throws Exception {
+		EntityManager em = AdministradorEntityManager.getEntityManager();
+		Query q = em.createNamedQuery(Egresado.LISTA_EGRESADOS);
+		List<Egresado> lista = q.getResultList();
+		return lista;
 	}
 
 }
