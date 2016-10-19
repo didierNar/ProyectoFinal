@@ -14,6 +14,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.enumeraciones.NivelAcademico;
+
 @Entity
 @Table(name = "T_INFO_ACADEMICA")
 public class InfoAcademica implements Serializable {
@@ -36,7 +38,7 @@ public class InfoAcademica implements Serializable {
 	private Facultad facultad;
 
 	@Column(name = "nivel_academico")
-	private String nivelAcademico;
+	private NivelAcademico nivelAcademico;
 
 	@JoinColumn(name = "programa_academico")
 	@ManyToOne
@@ -61,7 +63,7 @@ public class InfoAcademica implements Serializable {
 	 * @param numDiploma
 	 * @param areaOfertaLaboral
 	 */
-	public InfoAcademica(Egresado egresado, Date fechaGrado, Facultad facultad, String nivelAcademico,
+	public InfoAcademica(Egresado egresado, Date fechaGrado, Facultad facultad, NivelAcademico nivelAcademico,
 			Programa programaAcademico, String numDiploma, String areaOfertaLaboral) {
 		super();
 		this.egresado = egresado;
@@ -106,7 +108,7 @@ public class InfoAcademica implements Serializable {
 	/**
 	 * @return the nivelAcademico
 	 */
-	public String getNivelAcademico() {
+	public NivelAcademico getNivelAcademico() {
 		return nivelAcademico;
 	}
 
@@ -114,7 +116,7 @@ public class InfoAcademica implements Serializable {
 	 * @param nivelAcademico
 	 *            the nivelAcademico to set
 	 */
-	public void setNivelAcademico(String nivelAcademico) {
+	public void setNivelAcademico(NivelAcademico nivelAcademico) {
 		this.nivelAcademico = nivelAcademico;
 	}
 

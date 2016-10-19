@@ -16,7 +16,7 @@ public class Egresado implements Serializable{
 
 	@Id
 	@Column(name="ID_EGRESADO")
-	private int codigoEgresado;
+	private String codigoEgresado;
 	
 	@JoinColumn(name="ID_PROGRAMA")
 	@ManyToOne
@@ -60,7 +60,7 @@ public class Egresado implements Serializable{
 	 * @param correo
 	 * @param numTel
 	 */
-	public Egresado(int codigoEgresado, Programa codigoPrograma, String nombre, String apellido, String tipoDocumento,
+	public Egresado(String codigoEgresado, Programa codigoPrograma, String nombre, String apellido, String tipoDocumento,
 			String numDocumento, String correo, String numTel) {
 		super();
 		this.codigoEgresado = codigoEgresado;
@@ -175,14 +175,14 @@ public class Egresado implements Serializable{
 	/**
 	 * @return the codigoEgresado
 	 */
-	public int getCodigoEgresado() {
+	public String getCodigoEgresado() {
 		return codigoEgresado;
 	}
 
 	/**
 	 * @param codigoEgresado the codigoEgresado to set
 	 */
-	public void setCodigoEgresado(int codigoEgresado) {
+	public void setCodigoEgresado(String codigoEgresado) {
 		this.codigoEgresado = codigoEgresado;
 	}
 

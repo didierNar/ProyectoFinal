@@ -7,27 +7,34 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="T_CIUDAD")
+@Table(name = "T_CIUDAD")
+@NamedQueries({ @NamedQuery(name = Ciudad.CIUDADES_DEPTO, query = "SELECT c FROM Ciudad c WHERE c.departamento = ?1") })
 public class Ciudad implements Serializable {
-	
+
+	/**
+	 * Obtiene la lista de ciudades de un departemento
+	 */
+	public static final String CIUDADES_DEPTO = "Ciudad.ciudadesDepto";
+
 	@Id
-	@Column(name="ID_CIUDAD")
+	@Column(name = "ID_CIUDAD")
 	private int codigoCiudad;
-	
-	@JoinColumn(name="ID_DEPARTAMENTO")
+
+	@JoinColumn(name = "ID_DEPARTAMENTO")
 	@ManyToOne
 	private Departamento departamento;
-	
-	@Column(name="nombre_ciudad")
+
+	@Column(name = "nombre_ciudad")
 	private String nombre;
-	
+
 	public Ciudad() {
 		// TODO Auto-generated constructor stub
 	}
-
 
 	/**
 	 * @param codigoCiudad
@@ -41,7 +48,6 @@ public class Ciudad implements Serializable {
 		this.nombre = nombre;
 	}
 
-
 	/**
 	 * @return the nombre
 	 */
@@ -49,14 +55,13 @@ public class Ciudad implements Serializable {
 		return nombre;
 	}
 
-
 	/**
-	 * @param nombre the nombre to set
+	 * @param nombre
+	 *            the nombre to set
 	 */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
 
 	/**
 	 * @return the codigoCiudad
@@ -66,7 +71,8 @@ public class Ciudad implements Serializable {
 	}
 
 	/**
-	 * @param codigoCiudad the codigoCiudad to set
+	 * @param codigoCiudad
+	 *            the codigoCiudad to set
 	 */
 	public void setCodigoCiudad(int codigoCiudad) {
 		this.codigoCiudad = codigoCiudad;
@@ -80,14 +86,26 @@ public class Ciudad implements Serializable {
 	}
 
 	/**
-	 * @param departamento the departamento to set
+	 * @param departamento
+	 *            the departamento to set
 	 */
 	public void setDepartamento(Departamento departamento) {
 		this.departamento = departamento;
 	}
-
+	
+	
 
 	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return nombre;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#hashCode()
 	 */
 	@Override
@@ -100,8 +118,9 @@ public class Ciudad implements Serializable {
 		return result;
 	}
 
-
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	@Override
@@ -127,9 +146,5 @@ public class Ciudad implements Serializable {
 			return false;
 		return true;
 	}
-	
-	
-	
-	
 
 }

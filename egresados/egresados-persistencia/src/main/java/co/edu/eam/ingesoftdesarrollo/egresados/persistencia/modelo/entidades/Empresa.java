@@ -20,7 +20,7 @@ public class Empresa implements Serializable {
 
 	@Id
 	@Column(name = "NIT")
-	private int nit;
+	private String nit;
 	
 	@OneToOne(mappedBy="empresa")
 	private Contacto contacto;
@@ -73,7 +73,7 @@ public class Empresa implements Serializable {
 	 * @param ciudad
 	 * @param nombre
 	 */
-	public Empresa(int nit, SectorLaboral sector, String razonSocial, Departamento depto, String telefono,
+	public Empresa(String nit, SectorLaboral sector, String razonSocial, Departamento depto, String telefono,
 			TipoEmpresa tipo, String web, String direccion, Ciudad ciudad, Pais pais) {
 		super();
 		this.nit = nit;
@@ -215,7 +215,7 @@ public class Empresa implements Serializable {
 	/**
 	 * @return the codigoEmpresa
 	 */
-	public int getNit() {
+	public String getNit() {
 		return nit;
 	}
 
@@ -223,7 +223,7 @@ public class Empresa implements Serializable {
 	 * @param codigoEmpresa
 	 *            the codigoEmpresa to set
 	 */
-	public void setNit(int nit) {
+	public void setNit(String nit) {
 		this.nit = nit;
 	}
 
@@ -255,38 +255,6 @@ public class Empresa implements Serializable {
 	 */
 	public void setCiudad(Ciudad ciudad) {
 		this.ciudad = ciudad;
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-	 */
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + nit;
-		return result;
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-	 */
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Empresa other = (Empresa) obj;
-		if (nit != other.nit)
-			return false;
-		return true;
 	}
 
 }

@@ -1,8 +1,14 @@
 package co.edu.eam.ingesoftdesarrollo.logica.bo;
 
+import java.util.List;
+
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.dao.definiciones.IDAOEmpresa;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.dao.implementacion.jpa.DAOEmpresaJPA;
+import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Ciudad;
+import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Departamento;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Empresa;
+import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Pais;
+import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.SectorLaboral;
 import co.edu.eam.ingesoftdesarrollo.logica.excepcion.ExcepcionNegocio;
 
 public class BOEmpresa {
@@ -23,7 +29,7 @@ public class BOEmpresa {
 		}
 	}
 	
-	public Empresa buscar (int nit) throws Exception{
+	public Empresa buscar (String nit) throws Exception{
 		Empresa em = daoEmpresa.buscar(nit);
 		if (em != null){
 			return em;
@@ -34,6 +40,22 @@ public class BOEmpresa {
 	
 	public void editar (Empresa em) throws Exception{
 		daoEmpresa.editar(em);
+	}
+	
+	public List<Pais> listaPaises () throws Exception{
+		return daoEmpresa.listarPaises();
+	}
+	
+	public List<Departamento> deptosPais (Pais p) throws Exception{
+		return daoEmpresa.deptosPais(p);
+	}
+	
+	public List<Ciudad> ciudadesDepto (Departamento d) throws Exception{
+		return daoEmpresa.ciudadesDepto(d);
+	}
+	
+	public List<SectorLaboral> listaSectorLab () throws Exception{
+		return daoEmpresa.listarSectorLab();
 	}
 
 }

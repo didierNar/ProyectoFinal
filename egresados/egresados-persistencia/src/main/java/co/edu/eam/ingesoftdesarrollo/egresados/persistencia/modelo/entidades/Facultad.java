@@ -61,6 +61,16 @@ public class Facultad implements Serializable {
 	public int getCodigo() {
 		return codigo;
 	}
+	
+	
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return nombre;
+	}
 
 	/**
 	 * @param codigo

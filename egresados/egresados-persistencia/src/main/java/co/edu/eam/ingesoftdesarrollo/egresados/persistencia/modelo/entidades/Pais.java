@@ -3,11 +3,19 @@ package co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "T_PAIS")
+@NamedQueries({ @NamedQuery(name = Pais.PAISES, query = "SELECT p FROM Pais p") })
 public class Pais {
+
+	/**
+	 * Obtiene la lista de paises
+	 */
+	public static final String PAISES = "Pais.listar";
 
 	@Column(name = "nombre")
 	private String nombre;
@@ -59,5 +67,14 @@ public class Pais {
 	public void setCod(int cod) {
 		this.cod = cod;
 	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return nombre;
+	}	
+	
 
 }

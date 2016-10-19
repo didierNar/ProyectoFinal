@@ -13,6 +13,9 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.enumeraciones.SituacionActual;
+import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.enumeraciones.TipoEmpresa;
+
 @Entity
 @Table(name = "T_INFO_LABORAL")
 public class InformacionLaboral implements Serializable {
@@ -27,10 +30,10 @@ public class InformacionLaboral implements Serializable {
 	private Egresado egresado;
 
 	@Column(name = "situa_actual")
-	private String situaActual;
+	private SituacionActual situaActual;
 
 	@Column(name = "tipo_empresa")
-	private String tipoEmpresa;
+	private TipoEmpresa tipoEmpresa;
 
 	@Column(name = "sector_laboral")
 	private String sectorLaboral;
@@ -62,7 +65,7 @@ public class InformacionLaboral implements Serializable {
 	 * @param fechaIngreso
 	 * @param fechaSalida
 	 */
-	public InformacionLaboral(Egresado egresado, String situaActual, String tipoEmpresa, String sectorLaboral,
+	public InformacionLaboral(Egresado egresado, SituacionActual situaActual, TipoEmpresa tipoEmpresa, String sectorLaboral,
 			String nombreEmpresa, Date fechaIngreso, Date fechaSalida, String cargo) {
 		super();
 		this.cargo = cargo;
@@ -92,7 +95,7 @@ public class InformacionLaboral implements Serializable {
 	/**
 	 * @return the situaActual
 	 */
-	public String getSituaActual() {
+	public SituacionActual getSituaActual() {
 		return situaActual;
 	}
 
@@ -100,14 +103,14 @@ public class InformacionLaboral implements Serializable {
 	 * @param situaActual
 	 *            the situaActual to set
 	 */
-	public void setSituaActual(String situaActual) {
+	public void setSituaActual(SituacionActual situaActual) {
 		this.situaActual = situaActual;
 	}
 
 	/**
 	 * @return the tipoEmpresa
 	 */
-	public String getTipoEmpresa() {
+	public TipoEmpresa getTipoEmpresa() {
 		return tipoEmpresa;
 	}
 
@@ -115,7 +118,7 @@ public class InformacionLaboral implements Serializable {
 	 * @param tipoEmpresa
 	 *            the tipoEmpresa to set
 	 */
-	public void setTipoEmpresa(String tipoEmpresa) {
+	public void setTipoEmpresa(TipoEmpresa tipoEmpresa) {
 		this.tipoEmpresa = tipoEmpresa;
 	}
 

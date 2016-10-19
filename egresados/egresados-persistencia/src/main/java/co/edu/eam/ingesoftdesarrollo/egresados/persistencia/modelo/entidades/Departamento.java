@@ -5,31 +5,62 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="T_DEPARTAMENTO")
+@Table(name = "T_DEPARTAMENTO")
+@NamedQueries({
+		@NamedQuery(name = Departamento.DEPARTAMENTOS_PAIS, query = "SELECT d FROM Departamento d WHERE d.pais = ?1") })
 public class Departamento implements Serializable {
 
+	/**
+	 * Obtiene la lista de departamentos de un país
+	 */
+	public static final String DEPARTAMENTOS_PAIS = "Departamento.deptosPais";
+
 	@Id
-	@Column(name="ID_DEPARTAMENTO")
+	@Column(name = "ID_DEPARTAMENTO")
 	private int codigo;
-	
-	@Column(name="nom_dep")
+
+	@Column(name = "nom_dep")
 	private String nombre;
-	
+
+	@JoinColumn(name = "pais")
+	@ManyToOne
+	private Pais pais;
+
 	public Departamento() {
 		// TODO Auto-generated constructor stub
-	}	
+	}
 
 	/**
 	 * @param codigo
 	 * @param nombre
 	 */
-	public Departamento(int codigo, String nombre) {
+	public Departamento(int codigo, String nombre, Pais pais) {
 		super();
 		this.codigo = codigo;
 		this.nombre = nombre;
+		this.pais = pais;
+	}
+
+	/**
+	 * @return the pais
+	 */
+	public Pais getPais() {
+		return pais;
+	}
+
+	/**
+	 * @param pais
+	 *            the pais to set
+	 */
+	public void setPais(Pais pais) {
+		this.pais = pais;
 	}
 
 	/**
@@ -39,16 +70,13 @@ public class Departamento implements Serializable {
 		return nombre;
 	}
 
-
-
 	/**
-	 * @param nombre the nombre to set
+	 * @param nombre
+	 *            the nombre to set
 	 */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
-
 
 	/**
 	 * @return the codigo
@@ -58,13 +86,24 @@ public class Departamento implements Serializable {
 	}
 
 	/**
-	 * @param codigo the codigo to set
+	 * @param codigo
+	 *            the codigo to set
 	 */
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
-
+	
 	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return nombre;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#hashCode()
 	 */
 	@Override
@@ -76,7 +115,9 @@ public class Departamento implements Serializable {
 		return result;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	@Override
@@ -97,7 +138,5 @@ public class Departamento implements Serializable {
 			return false;
 		return true;
 	}
-	
-	
-	
+
 }
