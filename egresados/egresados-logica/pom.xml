@@ -8,6 +8,14 @@
 	</parent>
 	<artifactId>egresados-logica</artifactId>
 
+	<repositories>
+		<repository>
+			<id>ossh</id>
+			<name>maven central</name>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</repository>
+	</repositories>
+
 	<dependencies>
 		<dependency>
 			<groupId>co.edu.eam.ingesoftdesarrrollo</groupId>
@@ -15,5 +23,17 @@
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
+
+	<dependency>
+		<groupId>junit</groupId>
+		<artifactId>junit</artifactId>
+		<version>4.8.1</version>
+	</dependency>
+
+	<dependency>
+		<groupId>com.github.caferrerb</groupId>
+		<artifactId>testdata</artifactId>
+		<version>1.1.2-SNAPSHOT</version>
+	</dependency>
 
 </project>
