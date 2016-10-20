@@ -195,21 +195,6 @@ public class Egresado implements Serializable{
 	public void setCodigoEgresado(String codigoEgresado) {
 		this.codigoEgresado = codigoEgresado;
 	}
-
-	/**
-	 * @return the programa
-	 */
-	public Programa getPrograma() {
-		return codigoPrograma;
-	}
-
-	/**
-	 * @param programa the programa to set
-	 */
-	public void setPrograma(Programa programa) {
-		this.codigoPrograma = programa;
-	}
-	
 	
 	
 }

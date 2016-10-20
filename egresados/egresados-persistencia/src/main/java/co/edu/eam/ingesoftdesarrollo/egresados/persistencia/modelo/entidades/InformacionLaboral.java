@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -45,8 +46,9 @@ public class InformacionLaboral implements Serializable {
 	@Column(name = "tipo_empresa")
 	private TipoEmpresa tipoEmpresa;
 
-	@Column(name = "sector_laboral")
-	private String sectorLaboral;
+	@JoinColumn(name = "sector_laboral")
+	@ManyToOne
+	private SectorLaboral sectorLaboral;
 
 	@Column(name = "nombre_empresa")
 	private String nombreEmpresa;
@@ -76,7 +78,7 @@ public class InformacionLaboral implements Serializable {
 	 * @param fechaSalida
 	 */
 	public InformacionLaboral(Egresado egresado, SituacionActual situaActual, TipoEmpresa tipoEmpresa,
-			String sectorLaboral, String nombreEmpresa, Date fechaIngreso, Date fechaSalida, String cargo) {
+			SectorLaboral sectorLaboral, String nombreEmpresa, Date fechaIngreso, Date fechaSalida, String cargo) {
 		super();
 		this.cargo = cargo;
 		this.egresado = egresado;
@@ -136,7 +138,7 @@ public class InformacionLaboral implements Serializable {
 	/**
 	 * @return the sectorLaboral
 	 */
-	public String getSectorLaboral() {
+	public SectorLaboral getSectorLaboral() {
 		return sectorLaboral;
 	}
 
@@ -144,7 +146,7 @@ public class InformacionLaboral implements Serializable {
 	 * @param sectorLaboral
 	 *            the sectorLaboral to set
 	 */
-	public void setSectorLaboral(String sectorLaboral) {
+	public void setSectorLaboral(SectorLaboral sectorLaboral) {
 		this.sectorLaboral = sectorLaboral;
 	}
 

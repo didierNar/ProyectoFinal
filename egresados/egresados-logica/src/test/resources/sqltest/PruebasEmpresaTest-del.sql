@@ -1,0 +1,1 @@
+DELETE FROM `egresados`.`T_EMPRESA` WHERE `NIT`='111';
