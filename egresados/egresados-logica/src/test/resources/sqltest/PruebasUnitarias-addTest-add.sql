@@ -1,2 +1,2 @@
-insert into db_proyectofinalpruebas.t_facultad(ID_FACULTAD,NOMBRE_FACULTAD)values(1,'ingenieria')
-insert into db_proyectofinalpruebas.t_programa(ID_PROGRAMA,NOMBRE_PROGRAMA,ID_FACULTAD)values(12,'ingenieria de software',1)
+INSERT INTO `Egresados`.`T_FACULTAD` (`ID_FACULTAD`, `nombre`) VALUES (1, 'ingenieria');
+INSERT INTO `Egresados`.`T_PROGRAMA` (`ID_PROGRAMA`, `creditos_programa`, `nom_programa`, `ID_FACULTAD`) VALUES (567, '23', 'desarrollo', 1);

@@ -7,46 +7,44 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Egresado;
+import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Facultad;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Programa;
 import co.edu.eam.ingesoftdesarrollo.logica.bo.BOEgresados;
+import co.edu.eam.ingesoftdesarrollo.logica.bo.BOFacultad;
 import co.edu.eam.ingesoftdesarrollo.logica.bo.BOPrograma;
 import junit.framework.Assert;
 
-public class BOEgresadosTest {
-
+public class BOProgramaTest {
+	
 	@BeforeClass
 	public static void beoreClass() {
-		TestDataUtil.ejecutarSQL("sqltest/PruebasUnitarias-addTest-add.sql");
+		TestDataUtil.ejecutarSQL("sqltest/PruebasPrograma-addTest-add.sql");
 	}
 
-	private BOEgresados egresados;
 	private BOPrograma programa;
+	private BOFacultad facultad;
 
 	@Before
 	public void setUp() {
-		egresados = new BOEgresados();
 		programa = new BOPrograma();
+		facultad = new BOFacultad();
 	}
 
 	@Test
 	public void registrarEgresados() {
 
-		Egresado egresado = new Egresado();
-		egresado.setCodigoEgresado("123");
-		egresado.setApellido("Bolivar");
-		egresado.setCorreo("tennluis");
-		egresado.setNombre("Luis");
-		egresado.setNumDocumento("321");
-		egresado.setNumTel("333456");
-		egresado.setTipoDocumento("cedula");
+		Programa progra = new Programa();
+		progra.setCodigo(123);
+		progra.setCreditosPrograma("5");
+		progra.setNomPrograma("matematicas");
+		
 
 		try {
-
-			Programa pro = programa.buscar(567);
-			egresado.setCodigoPrograma(pro);
-			egresados.registrar(egresado);
-			Egresado egre = egresados.buscar("321");
-			Assert.assertNotNull(egre);
+            Facultad facul = facultad.buscar(432);
+			progra.setFacultad(facul);
+			programa.registrar(progra);
+			Programa program = programa.buscar(123);
+			Assert.assertNotNull(program);
 
 		} catch (Exception e) {
 
@@ -59,7 +57,7 @@ public class BOEgresadosTest {
 
 	@AfterClass
 	public static void afterClass() {
-		TestDataUtil.ejecutarSQL("sqltest/PruebasUnitariasTest-del.sql");
+		TestDataUtil.ejecutarSQL("sqltest/PruebasProgramaTest-del.sql");
 
 	}
 

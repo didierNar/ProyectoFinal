@@ -6,47 +6,45 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.AreasInteres;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Egresado;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Programa;
+import co.edu.eam.ingesoftdesarrollo.logica.bo.BOAreaInteres;
 import co.edu.eam.ingesoftdesarrollo.logica.bo.BOEgresados;
 import co.edu.eam.ingesoftdesarrollo.logica.bo.BOPrograma;
 import junit.framework.Assert;
 
-public class BOEgresadosTest {
-
+public class BOAreaInteresTest {
+	
 	@BeforeClass
 	public static void beoreClass() {
-		TestDataUtil.ejecutarSQL("sqltest/PruebasUnitarias-addTest-add.sql");
+//		TestDataUtil.ejecutarSQL("sqltest/PruebasUnitarias-addTest-add.sql");
 	}
+	
+	private BOAreaInteres areaInteres;
 
-	private BOEgresados egresados;
-	private BOPrograma programa;
+	
 
 	@Before
 	public void setUp() {
-		egresados = new BOEgresados();
-		programa = new BOPrograma();
+		
+		areaInteres = new BOAreaInteres();
+		
 	}
 
 	@Test
 	public void registrarEgresados() {
+		
+		AreasInteres area = new AreasInteres();
+		area.setCodigo(123);
 
-		Egresado egresado = new Egresado();
-		egresado.setCodigoEgresado("123");
-		egresado.setApellido("Bolivar");
-		egresado.setCorreo("tennluis");
-		egresado.setNombre("Luis");
-		egresado.setNumDocumento("321");
-		egresado.setNumTel("333456");
-		egresado.setTipoDocumento("cedula");
+		
 
 		try {
 
-			Programa pro = programa.buscar(567);
-			egresado.setCodigoPrograma(pro);
-			egresados.registrar(egresado);
-			Egresado egre = egresados.buscar("321");
-			Assert.assertNotNull(egre);
+			areaInteres.registrar(area);
+			AreasInteres areaIn = areaInteres.buscar(123);
+			Assert.assertNotNull(areaIn);
 
 		} catch (Exception e) {
 
@@ -59,7 +57,7 @@ public class BOEgresadosTest {
 
 	@AfterClass
 	public static void afterClass() {
-		TestDataUtil.ejecutarSQL("sqltest/PruebasUnitariasTest-del.sql");
+//		TestDataUtil.ejecutarSQL("sqltest/PruebasUnitariasTest-del.sql");
 
 	}
 
