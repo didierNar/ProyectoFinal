@@ -17,23 +17,31 @@
 	</repositories>
 
 	<dependencies>
+	
 		<dependency>
 			<groupId>co.edu.eam.ingesoftdesarrrollo</groupId>
 			<artifactId>egresados-persistencia</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.1</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.39</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.github.caferrerb</groupId>
+			<artifactId>testdata</artifactId>
+			<version>1.1.2-SNAPSHOT</version>
+		</dependency>
+
 	</dependencies>
-
-	<dependency>
-		<groupId>junit</groupId>
-		<artifactId>junit</artifactId>
-		<version>4.8.1</version>
-	</dependency>
-
-	<dependency>
-		<groupId>com.github.caferrerb</groupId>
-		<artifactId>testdata</artifactId>
-		<version>1.1.2-SNAPSHOT</version>
-	</dependency>
 
 </project>
