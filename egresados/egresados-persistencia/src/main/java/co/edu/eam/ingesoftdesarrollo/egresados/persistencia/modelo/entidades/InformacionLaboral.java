@@ -35,7 +35,7 @@ public class InformacionLaboral implements Serializable {
 	@Column(name = "ID_EGRESADO")
 	private String codEgresado;
 
-	@Id
+	
 	@JoinColumn(name = "ID_EGRESADO", insertable = false, updatable = false)
 	@OneToOne
 	@MapsId

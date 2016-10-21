@@ -64,7 +64,7 @@ public class BOAreaInteresTest {
 
 	@AfterClass
 	public static void afterClass() {
-		TestDataUtil.ejecutarSQL("sqltest/PruebasAreaInteresTest-del.sql");
+		TestDataUtil.ejecutarSQL("sqltest/PruebasAreaInteres-Test-del.sql");
 
 	}
 
