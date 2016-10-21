@@ -4,50 +4,12 @@ import java.io.Serializable;
 
 public class HistoriaLaboralPK implements Serializable{
 	
-	private int egresado;
+	private String egresado;
 	
-	private int empresa;
+	private String empresa;
 	
 	public HistoriaLaboralPK() {
 		// TODO Auto-generated constructor stub
-	}
-
-	/**
-	 * @param egresado
-	 * @param empresa
-	 */
-	public HistoriaLaboralPK(int egresado, int empresa) {
-		super();
-		this.egresado = egresado;
-		this.empresa = empresa;
-	}
-
-	/**
-	 * @return the egresado
-	 */
-	public int getEgresado() {
-		return egresado;
-	}
-
-	/**
-	 * @param egresado the egresado to set
-	 */
-	public void setEgresado(int egresado) {
-		this.egresado = egresado;
-	}
-
-	/**
-	 * @return the empresa
-	 */
-	public int getEmpresa() {
-		return empresa;
-	}
-
-	/**
-	 * @param empresa the empresa to set
-	 */
-	public void setEmpresa(int empresa) {
-		this.empresa = empresa;
 	}
 
 	/* (non-Javadoc)
@@ -57,8 +19,8 @@ public class HistoriaLaboralPK implements Serializable{
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + egresado;
-		result = prime * result + empresa;
+		result = prime * result + ((egresado == null) ? 0 : egresado.hashCode());
+		result = prime * result + ((empresa == null) ? 0 : empresa.hashCode());
 		return result;
 	}
 
@@ -74,13 +36,19 @@ public class HistoriaLaboralPK implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		HistoriaLaboralPK other = (HistoriaLaboralPK) obj;
-		if (egresado != other.egresado)
+		if (egresado == null) {
+			if (other.egresado != null)
+				return false;
+		} else if (!egresado.equals(other.egresado))
 			return false;
-		if (empresa != other.empresa)
+		if (empresa == null) {
+			if (other.empresa != null)
+				return false;
+		} else if (!empresa.equals(other.empresa))
 			return false;
 		return true;
 	}
-	
+
 	
 
 }

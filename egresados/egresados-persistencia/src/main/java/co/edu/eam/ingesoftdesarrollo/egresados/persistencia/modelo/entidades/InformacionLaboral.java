@@ -26,15 +26,16 @@ import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.enumeraciones.TipoEm
 public class InformacionLaboral implements Serializable {
 
 	/**
-	 * Obtiene la información laboral de un egresado
+	 * Obtiene la informaciï¿½n laboral de un egresado
 	 * ?1: EL egresado
 	 */
 	public static final String EGRESADOS_EMPRESA = "InformacionLaboral.egresadosEmpresa";
 
 	@Id
 	@Column(name = "ID_EGRESADO")
-	private int codEgresado;
+	private String codEgresado;
 
+	@Id
 	@JoinColumn(name = "ID_EGRESADO", insertable = false, updatable = false)
 	@OneToOne
 	@MapsId

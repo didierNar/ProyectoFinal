@@ -32,43 +32,14 @@ public class BOEmpresaTest {
 	public void testRegistrar(){
 		
 		try{
+		Empresa empresa = new Empresa();
+		empresa.setDireccion("boreal");
+		empresa.setNit("123");
+		empresa.setRazonSocial("no se");
+		empresa.setTelefono("300712");
+		empresa.setWeb("didiselacome");
 		
-		Empresa em = new Empresa();
-		em.setNit("111");
 		
-		SectorLaboral sector = new SectorLaboral();
-		sector.setCodigo(111);
-		sector.setNombre("el sector");
-		
-		em.setSector(sector);
-		em.setRazonSocial("no se");
-		
-		Departamento depto = new Departamento();
-		depto.setCodigo(111);
-		depto.setNombre("Bolivar");
-		
-		Pais pais = new Pais();
-		pais.setCod(111);
-		pais.setNombre("España");
-		
-		depto.setPais(pais);
-		
-		em.setTelefono("123123");
-		em.setTipo(TipoEmpresa.PRIVADA);
-		em.setWeb("No tiene");
-		em.setDireccion("cualquiera");
-		
-		Ciudad ciudad = new Ciudad();
-		ciudad.setCodigoCiudad(111);
-		ciudad.setDepartamento(depto);
-		ciudad.setNombre("no se");
-		
-		em.setCiudad(ciudad);
-		em.setPais(pais);
-		
-		boEmpresa.registrar(em);
-		
-		boEmpresa.buscar("111");
 		
 		} catch (Exception e){
 			e.printStackTrace();
