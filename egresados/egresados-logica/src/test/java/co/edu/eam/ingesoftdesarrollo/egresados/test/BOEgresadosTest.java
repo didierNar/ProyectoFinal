@@ -7,25 +7,29 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Egresado;
+import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Facultad;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Programa;
 import co.edu.eam.ingesoftdesarrollo.logica.bo.BOEgresados;
+import co.edu.eam.ingesoftdesarrollo.logica.bo.BOFacultad;
 import co.edu.eam.ingesoftdesarrollo.logica.bo.BOPrograma;
 import junit.framework.Assert;
 
 public class BOEgresadosTest {
 
 	@BeforeClass
-	public static void beoreClass() {
+	public static void beforeClass() {
 		TestDataUtil.ejecutarSQL("sqltest/PruebasUnitarias-addTest-add.sql");
 	}
 
 	private BOEgresados egresados;
 	private BOPrograma programa;
+	private BOFacultad facultad;
 
 	@Before
 	public void setUp() {
 		egresados = new BOEgresados();
 		programa = new BOPrograma();
+		facultad = new BOFacultad();
 	}
 
 	@Test

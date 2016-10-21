@@ -15,6 +15,9 @@ public class AreasInteres implements Serializable{
 	@Column(name="ID_AREA")
 	private int codigo;
 	
+	@Column(name="ID_NOMBRE")
+	private String nombre;
+	
 	public AreasInteres() {
 		// TODO Auto-generated constructor stub
 	}
@@ -22,9 +25,25 @@ public class AreasInteres implements Serializable{
 	/**
 	 * @param codigo
 	 */
-	public AreasInteres(int codigo) {
+	public AreasInteres(int codigo, String nombre) {
 		super();
 		this.codigo = codigo;
+		this.nombre = nombre;
+	}
+	
+
+	/**
+	 * @return the nombre
+	 */
+	public String getNombre() {
+		return nombre;
+	}
+
+	/**
+	 * @param nombre the nombre to set
+	 */
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
 	/**

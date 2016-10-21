@@ -20,7 +20,7 @@ public class HistoriaLaboral implements Serializable {
 	private InformacionLaboral egresado;
 	
 	@Id
-	@JoinColumn(name="ID_EMPRESA")
+	@JoinColumn(name="NIT")
 	@ManyToOne
 	private Empresa empresa;
 

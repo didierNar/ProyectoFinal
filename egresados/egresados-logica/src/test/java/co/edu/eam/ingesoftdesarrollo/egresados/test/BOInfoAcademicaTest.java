@@ -1,11 +1,14 @@
 package co.edu.eam.ingesoftdesarrollo.egresados.test;
 
+import java.util.Date;
+
 import org.caferrer.testdata.junit.TestDataUtil;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.enumeraciones.NivelAcademico;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Egresado;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Facultad;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.InfoAcademica;
@@ -44,8 +47,12 @@ public class BOInfoAcademicaTest {
 		InfoAcademica info = new InfoAcademica();
 		info.setAreaOfertaLaboral("contador");
 		info.setNumDiploma("123");
-		info.setNivelAcademico(null);
-		info.setFechaGrado(null);
+		Date fecha = new Date();
+		fecha.setDate(12);
+		fecha.setMonth(3);
+		fecha.setYear(2002);
+		info.setNivelAcademico(NivelAcademico.DIPLOMADO);
+		info.setFechaGrado(fecha);
 		
 
 		

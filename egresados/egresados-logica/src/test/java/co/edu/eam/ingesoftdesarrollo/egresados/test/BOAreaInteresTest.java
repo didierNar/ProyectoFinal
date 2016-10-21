@@ -37,6 +37,7 @@ public class BOAreaInteresTest {
 		
 		AreasInteres area = new AreasInteres();
 		area.setCodigo(123);
+		area.setNombre("sistemas");
 
 		
 
@@ -45,6 +46,12 @@ public class BOAreaInteresTest {
 			areaInteres.registrar(area);
 			AreasInteres areaIn = areaInteres.buscar(123);
 			Assert.assertNotNull(areaIn);
+			
+			areaIn.setCodigo(123);
+			areaIn.setNombre("el mismo");
+			areaInteres.editar(areaIn);
+			AreasInteres areaInt = areaInteres.buscar(123);
+			Assert.assertEquals("el mismo", areaInt.getNombre());
 
 		} catch (Exception e) {
 
@@ -57,7 +64,7 @@ public class BOAreaInteresTest {
 
 	@AfterClass
 	public static void afterClass() {
-//		TestDataUtil.ejecutarSQL("sqltest/PruebasUnitariasTest-del.sql");
+		TestDataUtil.ejecutarSQL("sqltest/PruebasAreaInteresTest-del.sql");
 
 	}
 
