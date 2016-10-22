@@ -42,6 +42,15 @@ public class BOProgramaTest {
 			programa.registrar(progra);
 			Programa program = programa.buscar(123);
 			Assert.assertNotNull(program);
+			
+			program.setCodigo(123);
+			program.setCreditosPrograma("8");
+			program.setNomPrograma("algebra");
+			Facultad facul1 = facultad.buscar(432);
+			program.setFacultad(facul1);
+			programa.editar(program);
+			Programa programaT = programa.buscar(123);
+			Assert.assertEquals("algebra", programaT.getNomPrograma());
 
 		} catch (Exception e) {
 
@@ -54,7 +63,7 @@ public class BOProgramaTest {
 
 	@AfterClass
 	public static void afterClass() {
-		TestDataUtil.ejecutarSQL("sqltest/PruebasPrograma-Test-del.sql");
+         TestDataUtil.ejecutarSQL("sqltest/PruebasPrograma-Test-del.sql");
 
 	}
 
