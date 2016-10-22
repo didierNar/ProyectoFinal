@@ -39,7 +39,7 @@ public class BOEmpresaTest {
 		empresa.setNit("123");
 		empresa.setRazonSocial("no se");
 		empresa.setTelefono("300712");
-		empresa.setWeb("didiselacome");
+		empresa.setWeb("no tiene");
 		empresa.setTipo(TipoEmpresa.PRIVADA);
 		Pais pais = new Pais();
 		pais.setCod(567);
@@ -64,8 +64,6 @@ public class BOEmpresaTest {
 			boEmpresa.registrar(empresa);
 			Empresa emp = boEmpresa.buscar("123");
 			Assert.assertNotNull(emp);
-			
-			
 
 		} catch (Exception e) {
 			e.printStackTrace();

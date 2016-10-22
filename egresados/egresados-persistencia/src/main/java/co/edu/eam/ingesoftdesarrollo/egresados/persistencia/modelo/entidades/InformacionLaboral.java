@@ -19,6 +19,7 @@ import javax.persistence.TemporalType;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.enumeraciones.SituacionActual;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.enumeraciones.TipoEmpresa;
 
+
 @Entity
 @Table(name = "T_INFO_LABORAL")
 @NamedQueries({
