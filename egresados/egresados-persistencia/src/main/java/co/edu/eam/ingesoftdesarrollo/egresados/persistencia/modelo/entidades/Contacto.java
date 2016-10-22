@@ -21,7 +21,7 @@ public class Contacto implements Serializable {
 	
 	@Id
 	@Column(name="ID_EMPRESA")
-	private int nit;
+	private String nit;
 	
 	@Column(name="nombre")
 	private String nombre;

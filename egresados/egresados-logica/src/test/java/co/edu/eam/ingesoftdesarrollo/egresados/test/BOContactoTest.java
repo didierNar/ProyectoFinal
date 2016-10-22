@@ -1,82 +1,72 @@
 package co.edu.eam.ingesoftdesarrollo.egresados.test;
 
+import org.caferrer.testdata.junit.TestDataUtil;
+import org.junit.AfterClass;
 import org.junit.Assert;
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
-import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.enumeraciones.TipoEmpresa;
-import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Ciudad;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Contacto;
-import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Departamento;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Empresa;
-import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Pais;
-import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.SectorLaboral;
 import co.edu.eam.ingesoftdesarrollo.logica.bo.BOContacto;
+import co.edu.eam.ingesoftdesarrollo.logica.bo.BOEmpresa;
+
+
 
 public class BOContactoTest {
 	
-	private BOContacto boContacto;
 	
-	public BOContactoTest() {
-		// TODO Auto-generated constructor stub
-		boContacto = new BOContacto();
+
+	@BeforeClass
+	public static void beforeClass() {
+		TestDataUtil.ejecutarSQL("sqltest/PruebasContacto-addTest-add.sql");
 	}
 	
+	private BOContacto contacto;
+	private BOEmpresa empresa;
+
+	@Before
+	public void setUp() {
+
+		contacto = new BOContacto();
+		empresa = new BOEmpresa();
+
+	}
+
 	@Test
-	private void testRegistro(){
+	public void registrarEgresados() {
 		
-		try{
+		Contacto contact = new Contacto();
+		contact.setCargo("Seguridad Informatica");
+		contact.setCorreo("tennluis");
+		contact.setNombre("Lucho");
+		contact.setTel("300712");
 		
-		Contacto con = new Contacto();
-		
-		con.setCargo("aseo");
-		con.setCorreo("@@@");
-		
-		Empresa em = new Empresa();
-		em.setNit("111");
-		
-		SectorLaboral sector = new SectorLaboral();
-		sector.setCodigo(111);
-		sector.setNombre("el sector");
-		
-		em.setSector(sector);
-		em.setRazonSocial("no se");
-		
-		Departamento depto = new Departamento();
-		depto.setCodigo(111);
-		depto.setNombre("Bolivar");
-		
-		Pais pais = new Pais();
-		pais.setCod(111);
-		pais.setNombre("España");
-		
-		depto.setPais(pais);
-		
-		em.setTelefono("123123");
-		em.setTipo(TipoEmpresa.PRIVADA);
-		em.setWeb("No tiene");
-		em.setDireccion("cualquiera");
-		
-		Ciudad ciudad = new Ciudad();
-		ciudad.setCodigoCiudad(111);
-		ciudad.setDepartamento(depto);
-		ciudad.setNombre("no se");
-		
-		em.setCiudad(ciudad);
-		em.setPais(pais);
-		
-		con.setEmpresa(em);
-		con.setNombre("Mara");
-		con.setTel("234");
-		
-		boContacto.registrar(con);
-		
-		boContacto.buscar(em);
-		
-		} catch (Exception e){
+		try {
+			
+			Empresa empre = empresa.buscar("654");
+			contact.setEmpresa(empre);
+			contacto.registrar(contact);
+			
+			Contacto contac = contacto.buscar(empre);
+			Assert.assertNotNull(contac);
+
+			
+
+		} catch (Exception e) {
+
 			e.printStackTrace();
 			Assert.fail();
+
 		}
-		
+
+	}
+
+	@AfterClass
+	public static void afterClass() {
+		TestDataUtil.ejecutarSQL("sqltest/PruebasContacto-Test-del.sql");
+
 	}
 
 }
