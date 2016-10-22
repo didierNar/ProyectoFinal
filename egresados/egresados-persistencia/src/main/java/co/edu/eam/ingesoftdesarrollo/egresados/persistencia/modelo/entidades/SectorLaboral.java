@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -21,6 +23,7 @@ public class SectorLaboral implements Serializable {
 
 	@Id
 	@Column(name = "ID_SECTOR")
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int codigo;
 
 	@Column(name = "nombre")
@@ -34,7 +37,7 @@ public class SectorLaboral implements Serializable {
 	 * @param codigo
 	 * @param nombre
 	 */
-	public SectorLaboral(int codigo, String nombre) {
+	public SectorLaboral(String nombre) {
 		super();
 		this.codigo = codigo;
 		this.nombre = nombre;

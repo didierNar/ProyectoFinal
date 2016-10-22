@@ -14,7 +14,6 @@ import javax.persistence.Table;
 @Table(name="T_CONTACTO")
 public class Contacto implements Serializable {
 
-	@Id
 	@JoinColumn(name="ID_EMPRESA", insertable=false, updatable=false)
 	@OneToOne
 	@MapsId

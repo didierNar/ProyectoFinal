@@ -26,6 +26,7 @@ import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Fac
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.InfoAcademica;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.InformacionLaboral;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Programa;
+import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.SectorLaboral;
 import co.edu.eam.ingesoftdesarrollo.logica.excepcion.ExcepcionNegocio;
 
 /**
@@ -742,7 +743,7 @@ public class VentanaEgresados extends javax.swing.JFrame implements ActionListen
 
 				jCBSituacionActual.setSelectedItem(infoLab.getSituaActual());
 				jCBTipoEmp.setSelectedItem(infoLab.getTipoEmpresa());
-				jTFSectorLab.setText(infoLab.getSectorLaboral());
+				jTFSectorLab.setText(infoLab.getSectorLaboral().getNombre());
 				jTFNomEmp.setText(infoLab.getNombreEmpresa());
 				jDFechaIngreso.setDate(infoLab.getFechaIngreso());
 				jDFechaSalida.setDate(infoLab.getFechaSalida());
@@ -793,6 +794,9 @@ public class VentanaEgresados extends javax.swing.JFrame implements ActionListen
 					SituacionActual situa = (SituacionActual) jCBSituacionActual.getSelectedItem();
 					TipoEmpresa tipoEmp = (TipoEmpresa) jCBTipoEmp.getSelectedItem();
 					String sectorLab = jTFSectorLab.getText();
+					
+					SectorLaboral sector = new SectorLaboral(sectorLab);
+					
 					String nomEmp = jTFNomEmp.getText();
 					Date fechaIngreso = jDFechaIngreso.getDate();
 					Date fechaSalida = jDFechaSalida.getDate();
@@ -812,7 +816,7 @@ public class VentanaEgresados extends javax.swing.JFrame implements ActionListen
 						Egresado e = new Egresado(cod, programa, nombre, ape, tipoDoc, id, correo, tel);
 
 						// agregar Información laboral
-						InformacionLaboral infoLab = new InformacionLaboral(e, situa, tipoEmp, sectorLab, nomEmp,
+						InformacionLaboral infoLab = new InformacionLaboral(e, situa, tipoEmp, sector, nomEmp,
 								fechaIngreso, fechaSalida, cargo);
 
 						// Agregar información académica
@@ -856,6 +860,9 @@ public class VentanaEgresados extends javax.swing.JFrame implements ActionListen
 				SituacionActual situa = (SituacionActual) jCBSituacionActual.getSelectedItem();
 				TipoEmpresa tipoEmp = (TipoEmpresa) jCBTipoEmp.getSelectedItem();
 				String sectorLab = jTFSectorLab.getText();
+				
+				SectorLaboral sector = new SectorLaboral(sectorLab);
+				
 				String nomEmp = jTFNomEmp.getText();
 				Date fechaIngreso = jDFechaIngreso.getDate();
 				Date fechaSalida = jDFechaSalida.getDate();
@@ -875,7 +882,7 @@ public class VentanaEgresados extends javax.swing.JFrame implements ActionListen
 					Egresado e = new Egresado(cod, programa, nombre, ape, tipoDoc, id, correo, tel);
 
 					// agregar Información laboral
-					InformacionLaboral infoLab = new InformacionLaboral(e, situa, tipoEmp, sectorLab, nomEmp,
+					InformacionLaboral infoLab = new InformacionLaboral(e, situa, tipoEmp, sector, nomEmp,
 							fechaIngreso, fechaSalida, cargo);
 
 					// Agregar información académica

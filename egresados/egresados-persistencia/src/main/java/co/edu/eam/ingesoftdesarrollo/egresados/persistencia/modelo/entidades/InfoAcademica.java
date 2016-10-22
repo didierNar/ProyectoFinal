@@ -22,7 +22,7 @@ public class InfoAcademica implements Serializable {
 
 	@Id
 	@Column(name = "ID_EGRESADO")
-	private int codEgresado;
+	private String codEgresado;
 	
 	@JoinColumn(name = "ID_EGRESADO", insertable=false, updatable=false)
 	@MapsId
