@@ -12,12 +12,8 @@ import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Emp
 import co.edu.eam.ingesoftdesarrollo.logica.bo.BOContacto;
 import co.edu.eam.ingesoftdesarrollo.logica.bo.BOEmpresa;
 
-
-
 public class BOContactoTest {
 	
-	
-
 	@BeforeClass
 	public static void beforeClass() {
 		TestDataUtil.ejecutarSQL("sqltest/PruebasContacto-addTest-add.sql");

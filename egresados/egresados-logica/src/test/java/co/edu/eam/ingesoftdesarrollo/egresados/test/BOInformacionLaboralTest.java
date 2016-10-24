@@ -2,63 +2,55 @@ package co.edu.eam.ingesoftdesarrollo.egresados.test;
 
 import java.util.Date;
 
+import org.caferrer.testdata.junit.TestDataUtil;
+import org.junit.AfterClass;
 import org.junit.Assert;
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.enumeraciones.SituacionActual;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.enumeraciones.TipoEmpresa;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Egresado;
-import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Facultad;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.InformacionLaboral;
-import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Programa;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.SectorLaboral;
+import co.edu.eam.ingesoftdesarrollo.logica.bo.BOEgresados;
 import co.edu.eam.ingesoftdesarrollo.logica.bo.BOInformacionLaboral;
 
 public class BOInformacionLaboralTest {
-	
-	private BOInformacionLaboral boInfoLab;
-	
-	public BOInformacionLaboralTest() {
-		// TODO Auto-generated constructor stub
-		boInfoLab = new BOInformacionLaboral();
+
+	@BeforeClass
+	public static void beforeClass() {
+		TestDataUtil.ejecutarSQL("sqltest/PruebasInfoLab-Test-add.sql");
 	}
 	
+	private BOInformacionLaboral boInfoLab;
+	private BOEgresados boEgresados;
+
+	@Before
+	public void setUp() {
+		boInfoLab = new BOInformacionLaboral();
+		boEgresados = new BOEgresados();
+	}
+
 	@Test
-	private void testRegistro(){
+	public void testRegistro(){
 		
 		try{
 		
 		InformacionLaboral infoLab = new InformacionLaboral();
 		
-		Egresado egre = new Egresado();
-		egre.setApellido("Ortiz");
-		egre.setCodigoEgresado("456");
-		
-		Programa pro = new Programa();
-		pro.setCodigo(123123);
-		pro.setCreditosPrograma("50");
-		
-		Facultad fac = new Facultad();
-		fac.setCodigo(123123);
-		fac.setNombre("Administracion");
-		
-		pro.setFacultad(fac);
-		pro.setNomPrograma("hotelería");
-		
-		egre.setCodigoPrograma(pro);
-		egre.setCorreo("holis");
-		egre.setNombre("Dario");
-		egre.setNumDocumento("123123");
-		egre.setNumTel("no tiene");
-		egre.setTipoDocumento("cedula");
+		Egresado egre = boEgresados.buscar("123456");
 		
 		infoLab.setSituaActual(SituacionActual.EMPLEADO);
 		infoLab.setTipoEmpresa(TipoEmpresa.PRIVADA);
 		
-		SectorLaboral sector = new SectorLaboral();
-		sector.setCodigo(123123);
-		sector.setNombre("No se");
+		infoLab.setEgresado(egre);
 		
+		SectorLaboral sector = new SectorLaboral();
+		sector.setNombre("No se");
+		sector.setCodigo(123123);
+				
 		infoLab.setSectorLaboral(sector);
 		infoLab.setNombreEmpresa("tapp");
 		
@@ -79,11 +71,20 @@ public class BOInformacionLaboralTest {
 		
 		boInfoLab.agregar(infoLab);
 		
+		InformacionLaboral info = boInfoLab.buscarInfoLab(egre);
+		Assert.assertNotNull(info);
+		
 		} catch (Exception e){
 			e.printStackTrace();
 			Assert.fail();
 		}
 		
+	}
+
+	@AfterClass
+	public static void afterClass() {
+		TestDataUtil.ejecutarSQL("sqltest/PruebasInfoLab-Test-del.sql");
+
 	}
 
 }

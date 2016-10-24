@@ -10,6 +10,7 @@ import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.dao.implementacion.j
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.enumeraciones.SituacionActual;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Egresado;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.InformacionLaboral;
+import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.SectorLaboral;
 import co.edu.eam.ingesoftdesarrollo.logica.excepcion.ExcepcionNegocio;
 
 public class BOInformacionLaboral {
@@ -52,6 +53,10 @@ public class BOInformacionLaboral {
 			}
 		}
 		return lista;
+	}
+	
+	public List<SectorLaboral> listaSectores () throws Exception{
+		return daoInfoLab.listaSectores();
 	}
 
 }

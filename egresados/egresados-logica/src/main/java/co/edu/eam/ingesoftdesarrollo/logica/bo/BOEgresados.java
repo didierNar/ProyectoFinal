@@ -23,8 +23,8 @@ public class BOEgresados {
 		}
 	}
 
-	public Egresado buscar(String ced) throws Exception {
-		Egresado egr = daoEgresados.buscar(ced);
+	public Egresado buscar(String cod) throws Exception {
+		Egresado egr = daoEgresados.buscar(cod);
 		if (egr != null) {
 			return egr;
 		} else {

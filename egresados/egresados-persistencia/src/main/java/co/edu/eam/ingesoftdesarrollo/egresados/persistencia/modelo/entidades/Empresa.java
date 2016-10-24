@@ -26,14 +26,14 @@ public class Empresa implements Serializable {
 	private Contacto contacto;
 
 	@JoinColumn(name = "ID_SECTOR")
-	@ManyToOne
+	@ManyToOne(cascade={})
 	private SectorLaboral sector;
 	
 	@Column(name = "razon_social")
 	private String razonSocial;
 	
 	@JoinColumn(name = "depto")
-	@ManyToOne
+	@ManyToOne(cascade={})
 	private Departamento depto;
 	
 	@Column(name = "telefono")
@@ -50,11 +50,11 @@ public class Empresa implements Serializable {
 	private String direccion;
 
 	@JoinColumn(name = "ID_CIUDAD")
-	@ManyToOne
+	@ManyToOne(cascade={})
 	private Ciudad ciudad;
 	
 	@JoinColumn(name="pais")
-	@ManyToOne
+	@ManyToOne(cascade={})
 	private Pais pais;
 
 	public Empresa() {

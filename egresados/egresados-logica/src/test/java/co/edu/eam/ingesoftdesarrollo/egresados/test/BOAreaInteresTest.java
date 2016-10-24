@@ -23,8 +23,6 @@ public class BOAreaInteresTest {
 	
 	private BOAreaInteres areaInteres;
 
-	
-
 	@Before
 	public void setUp() {
 		

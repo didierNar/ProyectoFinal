@@ -24,7 +24,7 @@ public class Programa implements Serializable {
 	private int codigo;
 
 	@JoinColumn(name = "ID_FACULTAD")
-	@ManyToOne
+	@ManyToOne(cascade={})
 	private Facultad facultad;
 
 	@Column(name = "nom_programa")

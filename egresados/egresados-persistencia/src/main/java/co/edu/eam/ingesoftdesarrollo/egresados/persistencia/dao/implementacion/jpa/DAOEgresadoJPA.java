@@ -19,10 +19,10 @@ public class DAOEgresadoJPA implements IDAOEgresados {
 		em.getTransaction().commit();
 	}
 
-	public Egresado buscar(String ced) throws Exception {
+	public Egresado buscar(String cod) throws Exception {
 		// TODO Auto-generated method stub
 		EntityManager em = AdministradorEntityManager.getEntityManager();
-		return em.find(Egresado.class, ced);
+		return em.find(Egresado.class, cod);
 	}
 
 	public void eliminar(String ced) throws Exception {

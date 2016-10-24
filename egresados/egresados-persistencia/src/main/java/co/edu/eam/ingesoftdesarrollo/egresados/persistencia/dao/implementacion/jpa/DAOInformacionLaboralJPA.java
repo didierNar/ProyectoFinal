@@ -8,6 +8,7 @@ import javax.persistence.Query;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.dao.definiciones.IDAOInformacionLaboral;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Egresado;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.InformacionLaboral;
+import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.SectorLaboral;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.utilidades.AdministradorEntityManager;
 
 public class DAOInformacionLaboralJPA implements IDAOInformacionLaboral{
@@ -22,7 +23,7 @@ public class DAOInformacionLaboralJPA implements IDAOInformacionLaboral{
 
 	public InformacionLaboral buscar(Egresado e) throws Exception {
 		EntityManager em = AdministradorEntityManager.getEntityManager();
-		return em.find(InformacionLaboral.class, e);
+		return em.find(InformacionLaboral.class, e.getCodigoEgresado());
 	}
 
 	public void editar(InformacionLaboral infoLab) throws Exception {
@@ -40,5 +41,13 @@ public class DAOInformacionLaboralJPA implements IDAOInformacionLaboral{
 		List<InformacionLaboral> lista = q.getResultList();
 		return lista;
 	}
+
+	public List<SectorLaboral> listaSectores() throws Exception {
+		EntityManager em = AdministradorEntityManager.getEntityManager();
+		Query q = em.createNamedQuery(SectorLaboral.LISTA_SECTORES);
+		List<SectorLaboral> lista = q.getResultList();
+		return lista;
+	}
+	
 
 }

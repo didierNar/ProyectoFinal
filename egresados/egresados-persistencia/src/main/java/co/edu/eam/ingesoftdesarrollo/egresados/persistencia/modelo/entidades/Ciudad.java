@@ -26,7 +26,7 @@ public class Ciudad implements Serializable {
 	private int codigoCiudad;
 
 	@JoinColumn(name = "ID_DEPARTAMENTO")
-	@ManyToOne
+	@ManyToOne(cascade={})
 	private Departamento departamento;
 
 	@Column(name = "nombre_ciudad")

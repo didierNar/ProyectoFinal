@@ -7,6 +7,7 @@ import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Fac
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.InfoAcademica;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.InformacionLaboral;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Programa;
+import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.SectorLaboral;
 import co.edu.eam.ingesoftdesarrollo.logica.bo.BOEgresados;
 import co.edu.eam.ingesoftdesarrollo.logica.bo.BOFacultad;
 import co.edu.eam.ingesoftdesarrollo.logica.bo.BOInfoAcademica;
@@ -61,6 +62,10 @@ public class ControladorVentanaEgresados {
 		boEgresados.actualizar(e);
 		boInfoAcademica.editarInfo(info);
 		boInfoLab.editar(infoLab);
+	}
+	
+	public List<SectorLaboral> listaSectores () throws Exception{
+		return boInfoLab.listaSectores();
 	}
 	
 }

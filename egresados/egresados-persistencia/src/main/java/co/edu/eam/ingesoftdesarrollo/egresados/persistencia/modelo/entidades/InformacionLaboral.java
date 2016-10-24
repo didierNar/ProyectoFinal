@@ -19,7 +19,6 @@ import javax.persistence.TemporalType;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.enumeraciones.SituacionActual;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.enumeraciones.TipoEmpresa;
 
-
 @Entity
 @Table(name = "T_INFO_LABORAL")
 @NamedQueries({
@@ -36,7 +35,6 @@ public class InformacionLaboral implements Serializable {
 	@Column(name = "ID_EGRESADO")
 	private String codEgresado;
 
-	
 	@JoinColumn(name = "ID_EGRESADO", insertable = false, updatable = false)
 	@OneToOne
 	@MapsId
@@ -49,7 +47,7 @@ public class InformacionLaboral implements Serializable {
 	private TipoEmpresa tipoEmpresa;
 
 	@JoinColumn(name = "sector_laboral")
-	@ManyToOne
+	@ManyToOne(cascade={})
 	private SectorLaboral sectorLaboral;
 
 	@Column(name = "nombre_empresa")

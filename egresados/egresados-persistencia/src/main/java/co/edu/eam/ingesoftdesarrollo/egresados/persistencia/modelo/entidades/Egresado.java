@@ -29,7 +29,7 @@ public class Egresado implements Serializable{
 	private String codigoEgresado;
 	
 	@JoinColumn(name="ID_PROGRAMA")
-	@ManyToOne
+	@ManyToOne(cascade={})
 	private Programa codigoPrograma;
 	
 	@Column(name="nombre")

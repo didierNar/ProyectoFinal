@@ -16,12 +16,12 @@ public class HistoriaLaboral implements Serializable {
 	
 	@Id
 	@JoinColumn(name="ID_EGRESADO")
-	@ManyToOne
+	@ManyToOne(cascade={})
 	private InformacionLaboral egresado;
 	
 	@Id
 	@JoinColumn(name="NIT")
-	@ManyToOne
+	@ManyToOne(cascade={})
 	private Empresa empresa;
 
 	

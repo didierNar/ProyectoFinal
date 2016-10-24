@@ -19,7 +19,7 @@ public class DAOContactoJPA implements IDAOContacto {
 
 	public Contacto buscar(Empresa emp) throws Exception {
 		EntityManager em = AdministradorEntityManager.getEntityManager();
-		return em.find(Contacto.class, emp);
+		return em.find(Contacto.class, emp.getNit());
 	}
 
 	public void editar(Contacto con) throws Exception {

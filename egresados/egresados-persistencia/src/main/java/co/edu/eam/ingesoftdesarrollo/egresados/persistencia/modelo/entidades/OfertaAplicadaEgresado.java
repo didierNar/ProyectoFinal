@@ -16,12 +16,12 @@ public class OfertaAplicadaEgresado implements Serializable {
 
 	@Id
 	@JoinColumn(name="ID_EGRESADO")
-	@ManyToOne
+	@ManyToOne(cascade={})
 	private Egresado codigoEgresado;
 	
 	@Id
 	@JoinColumn(name="ID_OFERTA")
-	@ManyToOne
+	@ManyToOne(cascade={})
 	private OfertaLaboral codigoOferta;
 	
 	public OfertaAplicadaEgresado() {
