@@ -16,12 +16,12 @@ public class AreasEgresado implements Serializable {
 
 	@Id
 	@JoinColumn(name="ID_EGRESADO")
-	@ManyToOne
+	@ManyToOne(cascade={})
 	private Egresado codigoEgresado;
 	
 	@Id
 	@JoinColumn(name="ID_AREA")
-	@ManyToOne
+	@ManyToOne(cascade={})
 	private AreasInteres codigoArea;
 	
 	public AreasEgresado() {

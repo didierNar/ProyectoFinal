@@ -39,7 +39,6 @@ public class SectorLaboral implements Serializable {
 	 */
 	public SectorLaboral(String nombre) {
 		super();
-		this.codigo = codigo;
 		this.nombre = nombre;
 	}
 

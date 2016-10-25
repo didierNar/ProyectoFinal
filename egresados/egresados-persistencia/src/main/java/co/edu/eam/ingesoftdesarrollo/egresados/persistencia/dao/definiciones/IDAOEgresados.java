@@ -8,7 +8,7 @@ public interface IDAOEgresados {
 	
 	public void registrar (Egresado e) throws Exception;
 	
-	public Egresado buscar (String ced) throws Exception;
+	public Egresado buscar (String cod) throws Exception;
 	
 	public void eliminar (String ced) throws Exception;
 	

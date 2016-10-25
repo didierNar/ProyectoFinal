@@ -21,15 +21,15 @@ public class OfertaLaboral implements Serializable{
 	private int codigo;
 	
 	@JoinColumn(name="ID_EMPRESA")
-	@ManyToOne
+	@ManyToOne(cascade={})
 	private Empresa empresa;
 	
 	@JoinColumn(name="ID_CIUDAD")
-	@ManyToOne
+	@ManyToOne(cascade={})
 	private Ciudad ciudad;
 	
 	@JoinColumn(name="ID_AREA")
-	@ManyToOne
+	@ManyToOne(cascade={})
 	private AreasInteres area;
 	
 	@Column(name="resumen")

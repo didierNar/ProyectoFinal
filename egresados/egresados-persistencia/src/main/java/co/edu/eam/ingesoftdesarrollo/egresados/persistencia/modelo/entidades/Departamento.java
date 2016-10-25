@@ -30,7 +30,7 @@ public class Departamento implements Serializable {
 	private String nombre;
 
 	@JoinColumn(name = "pais")
-	@ManyToOne
+	@ManyToOne(cascade={})
 	private Pais pais;
 
 	public Departamento() {

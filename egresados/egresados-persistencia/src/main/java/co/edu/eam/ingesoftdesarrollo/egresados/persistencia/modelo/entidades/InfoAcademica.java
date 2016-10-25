@@ -34,14 +34,14 @@ public class InfoAcademica implements Serializable {
 	private Date fechaGrado;
 
 	@JoinColumn(name = "facultad")
-	@ManyToOne
+	@ManyToOne(cascade={})
 	private Facultad facultad;
 
 	@Column(name = "nivel_academico")
 	private NivelAcademico nivelAcademico;
 
 	@JoinColumn(name = "programa_academico")
-	@ManyToOne
+	@ManyToOne(cascade={})
 	private Programa programaAcademico;
 
 	@Column(name = "num_diploma")
