@@ -50,7 +50,7 @@ public class Empresa implements Serializable {
 	private String direccion;
 
 	@JoinColumn(name = "ID_CIUDAD")
-	@ManyToOne
+	@ManyToOne(cascade={})
 	private Ciudad ciudad;
 	
 	@JoinColumn(name="pais")

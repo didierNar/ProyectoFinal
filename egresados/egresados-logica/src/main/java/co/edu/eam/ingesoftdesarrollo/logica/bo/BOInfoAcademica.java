@@ -24,7 +24,7 @@ public class BOInfoAcademica {
 		if (ia != null) {
 			return ia;
 		} else {
-			throw new ExcepcionNegocio("No existe información académica");
+			throw new ExcepcionNegocio("No existe informaciï¿½n acadï¿½mica");
 		}
 	}
 	

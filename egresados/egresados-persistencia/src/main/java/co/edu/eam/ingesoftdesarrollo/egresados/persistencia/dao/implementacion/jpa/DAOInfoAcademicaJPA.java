@@ -20,7 +20,7 @@ public class DAOInfoAcademicaJPA implements IDAOInfoAcademica {
 	public InfoAcademica buscar(Egresado e) throws Exception {
 		// TODO Auto-generated method stub
 		EntityManager em = AdministradorEntityManager.getEntityManager();
-		return em.find(InfoAcademica.class, e);
+		return em.find(InfoAcademica.class, e.getCodigoEgresado());
 	}
 
 	public void editarInfo(InfoAcademica info) throws Exception {

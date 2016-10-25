@@ -45,12 +45,23 @@ public class BOContactoTest {
 		
 		try {
 			
-			Empresa empre = empresa.buscar("654");
+			Empresa empre = empresa.buscar("656");
+			Assert.assertNotNull(empre);
 			contact.setEmpresa(empre);
 			contacto.registrar(contact);
 			
 			Contacto contac = contacto.buscar(empre);
 			Assert.assertNotNull(contac);
+			
+			contac.setCargo("Contador");
+			contac.setCorreo("tennuis77");
+			contac.setEmpresa(empre);
+			contac.setNombre("Luis");
+			contac.setTel("3001419");
+			contacto.editar(contac);
+			
+			Contacto con = contacto.buscar(empre);
+			Assert.assertEquals("tennluis77", con.getCorreo());
 
 			
 

@@ -24,7 +24,7 @@ public class BOInfoAcademicaTest {
 	
 	@BeforeClass
 	public static void beoreClass() {
-		TestDataUtil.ejecutarSQL("sqltest/PruebasInfoAcademica-addTest-add.sql");
+	TestDataUtil.ejecutarSQL("sqltest/PruebasInfoAcademica-addTest-add.sql");
 	}
 
     private BOInfoAcademica infoAcademica;
@@ -58,7 +58,7 @@ public class BOInfoAcademicaTest {
 		
 
 		try {
-            Egresado egre = egresado.buscar("321");
+            Egresado egre = egresado.buscar("123");
 			info.setEgresado(egre);
 			Facultad facul = facultad.buscar(432);
 			info.setFacultad(facul);
@@ -66,7 +66,18 @@ public class BOInfoAcademicaTest {
 			info.setProgramaAcademico(progra);
 			infoAcademica.agregar(info);
 			InfoAcademica infoAca = infoAcademica.buscarInfo(egre);
-			Assert.assertNotNull(infoAca);
+			Assert.assertEquals("contador", infoAca.getAreaOfertaLaboral());
+			
+			infoAca.setAreaOfertaLaboral("Administrador");
+			infoAca.setEgresado(egre);
+			infoAca.setFacultad(facul);
+			infoAca.setFechaGrado(fecha);
+			infoAca.setNivelAcademico(NivelAcademico.POSTGRADO);
+			infoAca.setNumDiploma("123");
+			infoAca.setProgramaAcademico(progra);
+			infoAcademica.editarInfo(infoAca);
+			InfoAcademica infoAcaB = infoAcademica.buscarInfo(egre);
+			Assert.assertEquals("Administrador", infoAcaB.getAreaOfertaLaboral());
 
 		} catch (Exception e) {
 

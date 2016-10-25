@@ -21,7 +21,7 @@ public class BOEmpresaTest {
 
 	@BeforeClass
 	public static void beforeClass() {
-//		TestDataUtil.ejecutarSQL("sqltest/PruebasEmpresa-addTest.sql");
+     TestDataUtil.ejecutarSQL("sqltest/PruebasEmpresa-addTest.sql");
 	}
 
 	@Before
@@ -41,19 +41,20 @@ public class BOEmpresaTest {
 		empresa.setTelefono("300712");
 		empresa.setWeb("no tiene");
 		empresa.setTipo(TipoEmpresa.PRIVADA);
+		
 		Pais pais = new Pais();
 		pais.setCod(567);
 		pais.setNombre("colombia");
 		empresa.setPais(pais);
+		
 		Departamento depar = new Departamento();
 		depar.setCodigo(765);
-		depar.setNombre("quindio");
-		depar.setPais(pais);
+        
+		
 		Ciudad ciud = new Ciudad();
 		ciud.setCodigoCiudad(345);
-		ciud.setDepartamento(depar);
-		ciud.setNombre("armenia");
 		empresa.setCiudad(ciud);
+		
 		SectorLaboral sectorLa = new SectorLaboral();
 		sectorLa.setCodigo(765);
 		sectorLa.setNombre("Contaduria");
