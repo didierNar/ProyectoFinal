@@ -50,7 +50,7 @@ public class BOContactoTest {
 			Assert.assertNotNull(contac);
 			
 			contac.setCargo("Contador");
-			contac.setCorreo("tennuis77");
+			contac.setCorreo("tennluis77");
 			contac.setEmpresa(empre);
 			contac.setNombre("Luis");
 			contac.setTel("3001419");
