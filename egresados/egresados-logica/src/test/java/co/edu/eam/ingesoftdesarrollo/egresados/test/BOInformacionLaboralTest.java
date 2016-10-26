@@ -36,43 +36,48 @@ public class BOInformacionLaboralTest {
 	@Test
 	public void testRegistro(){
 		
-		try{
-		
-		InformacionLaboral infoLab = new InformacionLaboral();
-		
-		Egresado egre = boEgresados.buscar("123456");
-		
-		infoLab.setSituaActual(SituacionActual.EMPLEADO);
-		infoLab.setTipoEmpresa(TipoEmpresa.PRIVADA);
-		
-		infoLab.setEgresado(egre);
-		
+		InformacionLaboral infoLabo = new InformacionLaboral();
+		infoLabo.setCargo("contador");
+		Date fecha = new Date();
+		fecha.setYear(2016);
+		fecha.setMonth(05);
+		fecha.setDate(13);
+		infoLabo.setFechaIngreso(fecha);
+		Date fecha2 = new Date();
+		fecha2.setYear(1992);
+		fecha2.setMonth(05);
+		fecha2.setDate(28);
+		infoLabo.setFechaSalida(fecha2);
+		infoLabo.setNombreEmpresa("boreal");
+		infoLabo.setSituaActual(SituacionActual.EMPLEADO);
+		infoLabo.setTipoEmpresa(TipoEmpresa.PUBLICA);
 		SectorLaboral sector = new SectorLaboral();
-		sector.setNombre("No se");
-		sector.setCodigo(123123);
-				
-		infoLab.setSectorLaboral(sector);
-		infoLab.setNombreEmpresa("tapp");
+		sector.setCodigo(567);
+		infoLabo.setSectorLaboral(sector);
 		
-		Date fechaIng = new Date();
-		fechaIng.setDate(12);
-		fechaIng.setMonth(2);
-		fechaIng.setYear(2000);
+		try{
+			
+		   Egresado egresa = boEgresados.buscar("123");
+		   infoLabo.setEgresado(egresa);
+		   boInfoLab.agregar(infoLabo);
+		   InformacionLaboral infoLaboB = boInfoLab.buscarInfoLab(egresa);
+		   Assert.assertEquals("boreal", infoLaboB.getNombreEmpresa());
+		   
+		   infoLaboB.setCargo("Administrador");
+		   infoLaboB.setEgresado(egresa);
+		   infoLaboB.setFechaIngreso(fecha);
+		   infoLaboB.setFechaSalida(fecha2);
+		   infoLaboB.setNombreEmpresa("no se");
+		   infoLaboB.setSituaActual(SituacionActual.DESEMPLEADO);
+		   infoLaboB.setSectorLaboral(sector);
+		   infoLaboB.setTipoEmpresa(TipoEmpresa.PUBLICA);
+		   boInfoLab.editar(infoLaboB);
+		   
+		   InformacionLaboral inf = boInfoLab.buscarInfoLab(egresa);
+		   Assert.assertEquals("Administrador", inf.getCargo());
+		   
+		   
 		
-		Date fechaSal = new Date();
-		fechaSal.setDate(12);
-		fechaSal.setMonth(2);
-		fechaSal.setYear(2016);
-		
-		infoLab.setFechaIngreso(fechaIng);
-		infoLab.setFechaSalida(fechaSal);
-		
-		infoLab.setCargo("barre");
-		
-		boInfoLab.agregar(infoLab);
-		
-		InformacionLaboral info = boInfoLab.buscarInfoLab(egre);
-		Assert.assertNotNull(info);
 		
 		} catch (Exception e){
 			e.printStackTrace();

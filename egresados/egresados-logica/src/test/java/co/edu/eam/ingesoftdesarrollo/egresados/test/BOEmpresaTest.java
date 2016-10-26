@@ -44,27 +44,39 @@ public class BOEmpresaTest {
 		
 		Pais pais = new Pais();
 		pais.setCod(567);
-		pais.setNombre("colombia");
 		empresa.setPais(pais);
 		
 		Departamento depar = new Departamento();
 		depar.setCodigo(765);
-        
+        empresa.setDepto(depar);
 		
 		Ciudad ciud = new Ciudad();
 		ciud.setCodigoCiudad(345);
 		empresa.setCiudad(ciud);
 		
 		SectorLaboral sectorLa = new SectorLaboral();
-		sectorLa.setCodigo(765);
-		sectorLa.setNombre("Contaduria");
+		sectorLa.setCodigo(432);
 		empresa.setSector(sectorLa);
 
 		try {
 			
 			boEmpresa.registrar(empresa);
 			Empresa emp = boEmpresa.buscar("123");
-			Assert.assertNotNull(emp);
+			Assert.assertEquals("300712", emp.getTelefono());
+			
+			emp.setCiudad(ciud);
+			emp.setDepto(depar);
+			emp.setDireccion("unicentro");
+			emp.setNit("123");
+			emp.setPais(pais);
+			emp.setRazonSocial("limitada");
+			emp.setSector(sectorLa);
+			emp.setTelefono("3001419");
+			emp.setTipo(TipoEmpresa.PUBLICA);
+			emp.setWeb("hello");
+			
+			Empresa empre = boEmpresa.buscar("123");
+			Assert.assertEquals("unicentro", empre.getDireccion());
 
 		} catch (Exception e) {
 			e.printStackTrace();
