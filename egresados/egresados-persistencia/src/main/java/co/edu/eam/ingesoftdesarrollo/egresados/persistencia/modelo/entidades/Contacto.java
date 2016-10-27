@@ -50,6 +50,7 @@ public class Contacto implements Serializable {
 	 */
 	public Contacto(Empresa empresa, String nombre, String correo, String cargo, String tel) {
 		super();
+		nit = empresa.getNit();
 		this.empresa = empresa;
 		this.nombre = nombre;
 		this.correo = correo;
