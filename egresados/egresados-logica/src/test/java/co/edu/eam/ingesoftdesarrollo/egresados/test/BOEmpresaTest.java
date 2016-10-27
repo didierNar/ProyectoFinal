@@ -63,18 +63,13 @@ public class BOEmpresaTest {
 			boEmpresa.registrar(empresa);
 			Empresa emp = boEmpresa.buscar("123");
 			Assert.assertEquals("300712", emp.getTelefono());
-			
-			emp.setCiudad(ciud);
-			emp.setDepto(depar);
+		
 			emp.setDireccion("unicentro");
-			emp.setNit("123");
-			emp.setPais(pais);
 			emp.setRazonSocial("limitada");
-			emp.setSector(sectorLa);
 			emp.setTelefono("3001419");
 			emp.setTipo(TipoEmpresa.PUBLICA);
 			emp.setWeb("hello");
-			
+			boEmpresa.editar(emp);
 			Empresa empre = boEmpresa.buscar("123");
 			Assert.assertEquals("unicentro", empre.getDireccion());
 
