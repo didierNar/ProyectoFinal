@@ -33,7 +33,7 @@ public class BOProgramaTest {
 
 		Programa progra = new Programa();
 		progra.setCodigo(123);
-		progra.setCreditosPrograma("5");
+		progra.setCreditosPrograma(5);
 		progra.setNomPrograma("matematicas");
 
 		try {
@@ -44,7 +44,7 @@ public class BOProgramaTest {
 			Assert.assertNotNull(program);
 			
 			program.setCodigo(123);
-			program.setCreditosPrograma("8");
+			program.setCreditosPrograma(8);
 			program.setNomPrograma("algebra");
 			Facultad facul1 = facultad.buscar(432);
 			program.setFacultad(facul1);

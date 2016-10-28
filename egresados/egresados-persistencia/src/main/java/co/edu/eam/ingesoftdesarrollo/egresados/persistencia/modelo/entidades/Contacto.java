@@ -14,13 +14,13 @@ import javax.persistence.Table;
 @Table(name="T_CONTACTO")
 public class Contacto implements Serializable {
 
-	@JoinColumn(name="ID_EMPRESA", insertable=false, updatable=false)
+	@JoinColumn(name="NIT", insertable=false, updatable=false)
 	@OneToOne
 	@MapsId
 	private Empresa empresa;
 	
 	@Id
-	@Column(name="ID_EMPRESA")
+	@Column(name="NIT")
 	private String nit;
 	
 	@Column(name="nombre")
@@ -50,6 +50,7 @@ public class Contacto implements Serializable {
 	 */
 	public Contacto(Empresa empresa, String nombre, String correo, String cargo, String tel) {
 		super();
+		nit = empresa.getNit();
 		this.empresa = empresa;
 		this.nombre = nombre;
 		this.correo = correo;

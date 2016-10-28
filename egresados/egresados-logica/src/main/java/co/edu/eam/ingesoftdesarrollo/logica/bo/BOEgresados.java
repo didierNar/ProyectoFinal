@@ -15,11 +15,11 @@ public class BOEgresados {
 	}
 
 	public void registrar(Egresado e) throws Exception {
-		Egresado egr = daoEgresados.buscar(e.getNumDocumento());
+		Egresado egr = daoEgresados.buscar(e.getCodigoEgresado());
 		if (egr == null) {
 			daoEgresados.registrar(e);
 		} else {
-			throw new ExcepcionNegocio("Ya existe un egresado con este número de cédula");
+			throw new ExcepcionNegocio("Ya existe un egresado con este código");
 		}
 	}
 

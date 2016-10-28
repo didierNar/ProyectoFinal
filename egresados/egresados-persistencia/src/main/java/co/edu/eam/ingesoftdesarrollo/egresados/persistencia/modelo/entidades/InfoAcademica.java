@@ -23,8 +23,8 @@ public class InfoAcademica implements Serializable {
 	@Id
 	@Column(name = "ID_EGRESADO")
 	private String codEgresado;
-	
-	@JoinColumn(name = "ID_EGRESADO", insertable=false, updatable=false)
+
+	@JoinColumn(name = "ID_EGRESADO", insertable = false, updatable = false)
 	@MapsId
 	@OneToOne
 	private Egresado egresado;
@@ -34,14 +34,14 @@ public class InfoAcademica implements Serializable {
 	private Date fechaGrado;
 
 	@JoinColumn(name = "facultad")
-	@ManyToOne(cascade={})
+	@ManyToOne(cascade = {})
 	private Facultad facultad;
 
 	@Column(name = "nivel_academico")
 	private NivelAcademico nivelAcademico;
 
 	@JoinColumn(name = "programa_academico")
-	@ManyToOne(cascade={})
+	@ManyToOne(cascade = {})
 	private Programa programaAcademico;
 
 	@Column(name = "num_diploma")
@@ -66,6 +66,7 @@ public class InfoAcademica implements Serializable {
 	public InfoAcademica(Egresado egresado, Date fechaGrado, Facultad facultad, NivelAcademico nivelAcademico,
 			Programa programaAcademico, String numDiploma, String areaOfertaLaboral) {
 		super();
+		codEgresado = egresado.getCodigoEgresado();
 		this.egresado = egresado;
 		this.fechaGrado = fechaGrado;
 		this.facultad = facultad;
@@ -180,7 +181,9 @@ public class InfoAcademica implements Serializable {
 		this.egresado = egresado;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#hashCode()
 	 */
 	@Override
@@ -191,7 +194,9 @@ public class InfoAcademica implements Serializable {
 		return result;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	@Override
@@ -210,7 +215,5 @@ public class InfoAcademica implements Serializable {
 			return false;
 		return true;
 	}
-	
-	
 
 }

@@ -79,6 +79,7 @@ public class VentanaEgresados extends javax.swing.JFrame implements ActionListen
 	// <editor-fold defaultstate="collapsed" desc="Generated
 	// <editor-fold defaultstate="collapsed" desc="Generated
 	// <editor-fold defaultstate="collapsed" desc="Generated
+	// <editor-fold defaultstate="collapsed" desc="Generated
 	// Code">//GEN-BEGIN:initComponents
 	private void initComponents() {
 
@@ -383,6 +384,11 @@ public class VentanaEgresados extends javax.swing.JFrame implements ActionListen
 		jBAgregarInfo.setText("AGREGAR INFORMACION LABORAL");
 
 		jCBSituacionActual.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+		jCBSituacionActual.addItemListener(new java.awt.event.ItemListener() {
+			public void itemStateChanged(java.awt.event.ItemEvent evt) {
+				jCBSituacionActualItemStateChanged(evt);
+			}
+		});
 
 		jCBTipoEmp.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
 
@@ -644,6 +650,19 @@ public class VentanaEgresados extends javax.swing.JFrame implements ActionListen
 		pack();
 	}// </editor-fold>//GEN-END:initComponents
 
+	private void jCBSituacionActualItemStateChanged(java.awt.event.ItemEvent evt) {// GEN-FIRST:event_jCBSituacionActualItemStateChanged
+		// TODO add your handling code here:
+		if (jCBSituacionActual.getSelectedIndex() != 0) {
+			int index = jCBSituacionActual.getSelectedIndex();
+			if (index == 1 || index == 4) {
+				jCBTipoEmp.setEnabled(false);
+				jCBSectorLab.setEnabled(false);
+			} else {
+				jCBTipoEmp.setEnabled(true);
+			}
+		}
+	}// GEN-LAST:event_jCBSituacionActualItemStateChanged
+
 	private void comboFacultadItemStateChanged(java.awt.event.ItemEvent evt) {// GEN-FIRST:event_comboFacultadItemStateChanged
 		// TODO add your handling code here:
 		if (comboFacultad.getSelectedIndex() != 0) {
@@ -750,7 +769,7 @@ public class VentanaEgresados extends javax.swing.JFrame implements ActionListen
 
 				jCBSituacionActual.setSelectedItem(infoLab.getSituaActual());
 				jCBTipoEmp.setSelectedItem(infoLab.getTipoEmpresa());
-				jCBSectorLab.setSelectedIndex(0);
+				jCBSectorLab.setSelectedItem(infoLab.getSectorLaboral());
 				jTFNomEmp.setText(infoLab.getNombreEmpresa());
 				jDFechaIngreso.setDate(infoLab.getFechaIngreso());
 				jDFechaSalida.setDate(infoLab.getFechaSalida());
@@ -992,8 +1011,8 @@ public class VentanaEgresados extends javax.swing.JFrame implements ActionListen
 		jCBTipoEmp.addItem(TipoEmpresa.PRIVADA);
 		jCBTipoEmp.addItem(TipoEmpresa.PUBLICA);
 	}
-	
-	private void refrescarComboSectorLab(){
+
+	private void refrescarComboSectorLab() {
 		try {
 			List<SectorLaboral> sectores = controlador.listaSectores();
 			jCBSectorLab.removeAllItems();
@@ -1004,7 +1023,7 @@ public class VentanaEgresados extends javax.swing.JFrame implements ActionListen
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}		
+		}
 	}
 
 	public class jpColor extends javax.swing.JPanel {

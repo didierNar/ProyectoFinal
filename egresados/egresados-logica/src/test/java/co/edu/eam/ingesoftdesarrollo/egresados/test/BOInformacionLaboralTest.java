@@ -60,6 +60,7 @@ public class BOInformacionLaboralTest {
 		   Egresado egresa = boEgresados.buscar("123");
 		   infoLabo.setEgresado(egresa);
 		   boInfoLab.agregar(infoLabo);
+		   
 		   InformacionLaboral infoLaboB = boInfoLab.buscarInfoLab(egresa);
 		   Assert.assertEquals("boreal", infoLaboB.getNombreEmpresa());
 		   
@@ -76,9 +77,6 @@ public class BOInformacionLaboralTest {
 		   InformacionLaboral inf = boInfoLab.buscarInfoLab(egresa);
 		   Assert.assertEquals("Administrador", inf.getCargo());
 		   
-		   
-		
-		
 		} catch (Exception e){
 			e.printStackTrace();
 			Assert.fail();

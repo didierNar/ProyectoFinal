@@ -36,7 +36,7 @@ public class BOEmpresaTest {
 
 		Empresa empresa = new Empresa();
 		empresa.setDireccion("boreal");
-		empresa.setNit("123");
+		empresa.setNit("1233");
 		empresa.setRazonSocial("no se");
 		empresa.setTelefono("300712");
 		empresa.setWeb("no tiene");
@@ -55,27 +55,28 @@ public class BOEmpresaTest {
 		empresa.setCiudad(ciud);
 		
 		SectorLaboral sectorLa = new SectorLaboral();
-		sectorLa.setCodigo(432);
+		sectorLa.setCodigo(43222);
 		empresa.setSector(sectorLa);
 
 		try {
 			
 			boEmpresa.registrar(empresa);
-			Empresa emp = boEmpresa.buscar("123");
+			Empresa emp = boEmpresa.buscar("1233");
 			Assert.assertEquals("300712", emp.getTelefono());
 			
-			emp.setCiudad(ciud);
-			emp.setDepto(depar);
+			//emp.setCiudad(ciud);
+			//emp.setDepto(depar);
 			emp.setDireccion("unicentro");
-			emp.setNit("123");
-			emp.setPais(pais);
+			//emp.setNit("123");
+			//emp.setPais(pais);
 			emp.setRazonSocial("limitada");
-			emp.setSector(sectorLa);
+			//emp.setSector(sectorLa);
 			emp.setTelefono("3001419");
 			emp.setTipo(TipoEmpresa.PUBLICA);
 			emp.setWeb("hello");
 			
-			Empresa empre = boEmpresa.buscar("123");
+			boEmpresa.editar(emp);
+			Empresa empre = boEmpresa.buscar("1233");
 			Assert.assertEquals("unicentro", empre.getDireccion());
 
 		} catch (Exception e) {

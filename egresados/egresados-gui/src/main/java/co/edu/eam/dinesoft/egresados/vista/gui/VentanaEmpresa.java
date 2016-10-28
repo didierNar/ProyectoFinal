@@ -92,8 +92,6 @@ public class VentanaEmpresa extends javax.swing.JFrame implements ActionListener
         jLabel29 = new javax.swing.JLabel();
         jTFNit = new javax.swing.JTextField();
         jLabel30 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTFRazonSocial = new javax.swing.JTextArea();
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
@@ -107,6 +105,7 @@ public class VentanaEmpresa extends javax.swing.JFrame implements ActionListener
         jCBDepto = new javax.swing.JComboBox();
         jCBPais = new javax.swing.JComboBox();
         jCBTipo = new javax.swing.JComboBox();
+        jTFRazonSocial = new javax.swing.JTextField();
         jPDatosContacto = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         jTFNomContacto = new javax.swing.JTextField();
@@ -192,10 +191,6 @@ public class VentanaEmpresa extends javax.swing.JFrame implements ActionListener
         jLabel30.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel30.setText("PaÍs :");
 
-        jTFRazonSocial.setColumns(20);
-        jTFRazonSocial.setRows(5);
-        jScrollPane3.setViewportView(jTFRazonSocial);
-
         jLabel31.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel31.setText("Departamento :");
 
@@ -255,8 +250,8 @@ public class VentanaEmpresa extends javax.swing.JFrame implements ActionListener
                 .addGroup(jPDatosEmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel27)
                     .addComponent(jLabel29)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
-                    .addComponent(jTFNit))
+                    .addComponent(jTFNit, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
+                    .addComponent(jTFRazonSocial))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
         jPDatosEmpresaLayout.setVerticalGroup(
@@ -268,9 +263,13 @@ public class VentanaEmpresa extends javax.swing.JFrame implements ActionListener
                         .addGap(1, 1, 1)
                         .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(67, 67, 67)
-                        .addComponent(jLabel34)
+                        .addGroup(jPDatosEmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel34)
+                            .addComponent(jLabel29))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTFDirWeb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPDatosEmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTFDirWeb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTFNit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(32, 32, 32)
                         .addComponent(jLabel35)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -284,21 +283,15 @@ public class VentanaEmpresa extends javax.swing.JFrame implements ActionListener
                             .addComponent(jLabel30)
                             .addComponent(jLabel27))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPDatosEmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jCBPais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jCBTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTFRazonSocial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(35, 35, 35)
+                        .addComponent(jLabel31)
                         .addGroup(jPDatosEmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPDatosEmpresaLayout.createSequentialGroup()
-                                .addGroup(jPDatosEmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jCBPais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jCBTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(35, 35, 35)
-                                .addComponent(jLabel31))
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPDatosEmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPDatosEmpresaLayout.createSequentialGroup()
-                                .addGap(17, 17, 17)
-                                .addComponent(jLabel29)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTFNit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(1, 1, 1)
+                                .addGap(64, 64, 64)
                                 .addComponent(jLabel33))
                             .addGroup(jPDatosEmpresaLayout.createSequentialGroup()
                                 .addGap(18, 18, 18)
@@ -493,14 +486,13 @@ public class VentanaEmpresa extends javax.swing.JFrame implements ActionListener
     private javax.swing.JPanel jPDatosEmpresa;
     private javax.swing.JPanel jPOpcines;
     private javax.swing.JPanel jPPrincipal;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextField jTFCargoContacto;
     private javax.swing.JTextField jTFCorreoContacto;
     private javax.swing.JTextField jTFDirWeb;
     private javax.swing.JTextField jTFDireccion;
     private javax.swing.JTextField jTFNit;
     private javax.swing.JTextField jTFNomContacto;
-    private javax.swing.JTextArea jTFRazonSocial;
+    private javax.swing.JTextField jTFRazonSocial;
     private javax.swing.JTextField jTFTel;
     private javax.swing.JTextField jTFTelContacto;
     private javax.swing.JTabbedPane jTPPestanias;
@@ -746,9 +738,7 @@ public class VentanaEmpresa extends javax.swing.JFrame implements ActionListener
 
 	private void limpiarCampos() {
 		// Campos Empresa
-		jCBPais.setSelectedIndex(0);
-		jCBDepto.setSelectedItem(null);
-		jCBCiudad.setSelectedItem(null);
+		refrescarComboPais();
 		jTFTel.setText(null);
 		jCBTipo.setSelectedItem(null);
 		jTFDirWeb.setText(null);
