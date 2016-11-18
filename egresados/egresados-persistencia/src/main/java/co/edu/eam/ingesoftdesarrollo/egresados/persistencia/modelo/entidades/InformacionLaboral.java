@@ -28,7 +28,8 @@ import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.enumeraciones.TipoEm
 @NamedQueries({
 		@NamedQuery(name = InformacionLaboral.EGRESADOS_EMPRESA, query = "SELECT i FROM InformacionLaboral i WHERE i.empresa = ?1"),
 		@NamedQuery(name = InformacionLaboral.INFOLAB_PROGRAMA, query = "SELECT i FROM InformacionLaboral i JOIN i.egresado e "
-				+ "WHERE e.codigoPrograma = ?1")
+				+ "WHERE e.codigoPrograma = ?1"),
+		@NamedQuery(name = InformacionLaboral.LISTAR_INFORMACION_LABORAL, query = "SELECT i FROM InformacionLaboral i")
 })
 public class InformacionLaboral implements Serializable {
 
@@ -43,6 +44,11 @@ public class InformacionLaboral implements Serializable {
 	 * ?1: El programa
 	 */
 	public static final String INFOLAB_PROGRAMA = "InformacionLaboral.InformacinLaboralPrograma";
+	
+	/**
+	 * Lista la información laboral
+	 */
+	public static final String LISTAR_INFORMACION_LABORAL = "InformacionLaboral.Listar";
 	
 	/**
 	 * atributo codEgresado
@@ -68,40 +74,40 @@ public class InformacionLaboral implements Serializable {
 	/**
 	 * atributo de tipo TipoEmpresa
 	 */
-	@Column(name = "tipo_empresa")
+	@Column(name = "tipo_empresa", nullable=true)
 	private TipoEmpresa tipoEmpresa;
 
 	/**
 	 * atributo de tipo SectorLaboral
 	 */
-	@JoinColumn(name = "sector_laboral")
+	@JoinColumn(name = "sector_laboral", nullable=true)
 	@ManyToOne(cascade={})
 	private SectorLaboral sectorLaboral;
 
 	/**
 	 * atributo nombreEmpresa
 	 */
-	@JoinColumn(name = "NIT")
+	@JoinColumn(name = "NIT", nullable=true)
 	@ManyToOne(cascade={})
 	private Empresa empresa;
 
 	/**
 	 * atributo de tipo Date
 	 */
-	@Column(name = "fecha_ingreso")
+	@Column(name = "fecha_ingreso", nullable=true)
 	@Temporal(TemporalType.DATE)
 	private Date fechaIngreso;
 
 	/**
 	 * atributo cargo
 	 */
-	@Column(name = "cargo_empresa")
+	@Column(name = "cargo_empresa", nullable=true)
 	private String cargo;
 
 	/**
 	 * atributo de tipo Date
 	 */
-	@Column(name = "fecha_salida")
+	@Column(name = "fecha_salida", nullable=true)
 	@Temporal(TemporalType.DATE)
 	private Date fechaSalida;
 
@@ -111,6 +117,19 @@ public class InformacionLaboral implements Serializable {
 	public InformacionLaboral() {
 		// TODO Auto-generated constructor stub
 	}
+
+	/** 
+	 * Para egresados desempleados e independientes
+	 * @param egresado
+	 * @param situaActual
+	 */
+	public InformacionLaboral(Egresado egresado, SituacionActual situaActual) {
+		super();
+		this.egresado = egresado;
+		this.situaActual = situaActual;
+	}
+
+
 
 	/**
 	 * @param egresado

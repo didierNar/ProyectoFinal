@@ -2,6 +2,8 @@ package co.edu.eam.dinesoft.egresados.vista.controladores;
 
 import java.util.List;
 
+import org.hibernate.tool.schema.extract.internal.ExtractionContextImpl;
+
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Empresa;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.InformacionLaboral;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.OfertaLaboral;
@@ -76,6 +78,34 @@ public class ControladorVentanaReportes {
 	 */
 	public List<InformacionLaboral> infoLabPro (Programa p) throws Exception{
 		return boInfoLab.infoLabPro(p);
+	}
+	
+	/**
+	 * Obtiene la lista de ofertas laborales de un determinado programa
+	 * @param p el programa
+	 * @return la lista de ofertas
+	 * @throws Exception si falla la operación
+	 */
+	public List<OfertaLaboral> ofertaLabPrograma (Programa p) throws Exception{
+		return boOferta.ofertasPorPrograma(p);
+	}
+	
+	/**
+	 * Obtiene la lista de información laboral
+	 * @return la lista de información laboral
+	 * @throws Exception si falla la operación
+	 */
+	public List<InformacionLaboral> listarInfoLab() throws Exception{
+		return boInfoLab.listarInfoLab();
+	}
+	
+	/**
+	 * Obtiene la lista de ofertas
+	 * @return la lista de ofertas
+	 * @throws Exception si falla la operación
+	 */
+	public List<OfertaLaboral> listarOfertas () throws Exception{
+		return boOferta.listaOfertas();
 	}
 	
 }

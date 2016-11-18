@@ -23,4 +23,14 @@ public class DAOOfertaLaboralJPA implements IDAOOfertaLaboral{
 		return lista;
 	}
 
+	/**
+	 * Obtiene la lista de ofertas
+	 */
+	public List<OfertaLaboral> listarOfertas() throws Exception {
+		EntityManager em = AdministradorEntityManager.getEntityManager();
+		Query q = em.createNamedQuery(OfertaLaboral.LISTAR_OFERTAS);
+		List<OfertaLaboral> lista = q.getResultList();
+		return lista;
+	}
+
 }

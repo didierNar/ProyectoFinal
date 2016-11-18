@@ -60,4 +60,11 @@ public interface IDAOInformacionLaboral {
 	 */
 	public List<InformacionLaboral> infoLabPrograma (Programa p) throws Exception;
 	
+	/**
+	 * Lista la información laboral registrada
+	 * @return la información laboral
+	 * @throws Exception si falla alguna operación
+	 */
+	public List<InformacionLaboral> listarInfoLab () throws Exception;
+	
 }

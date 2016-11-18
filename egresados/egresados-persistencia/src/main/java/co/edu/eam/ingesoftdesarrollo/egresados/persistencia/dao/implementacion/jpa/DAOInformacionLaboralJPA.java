@@ -88,6 +88,16 @@ public class DAOInformacionLaboralJPA implements IDAOInformacionLaboral{
 		List<InformacionLaboral> lista = q.getResultList();
 		return lista;
 	}
+
+	/**
+	 * Obtiene la lista de información laboral
+	 */
+	public List<InformacionLaboral> listarInfoLab() throws Exception {
+		EntityManager em = AdministradorEntityManager.getEntityManager();
+		Query q = em.createNamedQuery(InformacionLaboral.LISTAR_INFORMACION_LABORAL);
+		List<InformacionLaboral> lista = q.getResultList();
+		return lista;
+	}
 	
 
 }

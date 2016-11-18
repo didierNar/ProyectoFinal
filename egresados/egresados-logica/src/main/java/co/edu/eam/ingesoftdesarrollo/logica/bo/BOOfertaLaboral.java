@@ -26,4 +26,13 @@ public class BOOfertaLaboral {
 		return daoOferta.listaOfertasPrograma(p);
 	}
 	
+	/**
+	 * Obtiene la lista de ofertas
+	 * @return la lista de ofertas
+	 * @throws Exception si falla la operación
+	 */
+	public List<OfertaLaboral> listaOfertas () throws Exception{
+		return daoOferta.listarOfertas();
+	}
+	
 }

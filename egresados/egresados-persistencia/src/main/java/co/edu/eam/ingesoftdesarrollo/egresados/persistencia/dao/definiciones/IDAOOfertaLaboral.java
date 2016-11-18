@@ -20,4 +20,11 @@ public interface IDAOOfertaLaboral {
 	 */
 	public List<OfertaLaboral> listaOfertasPrograma (Programa p) throws Exception;
 	
+	/**
+	 * Obtiene la lista de ofertas
+	 * @return la lista de ofertas
+	 * @throws Exception Si falla la operación
+	 */
+	public List<OfertaLaboral> listarOfertas () throws Exception;
+	
 }
