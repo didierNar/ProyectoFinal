@@ -69,6 +69,7 @@ public class VentanaEgresados extends javax.swing.JFrame implements ActionListen
 		refrescarComboTipoEmpresa();
 		refrescarComboFacultad();
 		pintarPanelRegistro();
+		jBAgregarInfo.setVisible(false);
 
 	}
 
@@ -868,11 +869,12 @@ public class VentanaEgresados extends javax.swing.JFrame implements ActionListen
 						JOptionPane.showMessageDialog(null, "Se ha actualizado la informaci�n correctamente");
 						LimpiarCampos();
 					}
-				}
+				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
+
 
 		if (arg0.getSource() == jBInicio) {
 			this.dispose();
@@ -936,7 +938,6 @@ public class VentanaEgresados extends javax.swing.JFrame implements ActionListen
 					controlador.registrar(e, info, infoLab);
 					JOptionPane.showMessageDialog(null, "La informaci�n se ha agregado satisfactoriamente");
 					LimpiarCampos();
-				}
 
 			} catch (ExcepcionNegocio e) {
 				JOptionPane.showMessageDialog(null, e.getMessage());
