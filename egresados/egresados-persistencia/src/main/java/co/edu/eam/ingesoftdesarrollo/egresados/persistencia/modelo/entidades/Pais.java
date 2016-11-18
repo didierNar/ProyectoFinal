@@ -1,5 +1,7 @@
 package co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -10,7 +12,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "T_PAIS")
 @NamedQueries({ @NamedQuery(name = Pais.PAISES, query = "SELECT p FROM Pais p") })
-public class Pais {
+public class Pais implements Serializable {
 
 	/**
 	 * Obtiene la lista de paises

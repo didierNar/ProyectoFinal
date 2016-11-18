@@ -3,12 +3,14 @@ package co.edu.eam.dinesoft.egresados.vista.controladores;
 import java.util.List;
 
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Egresado;
+import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Empresa;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Facultad;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.InfoAcademica;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.InformacionLaboral;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Programa;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.SectorLaboral;
 import co.edu.eam.ingesoftdesarrollo.logica.bo.BOEgresados;
+import co.edu.eam.ingesoftdesarrollo.logica.bo.BOEmpresa;
 import co.edu.eam.ingesoftdesarrollo.logica.bo.BOFacultad;
 import co.edu.eam.ingesoftdesarrollo.logica.bo.BOInfoAcademica;
 import co.edu.eam.ingesoftdesarrollo.logica.bo.BOInformacionLaboral;
@@ -19,6 +21,7 @@ public class ControladorVentanaEgresados {
 	private BOInfoAcademica boInfoAcademica;
 	private BOInformacionLaboral boInfoLab;
 	private BOFacultad boFacultad;
+	private BOEmpresa boEmpresa;
 	
 	public ControladorVentanaEgresados() {
 		// TODO Auto-generated constructor stub
@@ -26,6 +29,7 @@ public class ControladorVentanaEgresados {
 		boInfoAcademica = new BOInfoAcademica();
 		boInfoLab = new BOInformacionLaboral();
 		boFacultad = new BOFacultad();
+		boEmpresa = new BOEmpresa();
 	}
 	
 	public void registrar (Egresado e, InfoAcademica info, InformacionLaboral infoLab) throws Exception{
@@ -66,6 +70,15 @@ public class ControladorVentanaEgresados {
 	
 	public List<SectorLaboral> listaSectores () throws Exception{
 		return boInfoLab.listaSectores();
+	}
+	
+	/**
+	 * Obtiene la lista de empresas registradas
+	 * @return la lista de empresas
+	 * @throws Exception si falla la operación
+	 */
+	public List<Empresa> listaEmpresas () throws Exception{
+		return boEmpresa.listaEmpresas();
 	}
 	
 }

@@ -9,7 +9,9 @@ import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.dao.implementacion.j
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.dao.implementacion.jpa.DAOInformacionLaboralJPA;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.enumeraciones.SituacionActual;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Egresado;
+import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Empresa;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.InformacionLaboral;
+import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Programa;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.SectorLaboral;
 import co.edu.eam.ingesoftdesarrollo.logica.excepcion.ExcepcionNegocio;
 
@@ -41,22 +43,22 @@ public class BOInformacionLaboral {
 		daoInfoLab.editar(infoLab);
 	}
 	
-	public List<InformacionLaboral> listaEgresadosEnEmpresa () throws Exception{
-		List<InformacionLaboral> lista = new ArrayList<InformacionLaboral>();
-		List<Egresado> listaEgre = daoEgresados.listar();
-		for (Egresado egresado : listaEgre) {
-			List<InformacionLaboral> listaInfo = daoInfoLab.informacionLaboralEgresado(egresado);
-			for (InformacionLaboral informacionLaboral : listaInfo) {
-				if (informacionLaboral.getSituaActual().equals(SituacionActual.EMPLEADO)){
-					lista.add(informacionLaboral);
-				}
-			}
-		}
-		return lista;
+	public List<InformacionLaboral> listaEgresadosEnEmpresa (Empresa e) throws Exception{
+		return daoInfoLab.informacionLaboralEgresado(e);
 	}
 	
 	public List<SectorLaboral> listaSectores () throws Exception{
 		return daoInfoLab.listaSectores();
+	}
+	
+	/**
+	 * Obtiene la información laboral de un programa
+	 * @param p el programa
+	 * @return la información laboral
+	 * @throws Exception si falla la operación
+	 */
+	public List<InformacionLaboral> infoLabPro (Programa p) throws Exception{
+		return daoInfoLab.infoLabPrograma(p);
 	}
 
 }

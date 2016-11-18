@@ -57,5 +57,14 @@ public class BOEmpresa {
 	public List<SectorLaboral> listaSectorLab () throws Exception{
 		return daoEmpresa.listarSectorLab();
 	}
+	
+	/**
+	 * Obtiene la lista de empresas registradas
+	 * @return la lista de empresas
+	 * @throws Exception si falla la operación
+	 */
+	public List<Empresa> listaEmpresas () throws Exception{
+		return daoEmpresa.listarEmpresas();
+	}
 
 }

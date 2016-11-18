@@ -7,7 +7,9 @@ import javax.persistence.Query;
 
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.dao.definiciones.IDAOInformacionLaboral;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Egresado;
+import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Empresa;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.InformacionLaboral;
+import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Programa;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.SectorLaboral;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.utilidades.AdministradorEntityManager;
 
@@ -34,7 +36,7 @@ public class DAOInformacionLaboralJPA implements IDAOInformacionLaboral{
 		em.getTransaction().commit();
 	}
 
-	public List<InformacionLaboral> informacionLaboralEgresado(Egresado e) throws Exception {
+	public List<InformacionLaboral> informacionLaboralEgresado(Empresa e) throws Exception {
 		EntityManager em = AdministradorEntityManager.getEntityManager();
 		Query q = em.createNamedQuery(InformacionLaboral.EGRESADOS_EMPRESA);
 		q.setParameter(1, e);
@@ -46,6 +48,17 @@ public class DAOInformacionLaboralJPA implements IDAOInformacionLaboral{
 		EntityManager em = AdministradorEntityManager.getEntityManager();
 		Query q = em.createNamedQuery(SectorLaboral.LISTA_SECTORES);
 		List<SectorLaboral> lista = q.getResultList();
+		return lista;
+	}
+
+	/**
+	 * Obtiene la información laboral de un programa
+	 */
+	public List<InformacionLaboral> infoLabPrograma(Programa p) throws Exception {
+		EntityManager em = AdministradorEntityManager.getEntityManager();
+		Query q = em.createNamedQuery(InformacionLaboral.INFOLAB_PROGRAMA);
+		q.setParameter(1, p);
+		List<InformacionLaboral> lista = q.getResultList();
 		return lista;
 	}
 	

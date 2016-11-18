@@ -23,5 +23,7 @@ public interface IDAOEmpresa {
 	public List<Ciudad> ciudadesDepto (Departamento dep) throws Exception;
 	
 	public List<SectorLaboral> listarSectorLab () throws Exception;
+	
+	public List<Empresa> listarEmpresas () throws Exception;
 
 }

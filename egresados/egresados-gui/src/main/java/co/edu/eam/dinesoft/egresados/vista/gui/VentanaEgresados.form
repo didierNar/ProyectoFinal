@@ -529,12 +529,12 @@
                                           </Group>
                                       </Group>
                                   </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace pref="66" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel16" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTFNomEmp" alignment="0" min="-2" pref="201" max="-2" attributes="0"/>
+                                      <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jCBEmpresaEgre" min="-2" pref="201" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace pref="45" max="32767" attributes="0"/>
                                   <Component id="jBAgregarInfo" min="-2" max="-2" attributes="0"/>
@@ -586,8 +586,8 @@
                               <Group type="102" attributes="0">
                                   <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                                   <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jTFNomEmp" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jCBEmpresaEgre" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -629,7 +629,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Arial" size="12" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Nombre de la empresa"/>
+                    <Property name="text" type="java.lang.String" value="Empresa"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel17">
@@ -673,8 +673,6 @@
                     <Property name="text" type="java.lang.String" value="AGREGAR INFORMACION LABORAL"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTFNomEmp">
-                </Component>
                 <Component class="com.toedter.calendar.JDateChooser" name="jDFechaIngreso">
                 </Component>
                 <Component class="com.toedter.calendar.JDateChooser" name="jDFechaSalida">
@@ -705,6 +703,13 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JComboBox" name="jCBSectorLab">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="0"/>
+                    </Property>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="jCBEmpresaEgre">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="0"/>

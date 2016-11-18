@@ -559,6 +559,9 @@ public class VentanaEmpresa extends javax.swing.JFrame implements ActionListener
 					Contacto con = new Contacto(emp, nombre, correo, cargo, telContacto);
 
 					controlador.editar(emp, con);
+					JOptionPane.showMessageDialog(null, "Se ha editado correcatamente");
+					
+					limpiarCampos();
 
 				}
 			} catch (Exception exc) {
@@ -595,6 +598,8 @@ public class VentanaEmpresa extends javax.swing.JFrame implements ActionListener
 				controlador.registrar(emp, con);
 
 				limpiarCampos();
+				
+				JOptionPane.showMessageDialog(null, "Se registró la empresa exitosamente");
 
 			} catch (ExcepcionNegocio e) {
 				JOptionPane.showMessageDialog(null, e.getMessage());

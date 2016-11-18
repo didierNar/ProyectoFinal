@@ -68,6 +68,11 @@ public class VentanaInfoParametrica extends javax.swing.JFrame implements Action
 
         jPPrincipal = new javax.swing.JPanel();
         jTPestania = new javax.swing.JTabbedPane();
+        jPGestionFacul = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jTFNomFac = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jTFCodFac = new javax.swing.JTextField();
         jPGestionProgra = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jTFNombrePro = new javax.swing.JTextField();
@@ -77,11 +82,6 @@ public class VentanaInfoParametrica extends javax.swing.JFrame implements Action
         jTFCodPro = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jCBFacultad = new javax.swing.JComboBox();
-        jPGestionFacul = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jTFNomFac = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jTFCodFac = new javax.swing.JTextField();
         jPGestionAreasIntre = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jTFNomArea = new javax.swing.JTextField();
@@ -99,6 +99,46 @@ public class VentanaInfoParametrica extends javax.swing.JFrame implements Action
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jTPestania.setFont(new java.awt.Font("Bernard MT Condensed", 0, 14)); // NOI18N
+        jTPestania.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jTPestaniaStateChanged(evt);
+            }
+        });
+
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel5.setText("Nombre Facultad :");
+
+        jLabel7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel7.setText("Código Facultad :");
+
+        javax.swing.GroupLayout jPGestionFaculLayout = new javax.swing.GroupLayout(jPGestionFacul);
+        jPGestionFacul.setLayout(jPGestionFaculLayout);
+        jPGestionFaculLayout.setHorizontalGroup(
+            jPGestionFaculLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPGestionFaculLayout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addGroup(jPGestionFaculLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTFCodFac, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7)
+                    .addComponent(jTFNomFac, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addContainerGap(195, Short.MAX_VALUE))
+        );
+        jPGestionFaculLayout.setVerticalGroup(
+            jPGestionFaculLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPGestionFaculLayout.createSequentialGroup()
+                .addGap(75, 75, 75)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTFCodFac, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTFNomFac, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(122, Short.MAX_VALUE))
+        );
+
+        jTPestania.addTab("Gestión Facultades", jPGestionFacul);
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel2.setText("Nombre del programa");
@@ -153,41 +193,6 @@ public class VentanaInfoParametrica extends javax.swing.JFrame implements Action
         );
 
         jTPestania.addTab("Gestión De Programa", jPGestionProgra);
-
-        jLabel5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel5.setText("Nombre Facultad :");
-
-        jLabel7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel7.setText("Código Facultad :");
-
-        javax.swing.GroupLayout jPGestionFaculLayout = new javax.swing.GroupLayout(jPGestionFacul);
-        jPGestionFacul.setLayout(jPGestionFaculLayout);
-        jPGestionFaculLayout.setHorizontalGroup(
-            jPGestionFaculLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPGestionFaculLayout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addGroup(jPGestionFaculLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTFCodFac, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7)
-                    .addComponent(jTFNomFac, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addContainerGap(195, Short.MAX_VALUE))
-        );
-        jPGestionFaculLayout.setVerticalGroup(
-            jPGestionFaculLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPGestionFaculLayout.createSequentialGroup()
-                .addGap(75, 75, 75)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTFCodFac, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTFNomFac, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(122, Short.MAX_VALUE))
-        );
-
-        jTPestania.addTab("Gestión Facultades", jPGestionFacul);
 
         jLabel8.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel8.setText("Nombre Del Area :");
@@ -338,6 +343,11 @@ public class VentanaInfoParametrica extends javax.swing.JFrame implements Action
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jTPestaniaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTPestaniaStateChanged
+        // TODO add your handling code here:
+    	refrescarComboFacultad();
+    }//GEN-LAST:event_jTPestaniaStateChanged
+
 	public class jpColor extends javax.swing.JPanel {
 
 		private Color color1 = Color.BLACK;
@@ -411,7 +421,7 @@ public class VentanaInfoParametrica extends javax.swing.JFrame implements Action
 		}
 
 		if (arg0.getSource() == jBEditar) {
-			if (jTPestania.getSelectedIndex() == 0) {
+			if (jTPestania.getSelectedIndex() == 1) {
 				// Tomando datos Programa
 
 				try {
@@ -434,7 +444,7 @@ public class VentanaInfoParametrica extends javax.swing.JFrame implements Action
 					exc.printStackTrace();
 				}
 
-			} else if (jTPestania.getSelectedIndex() == 1) {
+			} else if (jTPestania.getSelectedIndex() == 0) {
 				// Tomando datos Facultad
 
 				try {
@@ -479,7 +489,7 @@ public class VentanaInfoParametrica extends javax.swing.JFrame implements Action
 		}
 
 		if (arg0.getSource() == jBBuscar) {
-			if (jTPestania.getSelectedIndex() == 0) {
+			if (jTPestania.getSelectedIndex() == 1) {
 				// busqueda para Programa
 
 				try {
@@ -501,7 +511,7 @@ public class VentanaInfoParametrica extends javax.swing.JFrame implements Action
 					exc.printStackTrace();
 				}
 
-			} else if (jTPestania.getSelectedIndex() == 1) {
+			} else if (jTPestania.getSelectedIndex() == 0) {
 				// busqueda para Facultad
 				try {
 					if (jTFCodFac.getText().isEmpty()) {
@@ -544,7 +554,7 @@ public class VentanaInfoParametrica extends javax.swing.JFrame implements Action
 		}
 
 		if (arg0.getSource() == jBRegistrar) {
-			if (jTPestania.getSelectedIndex() == 0) {
+			if (jTPestania.getSelectedIndex() == 1) {
 				// Tomando datos Programa
 
 				try {
@@ -569,7 +579,7 @@ public class VentanaInfoParametrica extends javax.swing.JFrame implements Action
 					exc.printStackTrace();
 				}
 
-			} else if (jTPestania.getSelectedIndex() == 1) {
+			} else if (jTPestania.getSelectedIndex() == 0) {
 				// Tomando datos Facultad
 
 				try {

@@ -14,10 +14,17 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "T_PROGRAMA")
 @NamedQueries({
-		@NamedQuery(name = Programa.PROGRAMAS_FACULTAD, query = "SELECT p FROM Programa p WHERE p.facultad = ?1") })
+		@NamedQuery(name = Programa.PROGRAMAS_FACULTAD, query = "SELECT p FROM Programa p WHERE p.facultad = ?1"),
+        @NamedQuery(name = Programa.LISTAR_PROGRAMAS, query = "SELECT p FROM Programa p")  		
+})
 public class Programa implements Serializable {
 
 	public static final String PROGRAMAS_FACULTAD = "Programa.programasFacultad";
+	
+	/**
+	 * Obtiene la lista de programas registrados
+	 */
+	public static final String LISTAR_PROGRAMAS = "Programa.listar";
 
 	@Id
 	@Column(name = "ID_PROGRAMA")

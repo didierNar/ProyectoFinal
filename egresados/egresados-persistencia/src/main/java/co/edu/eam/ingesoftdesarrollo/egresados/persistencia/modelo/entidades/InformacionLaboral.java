@@ -22,15 +22,24 @@ import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.enumeraciones.TipoEm
 @Entity
 @Table(name = "T_INFO_LABORAL")
 @NamedQueries({
-		@NamedQuery(name = InformacionLaboral.EGRESADOS_EMPRESA, query = "SELECT i FROM InformacionLaboral i WHERE i.egresado = ?1") })
+		@NamedQuery(name = InformacionLaboral.EGRESADOS_EMPRESA, query = "SELECT i FROM InformacionLaboral i WHERE i.empresa = ?1"),
+		@NamedQuery(name = InformacionLaboral.INFOLAB_PROGRAMA, query = "SELECT i FROM InformacionLaboral i JOIN i.egresado e "
+				+ "WHERE e.codigoPrograma = ?1")
+})
 public class InformacionLaboral implements Serializable {
 
 	/**
-	 * Obtiene la informaciï¿½n laboral de un egresado
-	 * ?1: EL egresado
+	 * Obtiene la informaciï¿½n laboral de una empresa
+	 * ?1: la empresa
 	 */
 	public static final String EGRESADOS_EMPRESA = "InformacionLaboral.egresadosEmpresa";
-
+	
+	/**
+	 * Lista la información laboral por programa
+	 * ?1: El programa
+	 */
+	public static final String INFOLAB_PROGRAMA = "InformacionLaboral.InformacinLaboralPrograma";
+	
 	@Id
 	@Column(name = "ID_EGRESADO")
 	private String codEgresado;
@@ -50,8 +59,9 @@ public class InformacionLaboral implements Serializable {
 	@ManyToOne(cascade={})
 	private SectorLaboral sectorLaboral;
 
-	@Column(name = "nombre_empresa")
-	private String nombreEmpresa;
+	@JoinColumn(name = "NIT")
+	@ManyToOne(cascade={})
+	private Empresa empresa;
 
 	@Column(name = "fecha_ingreso")
 	@Temporal(TemporalType.DATE)
@@ -78,7 +88,7 @@ public class InformacionLaboral implements Serializable {
 	 * @param fechaSalida
 	 */
 	public InformacionLaboral(Egresado egresado, SituacionActual situaActual, TipoEmpresa tipoEmpresa,
-			SectorLaboral sectorLaboral, String nombreEmpresa, Date fechaIngreso, Date fechaSalida, String cargo) {
+			SectorLaboral sectorLaboral, Empresa empresa, Date fechaIngreso, Date fechaSalida, String cargo) {
 		super();
 		codEgresado=egresado.getCodigoEgresado();
 		this.cargo = cargo;
@@ -86,7 +96,7 @@ public class InformacionLaboral implements Serializable {
 		this.situaActual = situaActual;
 		this.tipoEmpresa = tipoEmpresa;
 		this.sectorLaboral = sectorLaboral;
-		this.nombreEmpresa = nombreEmpresa;
+		this.empresa = empresa;
 		this.fechaIngreso = fechaIngreso;
 		this.fechaSalida = fechaSalida;
 	}
@@ -154,16 +164,16 @@ public class InformacionLaboral implements Serializable {
 	/**
 	 * @return the nombreEmpresa
 	 */
-	public String getNombreEmpresa() {
-		return nombreEmpresa;
+	public Empresa getEmpresa() {
+		return empresa;
 	}
 
 	/**
 	 * @param nombreEmpresa
 	 *            the nombreEmpresa to set
 	 */
-	public void setNombreEmpresa(String nombreEmpresa) {
-		this.nombreEmpresa = nombreEmpresa;
+	public void setEmpresa(Empresa empresa) {
+		this.empresa = empresa;
 	}
 
 	/**

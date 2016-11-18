@@ -9,6 +9,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -16,8 +18,13 @@ import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.enumeraciones.TipoEm
 
 @Entity
 @Table(name = "T_EMPRESA")
+@NamedQueries({
+	@NamedQuery(name = Empresa.LISTA_EMPRESAS, query = "SELECT e FROM Empresa e")
+})
 public class Empresa implements Serializable {
 
+	public static final String LISTA_EMPRESAS = "Empresa.Listar";
+	
 	@Id
 	@Column(name = "NIT")
 	private String nit;
@@ -256,5 +263,13 @@ public class Empresa implements Serializable {
 	public void setCiudad(Ciudad ciudad) {
 		this.ciudad = ciudad;
 	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return razonSocial;
+	}	
 
 }

@@ -8,14 +8,25 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
 @Table(name="T_OFERTALABORAL")
+@NamedQueries({
+	@NamedQuery(name = OfertaLaboral.OFERTAS_PROGRAMA, query = "SELECT o FROM OfertaLaboral o WHERE o.programa = ?1")
+})
 public class OfertaLaboral implements Serializable{
 
+	/**
+	 * Obtiene las ofertas laborales de un programa
+	 * ?1: el programa
+	 */
+	public static final String OFERTAS_PROGRAMA = "OfertaLaboral.OfertasPrograma";
+	
 	@Id
 	@Column(name="ID_OFERTA")
 	private int codigo;
@@ -27,6 +38,10 @@ public class OfertaLaboral implements Serializable{
 	@JoinColumn(name="ID_CIUDAD")
 	@ManyToOne(cascade={})
 	private Ciudad ciudad;
+	
+	@JoinColumn(name="ID_PROGRAMA")
+	@ManyToOne
+	private Programa programa;
 	
 	@JoinColumn(name="ID_AREA")
 	@ManyToOne(cascade={})
@@ -50,6 +65,10 @@ public class OfertaLaboral implements Serializable{
 	@Column(name="fecha_apertura")
 	@Temporal(TemporalType.DATE)
 	private Date fechaApertura;
+	
+	@Column(name="fecha_cierre")
+	@Temporal(TemporalType.DATE)
+	private Date fechaCierre;
 	
 	public OfertaLaboral() {
 		// TODO Auto-generated constructor stub
@@ -83,6 +102,34 @@ public class OfertaLaboral implements Serializable{
 	}
 
 
+
+	/**
+	 * @return the programa
+	 */
+	public Programa getPrograma() {
+		return programa;
+	}
+
+	/**
+	 * @param programa the programa to set
+	 */
+	public void setPrograma(Programa programa) {
+		this.programa = programa;
+	}
+
+	/**
+	 * @return the fechaCierre
+	 */
+	public Date getFechaCierre() {
+		return fechaCierre;
+	}
+
+	/**
+	 * @param fechaCierre the fechaCierre to set
+	 */
+	public void setFechaCierre(Date fechaCierre) {
+		this.fechaCierre = fechaCierre;
+	}
 
 	/**
 	 * @return the resumen

@@ -66,4 +66,14 @@ public class DAOEmpresaJPA implements IDAOEmpresa{
 		return lista;
 	}
 
+	/**
+	 * Obtiene la lista de empresas registradas
+	 */
+	public List<Empresa> listarEmpresas() throws Exception {
+		EntityManager em = AdministradorEntityManager.getEntityManager();
+		Query q = em.createNamedQuery(Empresa.LISTA_EMPRESAS);
+		List<Empresa> lista = q.getResultList();
+		return lista;
+	}
+
 }
