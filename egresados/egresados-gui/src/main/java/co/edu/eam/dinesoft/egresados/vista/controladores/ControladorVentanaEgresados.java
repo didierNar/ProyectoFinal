@@ -7,6 +7,7 @@ import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Emp
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Facultad;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.InfoAcademica;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.InformacionLaboral;
+import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.OfertaLaboral;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Programa;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.SectorLaboral;
 import co.edu.eam.ingesoftdesarrollo.logica.bo.BOEgresados;
@@ -14,6 +15,7 @@ import co.edu.eam.ingesoftdesarrollo.logica.bo.BOEmpresa;
 import co.edu.eam.ingesoftdesarrollo.logica.bo.BOFacultad;
 import co.edu.eam.ingesoftdesarrollo.logica.bo.BOInfoAcademica;
 import co.edu.eam.ingesoftdesarrollo.logica.bo.BOInformacionLaboral;
+import co.edu.eam.ingesoftdesarrollo.logica.bo.BOOfertaLaboral;
 /**
  * Controlador de la ventana egresados
  * @author LuchoBolivar
@@ -25,6 +27,8 @@ public class ControladorVentanaEgresados {
 	 * declaracion del boEgresado
 	 */
 	private BOEgresados boEgresados;
+	
+	private BOOfertaLaboral boOfertas;
 	
 	/**
 	 * declaracion del boInfoAcademica
@@ -52,6 +56,7 @@ public class ControladorVentanaEgresados {
 		boInfoLab = new BOInformacionLaboral();
 		boFacultad = new BOFacultad();
 		boEmpresa = new BOEmpresa();
+		boOfertas = new BOOfertaLaboral();
 	}
 	
 	/**
@@ -130,6 +135,17 @@ public class ControladorVentanaEgresados {
 	}
 	
 	/**
+	 * Edita la información laboral de un egresado
+	 * @param e el egresado
+	 * @param infoLab la información laboral
+	 * @throws Exception si falla la operación
+	 */
+	public void editarInfoLab (Egresado e, InformacionLaboral infoLab) throws Exception{
+		boEgresados.actualizar(e);
+		boInfoLab.editar(infoLab);
+	}
+	
+	/**
 	 * Metodo que lista los sectores laborales
 	 * @return la lista de secotres laborales
 	 * @throws Exception si falla la operacion
@@ -145,6 +161,15 @@ public class ControladorVentanaEgresados {
 	 */
 	public List<Empresa> listaEmpresas () throws Exception{
 		return boEmpresa.listaEmpresas();
+	}
+	
+	/**
+	 * Lista de ofertas
+	 * @return las ofertas
+	 * @throws Exception si falla la operación
+	 */
+	public List<OfertaLaboral> listaOfertas () throws Exception{
+		return boOfertas.listaOfertas();
 	}
 	
 }

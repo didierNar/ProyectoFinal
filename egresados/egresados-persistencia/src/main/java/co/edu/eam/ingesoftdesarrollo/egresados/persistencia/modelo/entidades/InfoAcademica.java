@@ -76,8 +76,9 @@ public class InfoAcademica implements Serializable {
 	/**
 	 * atributo areaOfertaLaboral
 	 */
-	@Column(name = "area_ofertalaboral")
-	private String areaOfertaLaboral;
+	@JoinColumn(name = "area_ofertalaboral")
+	@ManyToOne
+	private OfertaLaboral areaOfertaLaboral;
 
 	/**
 	 * constructor de la clase InfoAcademica
@@ -96,7 +97,7 @@ public class InfoAcademica implements Serializable {
 	 * @param areaOfertaLaboral
 	 */
 	public InfoAcademica(Egresado egresado, Date fechaGrado, Facultad facultad, NivelAcademico nivelAcademico,
-			Programa programaAcademico, String numDiploma, String areaOfertaLaboral) {
+			Programa programaAcademico, String numDiploma, OfertaLaboral areaOfertaLaboral) {
 		super();
 		codEgresado = egresado.getCodigoEgresado();
 		this.egresado = egresado;
@@ -186,7 +187,7 @@ public class InfoAcademica implements Serializable {
 	/**
 	 * @return the areaOfertaLaboral
 	 */
-	public String getAreaOfertaLaboral() {
+	public OfertaLaboral getOfertaLaboral() {
 		return areaOfertaLaboral;
 	}
 
@@ -194,7 +195,7 @@ public class InfoAcademica implements Serializable {
 	 * @param areaOfertaLaboral
 	 *            the areaOfertaLaboral to set
 	 */
-	public void setAreaOfertaLaboral(String areaOfertaLaboral) {
+	public void setOfertaLaboral(OfertaLaboral areaOfertaLaboral) {
 		this.areaOfertaLaboral = areaOfertaLaboral;
 	}
 

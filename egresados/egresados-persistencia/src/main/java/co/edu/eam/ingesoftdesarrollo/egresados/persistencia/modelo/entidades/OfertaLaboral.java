@@ -337,6 +337,16 @@ public class OfertaLaboral implements Serializable{
 	public void setArea(AreasInteres area) {
 		this.area = area;
 	}
+	
+	
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return resumen;
+	}
 
 	/**
 	 * (non-Javadoc)
