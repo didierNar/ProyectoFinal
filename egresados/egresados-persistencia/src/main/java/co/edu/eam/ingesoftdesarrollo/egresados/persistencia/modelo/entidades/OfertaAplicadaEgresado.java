@@ -9,21 +9,35 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+/**
+ * Entidad OfertaAplicadaEgresada
+ * @author LuchoBolivar
+ *
+ */
 @Entity
 @Table(name="T_OFERTAAPLICADA_EGRE")
 @IdClass(OfertaAplicadaEgresadoPK.class)
 public class OfertaAplicadaEgresado implements Serializable {
 
+	/**
+	 * atributo de tipo Egresado 
+	 */
 	@Id
 	@JoinColumn(name="ID_EGRESADO")
 	@ManyToOne(cascade={})
 	private Egresado codigoEgresado;
 	
+	/**
+	 * atributo de tipo OfertaLaboral
+	 */
 	@Id
 	@JoinColumn(name="ID_OFERTA")
 	@ManyToOne(cascade={})
 	private OfertaLaboral codigoOferta;
 	
+	/**
+	 * constructor de la clase OfertaAplicadaEgresado
+	 */
 	public OfertaAplicadaEgresado() {
 		// TODO Auto-generated constructor stub
 	}
@@ -66,6 +80,11 @@ public class OfertaAplicadaEgresado implements Serializable {
 		this.codigoOferta = oferta;
 	}
 
+	/**
+	 *(non-Javadoc)
+	 * 
+	 * @see java.lang.Object#hashCode()
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -75,6 +94,11 @@ public class OfertaAplicadaEgresado implements Serializable {
 		return result;
 	}
 
+	/**
+	 *(non-Javadoc)
+	 * 
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

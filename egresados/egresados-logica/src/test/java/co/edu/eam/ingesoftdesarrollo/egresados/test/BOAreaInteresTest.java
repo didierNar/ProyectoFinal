@@ -14,15 +14,29 @@ import co.edu.eam.ingesoftdesarrollo.logica.bo.BOEgresados;
 import co.edu.eam.ingesoftdesarrollo.logica.bo.BOPrograma;
 import junit.framework.Assert;
 
+/**
+ * BO de prueba de la clase BOAreaInteres
+ * @author LuchoBolivar
+ *
+ */
 public class BOAreaInteresTest {
 	
+	/**
+	 * Metodo BeforeClass
+	 */
 	@BeforeClass
 	public static void beoreClass() {
 //		TestDataUtil.ejecutarSQL("sqltest/PruebasUnitarias-addTest-add.sql");
 	}
 	
+	/**
+	 * declara el BOAreaInteres
+	 */
 	private BOAreaInteres areaInteres;
 
+	/**
+	 * metodo setUp
+	 */
 	@Before
 	public void setUp() {
 		
@@ -30,6 +44,9 @@ public class BOAreaInteresTest {
 		
 	}
 
+	/**
+	 * Metodo que maneja las pruebas
+	 */
 	@Test
 	public void registrarEgresados() {
 		
@@ -58,6 +75,9 @@ public class BOAreaInteresTest {
 
 	}
 
+	/**
+	 * metodo AfterClass
+	 */
 	@AfterClass
 	public static void afterClass() {
 		TestDataUtil.ejecutarSQL("sqltest/PruebasAreaInteres-Test-del.sql");

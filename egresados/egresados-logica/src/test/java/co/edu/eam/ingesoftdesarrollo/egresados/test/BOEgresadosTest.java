@@ -12,16 +12,34 @@ import co.edu.eam.ingesoftdesarrollo.logica.bo.BOEgresados;
 import co.edu.eam.ingesoftdesarrollo.logica.bo.BOPrograma;
 import junit.framework.Assert;
 
+/**
+ * BO de prueba de la clase BOEgresadoTest
+ * @author LuchoBolivar
+ *
+ */
 public class BOEgresadosTest {
 
+	/**
+	 * declara el BOEgresado
+	 */
 	private BOEgresados egresados;
+	
+	/**
+	 * declara el BOPrograma
+	 */
 	private BOPrograma programa;
 
+	/**
+	 * Metodo BeforeClass
+	 */
 	@BeforeClass
 	public static void beforeClass() {
 		TestDataUtil.ejecutarSQL("sqltest/PruebasEgresados-Test-add.sql");
 	}
 
+	/**
+	 * metodo setUp
+	 */
 	@Before
 	public void setUp() {
 
@@ -30,6 +48,9 @@ public class BOEgresadosTest {
 
 	}
 
+	/**
+	 * Metodo que maneja las pruebas
+	 */
 	@Test
 	public void registrarEgresados() {
 
@@ -70,6 +91,9 @@ public class BOEgresadosTest {
 
 	}
 
+	/**
+	 * metodo AfterClass
+	 */
 	@AfterClass
 	public static void afterClass() {
 		TestDataUtil.ejecutarSQL("sqltest/PruebasEgresados-Test-del.sql");

@@ -2,17 +2,32 @@ package co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades;
 
 import java.io.Serializable;
 
+/**
+ * Entidad HistorialLaboralPK
+ * @author LuchoBolivar
+ *
+ */
 public class HistoriaLaboralPK implements Serializable{
 	
+	/**
+	 * atributo egresado
+	 */
 	private String egresado;
 	
+	/**
+	 * atributo empresa
+	 */
 	private String empresa;
 	
+	/**
+	 * contructor de la clase HistorialLaboralPK
+	 */
 	public HistoriaLaboralPK() {
 		// TODO Auto-generated constructor stub
 	}
 
-	/* (non-Javadoc)
+	/** 
+	 *(non-Javadoc)
 	 * @see java.lang.Object#hashCode()
 	 */
 	@Override
@@ -24,7 +39,8 @@ public class HistoriaLaboralPK implements Serializable{
 		return result;
 	}
 
-	/* (non-Javadoc)
+	/**
+	 * (non-Javadoc)
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	@Override

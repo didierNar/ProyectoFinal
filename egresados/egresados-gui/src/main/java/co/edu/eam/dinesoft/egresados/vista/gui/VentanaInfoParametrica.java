@@ -144,10 +144,10 @@ public class VentanaInfoParametrica extends javax.swing.JFrame implements Action
         jLabel2.setText("Nombre del programa");
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel3.setText("Créditos del programa");
+        jLabel3.setText("Crï¿½ditos del programa");
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel6.setText("Código Del Programa :");
+        jLabel6.setText("Cï¿½digo Del Programa :");
 
         jLabel11.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel11.setText("Facultad");
@@ -192,13 +192,52 @@ public class VentanaInfoParametrica extends javax.swing.JFrame implements Action
                 .addGap(21, 21, 21))
         );
 
+<<<<<<< HEAD
         jTPestania.addTab("Gestión De Programa", jPGestionProgra);
+=======
+        jTPestania.addTab("Gestiï¿½n De Programa", jPGestionProgra);
+
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel5.setText("Nombre Facultad :");
+
+        jLabel7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel7.setText("Cï¿½digo Facultad :");
+
+        javax.swing.GroupLayout jPGestionFaculLayout = new javax.swing.GroupLayout(jPGestionFacul);
+        jPGestionFacul.setLayout(jPGestionFaculLayout);
+        jPGestionFaculLayout.setHorizontalGroup(
+            jPGestionFaculLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPGestionFaculLayout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addGroup(jPGestionFaculLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTFCodFac, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7)
+                    .addComponent(jTFNomFac, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addContainerGap(195, Short.MAX_VALUE))
+        );
+        jPGestionFaculLayout.setVerticalGroup(
+            jPGestionFaculLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPGestionFaculLayout.createSequentialGroup()
+                .addGap(75, 75, 75)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTFCodFac, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTFNomFac, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(122, Short.MAX_VALUE))
+        );
+
+        jTPestania.addTab("Gestiï¿½n Facultades", jPGestionFacul);
+>>>>>>> branch 'master' of https://github.com/didierNar/ProyectoFinal.git
 
         jLabel8.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel8.setText("Nombre Del Area :");
 
         jLabel9.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel9.setText("Código Del Area :");
+        jLabel9.setText("Cï¿½digo Del Area :");
 
         javax.swing.GroupLayout jPGestionAreasIntreLayout = new javax.swing.GroupLayout(jPGestionAreasIntre);
         jPGestionAreasIntre.setLayout(jPGestionAreasIntreLayout);
@@ -227,10 +266,10 @@ public class VentanaInfoParametrica extends javax.swing.JFrame implements Action
                 .addContainerGap(105, Short.MAX_VALUE))
         );
 
-        jTPestania.addTab("Gestión Areas De Interes", jPGestionAreasIntre);
+        jTPestania.addTab("Gestiï¿½n Areas De Interes", jPGestionAreasIntre);
 
         jLabel1.setFont(new java.awt.Font("Bernard MT Condensed", 0, 36)); // NOI18N
-        jLabel1.setText("Información Paramétrica");
+        jLabel1.setText("Informaciï¿½n Paramï¿½trica");
 
         jBInicio.setBackground(new java.awt.Color(255, 255, 255));
         jBInicio.setFont(new java.awt.Font("Arial Narrow", 0, 14)); // NOI18N
@@ -367,18 +406,11 @@ public class VentanaInfoParametrica extends javax.swing.JFrame implements Action
 			g2.setPaint(new GradientPaint(0.0f, 0.0f, color1.darker(), 0.0f, getHeight(), color2.darker()));
 			g2.fillRect(clip.x, clip.y, clip.width, clip.height);
 		}
-
-		// public void setRandomColor() {
-		// Random rand = new Random();
-		// this.color1 = new Color(rand.nextInt(255), rand.nextInt(255),
-		// rand.nextInt(255));
-		// this.color2 = new Color(rand.nextInt(255), rand.nextInt(255),
-		// rand.nextInt(255));
-		// }
-		public void setVistaColor() {
-			this.color1 = new Color(66, 111, 166);
-			this.color2 = new Color(103, 174, 118);
-		}
+        
+        public void setVistaColor() {
+            this.color1 = new Color(66, 111, 166);
+            this.color2 = new Color(103, 174, 118);
+        }
 
 	}
 
@@ -494,7 +526,7 @@ public class VentanaInfoParametrica extends javax.swing.JFrame implements Action
 
 				try {
 					if (jTFCodPro.getText().isEmpty()) {
-						JOptionPane.showMessageDialog(null, "Debe diligenciar el código del programa que desea buscar");
+						JOptionPane.showMessageDialog(null, "Debe diligenciar el cï¿½digo del programa que desea buscar");
 					} else {
 						int cod = Integer.parseInt(jTFCodPro.getText());
 
@@ -515,7 +547,7 @@ public class VentanaInfoParametrica extends javax.swing.JFrame implements Action
 				// busqueda para Facultad
 				try {
 					if (jTFCodFac.getText().isEmpty()) {
-						JOptionPane.showMessageDialog(null, "Debe diligenciar el código de la facultad para buscarla");
+						JOptionPane.showMessageDialog(null, "Debe diligenciar el cï¿½digo de la facultad para buscarla");
 					} else {
 						int cod = Integer.parseInt(jTFCodFac.getText());
 
@@ -535,7 +567,7 @@ public class VentanaInfoParametrica extends javax.swing.JFrame implements Action
 
 				try {
 					if (jTFCodArea.getText().isEmpty()) {
-						JOptionPane.showMessageDialog(null, "Debe diligenciar el código del area que desea buscar");
+						JOptionPane.showMessageDialog(null, "Debe diligenciar el cï¿½digo del area que desea buscar");
 					} else {
 						int cod = Integer.parseInt(jTFCodArea.getText());
 
@@ -626,7 +658,7 @@ public class VentanaInfoParametrica extends javax.swing.JFrame implements Action
 		try {
 			List<Facultad> lista = controlador.listarFacultad();
 			jCBFacultad.removeAllItems();
-			jCBFacultad.addItem("Seleccione una opción");
+			jCBFacultad.addItem("Seleccione una opciï¿½n");
 			for (Facultad facultad : lista) {
 				jCBFacultad.addItem(facultad);
 			}

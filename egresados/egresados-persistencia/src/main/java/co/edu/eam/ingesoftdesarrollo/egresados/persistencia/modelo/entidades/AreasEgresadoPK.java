@@ -2,10 +2,21 @@ package co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades;
 
 import java.io.Serializable;
 
+/**
+ * entidad AreasEgresadosPK
+ * @author LuchoBolivar
+ *
+ */
 public class AreasEgresadoPK implements Serializable {
 
+	/**
+	 * atributo codigoEgresado
+	 */
 	private int codigoEgresado;
 
+	/**
+	 * atributo codigoArea
+	 */
 	private int codigoArea;
 
 	/**
@@ -48,7 +59,7 @@ public class AreasEgresadoPK implements Serializable {
 		this.codigoArea = codigoArea;
 	}
 
-	/*
+	/**
 	 * (non-Javadoc)
 	 * 
 	 * @see java.lang.Object#hashCode()
@@ -62,7 +73,7 @@ public class AreasEgresadoPK implements Serializable {
 		return result;
 	}
 
-	/*
+	/**
 	 * (non-Javadoc)
 	 * 
 	 * @see java.lang.Object#equals(java.lang.Object)

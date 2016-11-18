@@ -16,40 +16,72 @@ import javax.persistence.TemporalType;
 
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.enumeraciones.NivelAcademico;
 
+/**
+ * Entidad InfoAcademica
+ * @author LuchoBolivar
+ *
+ */
 @Entity
 @Table(name = "T_INFO_ACADEMICA")
 public class InfoAcademica implements Serializable {
 
+	/**
+	 * atributo codEgresado
+	 */
 	@Id
 	@Column(name = "ID_EGRESADO")
 	private String codEgresado;
-
-	@JoinColumn(name = "ID_EGRESADO", insertable = false, updatable = false)
+	
+	/**
+	 * atributo de tipo Egresado
+	 */
+	@JoinColumn(name = "ID_EGRESADO", insertable=false, updatable=false)
 	@MapsId
 	@OneToOne
 	private Egresado egresado;
 
+	/**
+	 * atributo de tipo Date 
+	 */
 	@Column(name = "fecha_grado")
 	@Temporal(TemporalType.DATE)
 	private Date fechaGrado;
 
+	/**
+	 * atributo de tipo Facultad
+	 */
 	@JoinColumn(name = "facultad")
 	@ManyToOne(cascade = {})
 	private Facultad facultad;
 
+	/**
+	 * atributo de tipo NivelAcademico
+	 */
 	@Column(name = "nivel_academico")
 	private NivelAcademico nivelAcademico;
 
+	/**
+	 * atributo de tipo programa
+	 */
 	@JoinColumn(name = "programa_academico")
 	@ManyToOne(cascade = {})
 	private Programa programaAcademico;
 
+	/**
+	 * atributo numDiploma
+	 */
 	@Column(name = "num_diploma")
 	private String numDiploma;
 
+	/**
+	 * atributo areaOfertaLaboral
+	 */
 	@Column(name = "area_ofertalaboral")
 	private String areaOfertaLaboral;
 
+	/**
+	 * constructor de la clase InfoAcademica
+	 */
 	public InfoAcademica() {
 		// TODO Auto-generated constructor stub
 	}
@@ -181,9 +213,8 @@ public class InfoAcademica implements Serializable {
 		this.egresado = egresado;
 	}
 
-	/*
+	/**
 	 * (non-Javadoc)
-	 * 
 	 * @see java.lang.Object#hashCode()
 	 */
 	@Override
@@ -194,9 +225,8 @@ public class InfoAcademica implements Serializable {
 		return result;
 	}
 
-	/*
+	/**
 	 * (non-Javadoc)
-	 * 
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	@Override

@@ -16,6 +16,11 @@ import javax.persistence.Table;
 
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.enumeraciones.TipoEmpresa;
 
+/**
+ * Entidad Empresa 
+ * @author LuchoBolivar
+ *
+ */
 @Entity
 @Table(name = "T_EMPRESA")
 @NamedQueries({
@@ -25,45 +30,81 @@ public class Empresa implements Serializable {
 
 	public static final String LISTA_EMPRESAS = "Empresa.Listar";
 	
+	/**
+	 * atributo nit
+	 */
 	@Id
 	@Column(name = "NIT")
 	private String nit;
 	
+	/**
+	 * atributo Contacto
+	 */
 	@OneToOne(mappedBy="empresa")
 	private Contacto contacto;
 
+	/**
+	 * atributo de tipo SectorLaboral
+	 */
 	@JoinColumn(name = "ID_SECTOR")
 	@ManyToOne(cascade={})
 	private SectorLaboral sector;
 	
+	/**
+	 * atributo RazonSocial
+	 */
 	@Column(name = "razon_social")
 	private String razonSocial;
 	
+	/**
+	 * atributo de tipo Departamento
+	 */
 	@JoinColumn(name = "depto")
 	@ManyToOne(cascade={})
 	private Departamento depto;
 	
+	/**
+	 * atributo telefono
+	 */
 	@Column(name = "telefono")
 	private String telefono;
 	
+	/**
+	 * atributo de tipo TipoEmpresa
+	 */
 	@Enumerated(EnumType.STRING)
 	@Column(name = "tipo_empresa")
 	private TipoEmpresa tipo;
 	
+	/**
+	 * atributo web
+	 */
 	@Column(name = "dir_web")
 	private String web;
 	
+	/**
+	 * atributo direccion
+	 */
 	@Column(name="direccion")
 	private String direccion;
 
+	/**
+	 * atributo de tipo Ciudad
+	 */
 	@JoinColumn(name = "ID_CIUDAD")
 	@ManyToOne(cascade={})
 	private Ciudad ciudad;
 	
+	/**
+	 * atributo Pais
+	 */
 	@JoinColumn(name="pais")
 	@ManyToOne(cascade={})
 	private Pais pais;
 
+	/**
+	 * constructor de la clase Empresa
+	 */
 	public Empresa() {
 		// TODO Auto-generated constructor stub
 	}	

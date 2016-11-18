@@ -12,22 +12,43 @@ import co.edu.eam.ingesoftdesarrollo.logica.bo.BOFacultad;
 import co.edu.eam.ingesoftdesarrollo.logica.bo.BOPrograma;
 import junit.framework.Assert;
 
+/**
+ * BO de prueba de la clase BOPrograma
+ * @author LuchoBolivar
+ *
+ */
 public class BOProgramaTest {
 
+	/**
+	 * Metodo BeforeClass
+	 */
 	@BeforeClass
 	public static void beoreClass() {
 		TestDataUtil.ejecutarSQL("sqltest/PruebasPrograma-addTest-add.sql");
 	}
-
+    
+	/**
+	 * declara el BOAreaInteres
+	 */
 	private BOPrograma programa;
+	
+	/**
+	 * declara el BOFacultad
+	 */
 	private BOFacultad facultad;
 
+	/**
+	 * metodo setUp
+	 */
 	@Before
 	public void setUp() {
 		programa = new BOPrograma();
 		facultad = new BOFacultad();
 	}
 
+	/**
+	 * Metodo que maneja las pruebas
+	 */
 	@Test
 	public void registrarEgresados() {
 
@@ -61,6 +82,9 @@ public class BOProgramaTest {
 
 	}
 
+	/**
+	 * metodo AfterClass
+	 */
 	@AfterClass
 	public static void afterClass() {
          TestDataUtil.ejecutarSQL("sqltest/PruebasPrograma-Test-del.sql");

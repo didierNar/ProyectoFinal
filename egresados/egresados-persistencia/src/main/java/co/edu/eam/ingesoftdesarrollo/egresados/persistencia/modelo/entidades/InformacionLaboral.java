@@ -18,7 +18,11 @@ import javax.persistence.TemporalType;
 
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.enumeraciones.SituacionActual;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.enumeraciones.TipoEmpresa;
-
+/**
+ * Entidad InformacionLaboral
+ * @author LuchoBolivar
+ *
+ */
 @Entity
 @Table(name = "T_INFO_LABORAL")
 @NamedQueries({
@@ -40,40 +44,70 @@ public class InformacionLaboral implements Serializable {
 	 */
 	public static final String INFOLAB_PROGRAMA = "InformacionLaboral.InformacinLaboralPrograma";
 	
+	/**
+	 * atributo codEgresado
+	 */
 	@Id
 	@Column(name = "ID_EGRESADO")
 	private String codEgresado;
 
+	/**
+	 * atributo de tipo Egresado
+	 */
 	@JoinColumn(name = "ID_EGRESADO", insertable = false, updatable = false)
 	@OneToOne
 	@MapsId
 	private Egresado egresado;
 
+	/**
+	 * atributo situaActual
+	 */
 	@Column(name = "situa_actual")
 	private SituacionActual situaActual;
 
+	/**
+	 * atributo de tipo TipoEmpresa
+	 */
 	@Column(name = "tipo_empresa")
 	private TipoEmpresa tipoEmpresa;
 
+	/**
+	 * atributo de tipo SectorLaboral
+	 */
 	@JoinColumn(name = "sector_laboral")
 	@ManyToOne(cascade={})
 	private SectorLaboral sectorLaboral;
 
+	/**
+	 * atributo nombreEmpresa
+	 */
 	@JoinColumn(name = "NIT")
 	@ManyToOne(cascade={})
 	private Empresa empresa;
 
+	/**
+	 * atributo de tipo Date
+	 */
 	@Column(name = "fecha_ingreso")
 	@Temporal(TemporalType.DATE)
 	private Date fechaIngreso;
 
+	/**
+	 * atributo cargo
+	 */
 	@Column(name = "cargo_empresa")
 	private String cargo;
 
+	/**
+	 * atributo de tipo Date
+	 */
 	@Column(name = "fecha_salida")
 	@Temporal(TemporalType.DATE)
 	private Date fechaSalida;
 
+	/**
+	 * constructor de la clase InformacionLaboral
+	 */
 	public InformacionLaboral() {
 		// TODO Auto-generated constructor stub
 	}
@@ -221,8 +255,8 @@ public class InformacionLaboral implements Serializable {
 		this.egresado = egresado;
 	}
 
-	/*
-	 * (non-Javadoc)
+	/**
+	 *(non-Javadoc)
 	 * 
 	 * @see java.lang.Object#hashCode()
 	 */
@@ -234,8 +268,8 @@ public class InformacionLaboral implements Serializable {
 		return result;
 	}
 
-	/*
-	 * (non-Javadoc)
+	/**
+	 *(non-Javadoc)
 	 * 
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */

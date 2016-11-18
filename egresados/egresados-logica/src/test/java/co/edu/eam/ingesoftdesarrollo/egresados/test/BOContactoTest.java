@@ -12,16 +12,34 @@ import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Emp
 import co.edu.eam.ingesoftdesarrollo.logica.bo.BOContacto;
 import co.edu.eam.ingesoftdesarrollo.logica.bo.BOEmpresa;
 
+/**
+ * BO de prueba de la clase BOContactoTest
+ * @author LuchoBolivar
+ *
+ */
 public class BOContactoTest {
 	
+	/**
+	 * Metodo BeforeClass
+	 */
 	@BeforeClass
 	public static void beforeClass() {
 		TestDataUtil.ejecutarSQL("sqltest/PruebasContacto-addTest-add.sql");
 	}
 	
+	/**
+	 * declara el BOContacto
+	 */
 	private BOContacto contacto;
+	
+	/**
+	 * declara el BOEmpresa
+	 */
 	private BOEmpresa empresa;
 
+	/**
+	 * metodo setUp
+	 */
 	@Before
 	public void setUp() {
 
@@ -30,6 +48,9 @@ public class BOContactoTest {
 
 	}
 
+	/**
+	 * Metodo que maneja las pruebas
+	 */
 	@Test
 	public void registrarEgresados() {
 		
@@ -70,6 +91,9 @@ public class BOContactoTest {
 
 	}
 
+	/**
+	 * metodo AfterClass
+	 */
 	@AfterClass
 	public static void afterClass() {
 		TestDataUtil.ejecutarSQL("sqltest/PruebasContacto-Test-del.sql");

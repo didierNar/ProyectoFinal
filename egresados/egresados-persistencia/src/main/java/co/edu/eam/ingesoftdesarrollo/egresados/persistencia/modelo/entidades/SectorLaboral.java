@@ -11,6 +11,11 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
+/**
+ * Entidad SectorLAboral
+ * @author LuchoBolivar
+ *
+ */
 @Entity
 @Table(name = "T_SECTORLABORAL")
 @NamedQueries({ @NamedQuery(name = SectorLaboral.LISTA_SECTORES, query = "SELECT s FROM SectorLaboral s") })
@@ -21,11 +26,17 @@ public class SectorLaboral implements Serializable {
 	 */
 	public static final String LISTA_SECTORES = "SectorLaboral.sectores";
 
+	/**
+	 * atributo codigo
+	 */
 	@Id
 	@Column(name = "ID_SECTOR")
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int codigo;
 
+	/**
+	 * atributo nombre 
+	 */
 	@Column(name = "nombre")
 	private String nombre;
 
@@ -76,7 +87,8 @@ public class SectorLaboral implements Serializable {
 	
 	
 
-	/* (non-Javadoc)
+	/**
+	 * (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -84,8 +96,8 @@ public class SectorLaboral implements Serializable {
 		return nombre;
 	}
 
-	/*
-	 * (non-Javadoc)
+	/**
+	 *(non-Javadoc)
 	 * 
 	 * @see java.lang.Object#hashCode()
 	 */
@@ -97,7 +109,7 @@ public class SectorLaboral implements Serializable {
 		return result;
 	}
 
-	/*
+	/**
 	 * (non-Javadoc)
 	 * 
 	 * @see java.lang.Object#equals(java.lang.Object)

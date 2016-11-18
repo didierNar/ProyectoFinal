@@ -8,7 +8,11 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-
+/**
+ * Entidad Facultad
+ * @author LuchoBolivar
+ *
+ */
 @Entity
 @Table(name = "T_FACULTAD")
 @NamedQueries({ @NamedQuery(name = Facultad.LISTA_FACULTADES, query = "SELECT f FROM Facultad f") })
@@ -19,13 +23,22 @@ public class Facultad implements Serializable {
 	 */
 	public static final String LISTA_FACULTADES = "Facultad.listar";
 
+	/**
+	 * atributo codigo
+	 */
 	@Id
 	@Column(name = "ID_FACULTAD")
 	private int codigo;
 
+	/**
+	 * atributo nombre
+	 */
 	@Column(name = "nombre")
 	private String nombre;
 
+	/**
+	 * Constructor de la clase Facultad
+	 */
 	public Facultad() {
 		// TODO Auto-generated constructor stub
 	}
@@ -64,7 +77,8 @@ public class Facultad implements Serializable {
 	
 	
 
-	/* (non-Javadoc)
+	/**
+	 * (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -80,7 +94,7 @@ public class Facultad implements Serializable {
 		this.codigo = codigo;
 	}
 
-	/*
+	/**
 	 * (non-Javadoc)
 	 * 
 	 * @see java.lang.Object#hashCode()
@@ -93,7 +107,7 @@ public class Facultad implements Serializable {
 		return result;
 	}
 
-	/*
+	/**
 	 * (non-Javadoc)
 	 * 
 	 * @see java.lang.Object#equals(java.lang.Object)

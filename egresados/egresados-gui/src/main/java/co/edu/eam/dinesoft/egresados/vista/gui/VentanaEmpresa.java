@@ -28,7 +28,7 @@ import co.edu.eam.ingesoftdesarrollo.logica.excepcion.ExcepcionNegocio;
 
 /**
  *
- * @author Didier Narváez
+ * @author Didier Narvï¿½ez
  */
 public class VentanaEmpresa extends javax.swing.JFrame implements ActionListener {
 
@@ -180,16 +180,16 @@ public class VentanaEmpresa extends javax.swing.JFrame implements ActionListener
         jTPPestanias.setFont(new java.awt.Font("Bernard MT Condensed", 0, 14)); // NOI18N
 
         jLabel27.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel27.setText("Razón Social:");
+        jLabel27.setText("Razï¿½n Social:");
 
         jLabel28.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel28.setText("Teléfono:");
+        jLabel28.setText("Telï¿½fono:");
 
         jLabel29.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel29.setText("NIT :");
 
         jLabel30.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel30.setText("PaÍs :");
+        jLabel30.setText("Paï¿½s :");
 
         jLabel31.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel31.setText("Departamento :");
@@ -316,10 +316,10 @@ public class VentanaEmpresa extends javax.swing.JFrame implements ActionListener
         jLabel13.setText("Cargo En La Empresa :");
 
         jLabel14.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel14.setText("Correo Electrónico :");
+        jLabel14.setText("Correo Electrï¿½nico :");
 
         jLabel15.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel15.setText("Teléfono :");
+        jLabel15.setText("Telï¿½fono :");
 
         javax.swing.GroupLayout jPDatosContactoLayout = new javax.swing.GroupLayout(jPDatosContacto);
         jPDatosContacto.setLayout(jPDatosContactoLayout);
@@ -654,6 +654,7 @@ public class VentanaEmpresa extends javax.swing.JFrame implements ActionListener
 				jTFDireccion.setText(emp.getDireccion());
 				jTFRazonSocial.setText(emp.getRazonSocial());
 				jTFNit.setText(emp.getNit());
+				//didi se la come
 
 				Contacto con = controlador.buscar(emp);
 
@@ -684,7 +685,7 @@ public class VentanaEmpresa extends javax.swing.JFrame implements ActionListener
 		try {
 			List<Pais> lista = controlador.listaPaises();
 			jCBPais.removeAllItems();
-			jCBPais.addItem("Seleccione opción");
+			jCBPais.addItem("Seleccione opciï¿½n");
 			for (Pais pais : lista) {
 				jCBPais.addItem(pais);
 			}
@@ -698,7 +699,7 @@ public class VentanaEmpresa extends javax.swing.JFrame implements ActionListener
 		try {
 			List<Departamento> lista = controlador.deptosPais(p);
 			jCBDepto.removeAllItems();
-			jCBDepto.addItem("Seleccione opción");
+			jCBDepto.addItem("Seleccione opciï¿½n");
 			for (Departamento depto : lista) {
 				jCBDepto.addItem(depto);
 			}
@@ -712,7 +713,7 @@ public class VentanaEmpresa extends javax.swing.JFrame implements ActionListener
 		try {
 			List<Ciudad> lista = controlador.ciudadesDepto(dep);
 			jCBCiudad.removeAllItems();
-			jCBCiudad.addItem("Seleccione opción");
+			jCBCiudad.addItem("Seleccione opciï¿½n");
 			for (Ciudad ciudad : lista) {
 				jCBCiudad.addItem(ciudad);
 			}
@@ -723,7 +724,7 @@ public class VentanaEmpresa extends javax.swing.JFrame implements ActionListener
 	}
 	
 	private void refrescarComboTipoEmpresa (){
-		jCBTipo.addItem("Seleccione una opción");
+		jCBTipo.addItem("Seleccione una opciï¿½n");
 		jCBTipo.addItem(TipoEmpresa.PRIVADA);
 		jCBTipo.addItem(TipoEmpresa.PUBLICA);
 	}
@@ -731,7 +732,7 @@ public class VentanaEmpresa extends javax.swing.JFrame implements ActionListener
 	private void refrescarComboSectorLab() {
 		try {
 			jCBSectorLab.removeAllItems();
-			jCBSectorLab.addItem("Seleccione una opción");
+			jCBSectorLab.addItem("Seleccione una opciï¿½n");
 			List<SectorLaboral> lista = controlador.listaSectorLab();
 			for (SectorLaboral sectorLaboral : lista) {
 				jCBSectorLab.addItem(sectorLaboral);

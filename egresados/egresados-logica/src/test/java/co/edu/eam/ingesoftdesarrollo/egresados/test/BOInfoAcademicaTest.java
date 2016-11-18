@@ -19,19 +19,44 @@ import co.edu.eam.ingesoftdesarrollo.logica.bo.BOInfoAcademica;
 import co.edu.eam.ingesoftdesarrollo.logica.bo.BOPrograma;
 import junit.framework.Assert;
 
+/**
+ * BO de prueba de la clase BOInfoAcademica
+ * @author LuchoBolivar
+ *
+ */
 public class BOInfoAcademicaTest {
 	
-	
+	/**
+	 * Metodo BeforeClass
+	 */
 	@BeforeClass
 	public static void beoreClass() {
 	TestDataUtil.ejecutarSQL("sqltest/PruebasInfoAcademica-addTest-add.sql");
 	}
 
+	/**
+	 * declara el BOInfoAcademica
+	 */
     private BOInfoAcademica infoAcademica;
+    
+    /**
+	 * declara el BOEgresados
+	 */
     private BOEgresados egresado;
+    
+    /**
+	 * declara el BOPrograma
+	 */
     private BOPrograma programa;
+    
+    /**
+	 * declara el BOFacultad
+	 */
     private BOFacultad facultad;
 
+    /**
+	 * metodo setUp
+	 */
 	@Before
 	public void setUp() {
 		infoAcademica = new BOInfoAcademica();
@@ -41,6 +66,9 @@ public class BOInfoAcademicaTest {
 		
 	}
 
+	/**
+	 * Metodo que maneja las pruebas
+	 */
 	@Test
 	public void registrarEgresados() {
 		   
@@ -88,6 +116,9 @@ public class BOInfoAcademicaTest {
 
 	}
 
+	/**
+	 * metodo AfterClass
+	 */
 	@AfterClass
 	public static void afterClass() {
 		TestDataUtil.ejecutarSQL("sqltest/PruebasInfoAcademica-Test-del.sql");
