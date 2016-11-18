@@ -10,31 +10,57 @@ import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+/**
+ * Entidad contacto 
+ * @author LuchoBolivar
+ *
+ */
 @Entity
 @Table(name="T_CONTACTO")
 public class Contacto implements Serializable {
 
+	/**
+	 * atributo de la clase empresa
+	 */
 	@JoinColumn(name="ID_EMPRESA", insertable=false, updatable=false)
 	@OneToOne
 	@MapsId
 	private Empresa empresa;
 	
+	/**
+	 * atributo nit 
+	 */
 	@Id
 	@Column(name="ID_EMPRESA")
 	private String nit;
 	
+	/**
+	 * atributo nombre
+	 */
 	@Column(name="nombre")
 	private String nombre;
 	
+	/**
+	 * atributo correo
+	 */
 	@Column(name="correo")
 	private String correo;
 	
+	/**
+	 * atributo cargo
+	 */
 	@Column(name="cargo")
 	private String cargo;
 	
+	/**
+	 * atributo telefono
+	 */
 	@Column(name="telefono")
 	private String tel;
 	
+	/**
+	 * constructor clase contacto
+	 */
 	public Contacto() {
 		// TODO Auto-generated constructor stub
 	}
@@ -144,7 +170,8 @@ public class Contacto implements Serializable {
 		this.empresa = empresa;
 	}
 
-	/* (non-Javadoc)
+	/**
+	 * (non-Javadoc)
 	 * @see java.lang.Object#hashCode()
 	 */
 	@Override
@@ -155,7 +182,8 @@ public class Contacto implements Serializable {
 		return result;
 	}
 
-	/* (non-Javadoc)
+	/**
+	 * (non-Javadoc)
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	@Override

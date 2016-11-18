@@ -83,10 +83,10 @@ public class VentanaInfoParametrica extends javax.swing.JFrame implements Action
         jLabel2.setText("Nombre del programa");
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel3.setText("Créditos del programa");
+        jLabel3.setText("Crï¿½ditos del programa");
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel6.setText("Código Del Programa :");
+        jLabel6.setText("Cï¿½digo Del Programa :");
 
         javax.swing.GroupLayout jPGestionPrograLayout = new javax.swing.GroupLayout(jPGestionProgra);
         jPGestionProgra.setLayout(jPGestionPrograLayout);
@@ -121,13 +121,13 @@ public class VentanaInfoParametrica extends javax.swing.JFrame implements Action
                 .addGap(37, 37, 37))
         );
 
-        jTPestania.addTab("Gestión De Programa", jPGestionProgra);
+        jTPestania.addTab("Gestiï¿½n De Programa", jPGestionProgra);
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel5.setText("Nombre Facultad :");
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel7.setText("Código Facultad :");
+        jLabel7.setText("Cï¿½digo Facultad :");
 
         jLabel10.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel10.setText("Areas Facultad");
@@ -176,13 +176,13 @@ public class VentanaInfoParametrica extends javax.swing.JFrame implements Action
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
-        jTPestania.addTab("Gestión Facultades", jPGestionFacul);
+        jTPestania.addTab("Gestiï¿½n Facultades", jPGestionFacul);
 
         jLabel8.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel8.setText("Nombre Del Area :");
 
         jLabel9.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel9.setText("Código Del Area :");
+        jLabel9.setText("Cï¿½digo Del Area :");
 
         javax.swing.GroupLayout jPGestionAreasIntreLayout = new javax.swing.GroupLayout(jPGestionAreasIntre);
         jPGestionAreasIntre.setLayout(jPGestionAreasIntreLayout);
@@ -211,10 +211,10 @@ public class VentanaInfoParametrica extends javax.swing.JFrame implements Action
                 .addContainerGap(99, Short.MAX_VALUE))
         );
 
-        jTPestania.addTab("Gestión Areas De Interes", jPGestionAreasIntre);
+        jTPestania.addTab("Gestiï¿½n Areas De Interes", jPGestionAreasIntre);
 
         jLabel1.setFont(new java.awt.Font("Bernard MT Condensed", 0, 36)); // NOI18N
-        jLabel1.setText("Información Paramétrica");
+        jLabel1.setText("Informaciï¿½n Paramï¿½trica");
 
         jBInicio.setBackground(new java.awt.Color(255, 255, 255));
         jBInicio.setFont(new java.awt.Font("Arial Narrow", 0, 14)); // NOI18N
@@ -346,12 +346,7 @@ public class VentanaInfoParametrica extends javax.swing.JFrame implements Action
             g2.setPaint(new GradientPaint(0.0f, 0.0f, color1.darker(), 0.0f, getHeight(), color2.darker()));
             g2.fillRect(clip.x, clip.y, clip.width, clip.height);
         }
-
-//        public void setRandomColor() {
-//            Random rand = new Random();
-//            this.color1 = new Color(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255));
-//            this.color2 = new Color(rand.nextInt(255), rand.nextInt(255), rand.nextInt(255));
-//        }
+        
         public void setVistaColor() {
             this.color1 = new Color(66, 111, 166);
             this.color2 = new Color(103, 174, 118);
@@ -403,7 +398,7 @@ public class VentanaInfoParametrica extends javax.swing.JFrame implements Action
         }
         
         if (arg0.getSource() == jBBuscar){
-            JOptionPane.showInputDialog(null, "Ingrese el número de cédula");
+            JOptionPane.showInputDialog(null, "Ingrese el nï¿½mero de cï¿½dula");
         }
 
     }

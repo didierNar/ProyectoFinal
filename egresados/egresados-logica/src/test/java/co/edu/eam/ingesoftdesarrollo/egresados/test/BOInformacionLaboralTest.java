@@ -16,23 +16,43 @@ import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Inf
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.SectorLaboral;
 import co.edu.eam.ingesoftdesarrollo.logica.bo.BOEgresados;
 import co.edu.eam.ingesoftdesarrollo.logica.bo.BOInformacionLaboral;
-
+/**
+ * BO de prueba de la clase BOInformacionLaboral
+ * @author LuchoBolivar
+ *
+ */
 public class BOInformacionLaboralTest {
 
+	/**
+	 * Metodo BeforeClass
+	 */
 	@BeforeClass
 	public static void beforeClass() {
 		TestDataUtil.ejecutarSQL("sqltest/PruebasInfoLab-Test-add.sql");
 	}
 	
+	/**
+	 * declara el BOInfoLab
+	 */
 	private BOInformacionLaboral boInfoLab;
+	
+	/**
+	 * declara el BOEgresado
+	 */
 	private BOEgresados boEgresados;
 
+	/**
+	 * metodo setUp
+	 */
 	@Before
 	public void setUp() {
 		boInfoLab = new BOInformacionLaboral();
 		boEgresados = new BOEgresados();
 	}
 
+	/**
+	 * Metodo que maneja las pruebas
+	 */
 	@Test
 	public void testRegistro(){
 		
@@ -86,6 +106,9 @@ public class BOInformacionLaboralTest {
 		
 	}
 
+	/**
+	 * metodo AfterClass
+	 */
 	@AfterClass
 	public static void afterClass() {
 		TestDataUtil.ejecutarSQL("sqltest/PruebasInfoLab-Test-del.sql");

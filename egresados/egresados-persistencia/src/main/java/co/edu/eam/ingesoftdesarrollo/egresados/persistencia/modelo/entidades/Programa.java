@@ -11,28 +11,52 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
+/**
+ * Entidaad Programa
+ * @author LuchoBolivar
+ *
+ */
 @Entity
 @Table(name = "T_PROGRAMA")
 @NamedQueries({
 		@NamedQuery(name = Programa.PROGRAMAS_FACULTAD, query = "SELECT p FROM Programa p WHERE p.facultad = ?1") })
 public class Programa implements Serializable {
 
+	/**
+	 * lista que trae programas de una facultad
+	 * p.facultad = codigo
+	 */
 	public static final String PROGRAMAS_FACULTAD = "Programa.programasFacultad";
 
+	/**
+	 * atributo codigo
+	 */
 	@Id
 	@Column(name = "ID_PROGRAMA")
 	private int codigo;
-
+	
+	/**
+	 * atributo de tipo facultad
+	 */
 	@JoinColumn(name = "ID_FACULTAD")
 	@ManyToOne(cascade={})
 	private Facultad facultad;
 
+	/**
+	 * atributo nomPrograma
+	 */
 	@Column(name = "nom_programa")
 	private String nomPrograma;
 
+	/**
+	 * atributo creditosPrograma
+	 */
 	@Column(name = "creditos_programa")
 	private String creditosPrograma;
 
+	/**
+	 * constructor de la clase Programa
+	 */
 	public Programa() {
 		// TODO Auto-generated constructor stub
 	}
@@ -113,7 +137,8 @@ public class Programa implements Serializable {
 	
 	
 
-	/* (non-Javadoc)
+	/**
+	 * (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -121,7 +146,7 @@ public class Programa implements Serializable {
 		return nomPrograma;
 	}
 
-	/*
+	/**
 	 * (non-Javadoc)
 	 * 
 	 * @see java.lang.Object#hashCode()
@@ -134,8 +159,8 @@ public class Programa implements Serializable {
 		return result;
 	}
 
-	/*
-	 * (non-Javadoc)
+	/**
+	 *(non-Javadoc)
 	 * 
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */

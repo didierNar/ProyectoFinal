@@ -11,6 +11,11 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
+/**
+ * Entidad Departamento
+ * @author LuchoBolivar
+ *
+ */
 @Entity
 @Table(name = "T_DEPARTAMENTO")
 @NamedQueries({
@@ -18,21 +23,33 @@ import javax.persistence.Table;
 public class Departamento implements Serializable {
 
 	/**
-	 * Obtiene la lista de departamentos de un país
+	 * Obtiene la lista de departamentos de un paï¿½s
 	 */
 	public static final String DEPARTAMENTOS_PAIS = "Departamento.deptosPais";
 
+	/**
+	 * atributo codigo
+	 */
 	@Id
 	@Column(name = "ID_DEPARTAMENTO")
 	private int codigo;
 
+	/**
+	 * atributo nombre
+	 */
 	@Column(name = "nom_dep")
 	private String nombre;
 
+	/**
+	 * atributo pais
+	 */
 	@JoinColumn(name = "pais")
 	@ManyToOne(cascade={})
 	private Pais pais;
 
+	/**
+	 * constructor de la clase departamento
+	 */
 	public Departamento() {
 		// TODO Auto-generated constructor stub
 	}
@@ -101,7 +118,7 @@ public class Departamento implements Serializable {
 		return nombre;
 	}
 
-	/*
+	/**
 	 * (non-Javadoc)
 	 * 
 	 * @see java.lang.Object#hashCode()
@@ -115,7 +132,7 @@ public class Departamento implements Serializable {
 		return result;
 	}
 
-	/*
+	/**
 	 * (non-Javadoc)
 	 * 
 	 * @see java.lang.Object#equals(java.lang.Object)

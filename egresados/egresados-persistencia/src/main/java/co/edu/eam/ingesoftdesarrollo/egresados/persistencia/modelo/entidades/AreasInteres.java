@@ -6,18 +6,31 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
+/**
+ * Entidad areaInteres
+ * @author LuchoBolivar
+ *
+ */
 @Entity
 @Table(name="T_AREAINTERES")
 public class AreasInteres implements Serializable{
 
+	/**
+	 * atributo codigo
+	 */
 	@Id
 	@Column(name="ID_AREA")
 	private int codigo;
 	
+	/**
+	 * atributo nombre
+	 */
 	@Column(name="ID_NOMBRE")
 	private String nombre;
 	
+	/**
+	 * constructor de la clase AreaInteres
+	 */
 	public AreasInteres() {
 		// TODO Auto-generated constructor stub
 	}

@@ -10,7 +10,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-
+/**
+ * entidad Ciudad
+ * @author LuchoBolivar
+ *
+ */
 @Entity
 @Table(name = "T_CIUDAD")
 @NamedQueries({ @NamedQuery(name = Ciudad.CIUDADES_DEPTO, query = "SELECT c FROM Ciudad c WHERE c.departamento = ?1") })
@@ -21,17 +25,29 @@ public class Ciudad implements Serializable {
 	 */
 	public static final String CIUDADES_DEPTO = "Ciudad.ciudadesDepto";
 
+	/**
+	 * atributo codigoCiudad
+	 */
 	@Id
 	@Column(name = "ID_CIUDAD")
 	private int codigoCiudad;
 
+	/**
+	 * atributo departamento
+	 */
 	@JoinColumn(name = "ID_DEPARTAMENTO")
 	@ManyToOne(cascade={})
 	private Departamento departamento;
 
+	/**
+	 * atributo nombre
+	 */
 	@Column(name = "nombre_ciudad")
 	private String nombre;
 
+	/**
+	 * constructor de la clase Ciudad
+	 */
 	public Ciudad() {
 		// TODO Auto-generated constructor stub
 	}
@@ -95,7 +111,8 @@ public class Ciudad implements Serializable {
 	
 	
 
-	/* (non-Javadoc)
+	/**
+	 * (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -103,7 +120,7 @@ public class Ciudad implements Serializable {
 		return nombre;
 	}
 
-	/*
+	/**
 	 * (non-Javadoc)
 	 * 
 	 * @see java.lang.Object#hashCode()
@@ -118,7 +135,7 @@ public class Ciudad implements Serializable {
 		return result;
 	}
 
-	/*
+	/**
 	 * (non-Javadoc)
 	 * 
 	 * @see java.lang.Object#equals(java.lang.Object)

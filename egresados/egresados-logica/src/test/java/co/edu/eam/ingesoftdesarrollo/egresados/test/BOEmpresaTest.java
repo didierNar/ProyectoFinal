@@ -15,22 +15,37 @@ import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Pai
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.SectorLaboral;
 import co.edu.eam.ingesoftdesarrollo.logica.bo.BOEmpresa;
 
+/**
+ * BO de prueba de la clase BOEmpresaTest
+ * @author LuchoBolivar
+ *
+ */
 public class BOEmpresaTest {
 	
-	
-
+	/**
+	 * Metodo BeforeClass
+	 */
 	@BeforeClass
 	public static void beforeClass() {
      TestDataUtil.ejecutarSQL("sqltest/PruebasEmpresa-addTest.sql");
 	}
 
+	/**
+	 * metodo setUp
+	 */
 	@Before
 	public void setUp() {
 		boEmpresa = new BOEmpresa();
 	}
 	
+	/**
+	 * declara el BOEmpresa
+	 */
 	private BOEmpresa boEmpresa;
 
+	/**
+	 * Metodo que maneja las pruebas
+	 */
 	@Test
 	public void testRegistrar() {
 
@@ -79,7 +94,10 @@ public class BOEmpresaTest {
 		}
 
 	}
-
+	
+	/**
+	 * metodo AfterClass
+	 */
 	@AfterClass
 	public static void afterClass() {
 		TestDataUtil.ejecutarSQL("sqltest/PruebasEmpresaTest-del.sql");

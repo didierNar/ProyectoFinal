@@ -9,16 +9,27 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+/**
+ * entidad AreaEgresado
+ * @author LuchoBolivar
+ *
+ */
 @Entity
 @Table(name="T_AREAS_EGRESADO")
 @IdClass(AreasEgresadoPK.class)
 public class AreasEgresado implements Serializable {
 
+	/**
+	 * atributo codigoEgresado
+	 */
 	@Id
 	@JoinColumn(name="ID_EGRESADO")
 	@ManyToOne(cascade={})
 	private Egresado codigoEgresado;
 	
+	/**
+	 * atributo codigoArea
+	 */
 	@Id
 	@JoinColumn(name="ID_AREA")
 	@ManyToOne(cascade={})

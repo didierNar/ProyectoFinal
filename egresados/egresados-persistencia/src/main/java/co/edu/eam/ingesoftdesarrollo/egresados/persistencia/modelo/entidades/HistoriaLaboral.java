@@ -9,22 +9,35 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+/**
+ * Entidad HistorialLaboral
+ * @author LuchoBolivar
+ *
+ */
 @Entity
 @Table(name="T_HIST_LABORAL")
 @IdClass(HistoriaLaboralPK.class)
 public class HistoriaLaboral implements Serializable {
 	
+	/**
+	 * atributo de tipo InformacionLaboral
+	 */
 	@Id
 	@JoinColumn(name="ID_EGRESADO")
 	@ManyToOne(cascade={})
 	private InformacionLaboral egresado;
 	
+	/**
+	 * atributo de tipo Empresa
+	 */
 	@Id
 	@JoinColumn(name="NIT")
 	@ManyToOne(cascade={})
 	private Empresa empresa;
 
-	
+	/**
+	 * constructo de la clase HistrialLaboral
+	 */
 	public HistoriaLaboral() {
 		// TODO Auto-generated constructor stub
 	}
@@ -67,7 +80,8 @@ public class HistoriaLaboral implements Serializable {
 		this.empresa = empresa;
 	}
 
-	/* (non-Javadoc)
+	/** 
+	 *(non-Javadoc)
 	 * @see java.lang.Object#hashCode()
 	 */
 	@Override
@@ -79,7 +93,8 @@ public class HistoriaLaboral implements Serializable {
 		return result;
 	}
 
-	/* (non-Javadoc)
+	/**
+	 * (non-Javadoc)
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	@Override

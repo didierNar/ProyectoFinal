@@ -12,45 +12,83 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+/**
+ * Entidad OfertaLaboral
+ * @author LuchoBolivar
+ *
+ */
 @Entity
 @Table(name="T_OFERTALABORAL")
 public class OfertaLaboral implements Serializable{
 
+	/**
+	 * atributo codigo
+	 */
 	@Id
 	@Column(name="ID_OFERTA")
 	private int codigo;
 	
+	/**
+	 * atributo de tipo empresa
+	 */
 	@JoinColumn(name="ID_EMPRESA")
 	@ManyToOne(cascade={})
 	private Empresa empresa;
 	
+	/**
+	 * atributo de tipo ciudad
+	 */
 	@JoinColumn(name="ID_CIUDAD")
 	@ManyToOne(cascade={})
 	private Ciudad ciudad;
 	
+	/**
+	 * atributo de tipo areaInteres
+	 */
 	@JoinColumn(name="ID_AREA")
 	@ManyToOne(cascade={})
 	private AreasInteres area;
 	
+	/**
+	 * atributo resumen
+	 */
 	@Column(name="resumen")
 	private String resumen;
 	
+	/**
+	 * atributo cargo
+	 */
 	@Column(name="cargo")
 	private String cargo;
 	
+	/**
+	 * atributo salario
+	 */
 	@Column(name="salario")
 	private double salario;
 	
+	/**
+	 * atributo descripcion
+	 */
 	@Column(name="descripcion_oferta")
 	private String descripcion;
 	
+	/**
+	 * atributo requerimientos
+	 */
 	@Column(name="requerimiento_oferta")
 	private String requerimientos;
 	
+	/**
+	 * atributo de tipo Date
+	 */
 	@Column(name="fecha_apertura")
 	@Temporal(TemporalType.DATE)
 	private Date fechaApertura;
 	
+	/**
+	 * constructor de la clase OfertaLaboral
+	 */
 	public OfertaLaboral() {
 		// TODO Auto-generated constructor stub
 	}
@@ -224,7 +262,8 @@ public class OfertaLaboral implements Serializable{
 		this.area = area;
 	}
 
-	/* (non-Javadoc)
+	/**
+	 * (non-Javadoc)
 	 * @see java.lang.Object#hashCode()
 	 */
 	@Override
@@ -235,7 +274,8 @@ public class OfertaLaboral implements Serializable{
 		return result;
 	}
 
-	/* (non-Javadoc)
+	/**
+	 * (non-Javadoc)
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	@Override

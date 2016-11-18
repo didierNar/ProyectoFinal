@@ -12,6 +12,11 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+/**
+ * Entidad Egresado
+ * @author LuchoBolivar
+ *
+ */
 @Entity
 @Table(name="T_EGRESADO")
 @NamedQueries({
@@ -24,38 +29,71 @@ public class Egresado implements Serializable{
 	 */
 	public static final String LISTA_EGRESADOS = "Egresado.listar";
 
+	/**
+	 * atributo codigoEgresado
+	 */
 	@Id
 	@Column(name="ID_EGRESADO")
 	private String codigoEgresado;
 	
+	/**
+	 * atributo codigoPrograma
+	 */
 	@JoinColumn(name="ID_PROGRAMA")
 	@ManyToOne(cascade={})
 	private Programa codigoPrograma;
 	
+	/**
+	 * atributo nombre 
+	 */
 	@Column(name="nombre")
 	private String nombre;
 	
+	/**
+	 * atributo apellido
+	 */
 	@Column(name="apellido")
 	private String apellido;
 	
+	/**
+	 * atributo tipoDocumento
+	 */
 	@Column(name="tipo_documento")
 	private String tipoDocumento;
 	
+	/**
+	 * atributo numDocumento
+	 */
 	@Column(name="num_documento")
 	private String numDocumento;
 	
+	/**
+	 * atributo correo
+	 */
 	@Column(name="correo")
 	private String correo;
 	
+	/**
+	 * atributo numero de telefono
+	 */
 	@Column(name="num_tel")
 	private String numTel;
 	
+	/**
+	 * atributo de tipo infoAcademica
+	 */
 	@OneToOne(mappedBy="egresado")
 	private InfoAcademica infoAcademica;
 	
+	/**
+	 * atributo de tipo InfoLaboral
+	 */
 	@OneToOne(mappedBy="egresado")
 	private InformacionLaboral infoLab;
 	
+	/**
+	 * constructor de la clase Egresado
+	 */
 	public Egresado() {
 		// TODO Auto-generated constructor stub
 	}

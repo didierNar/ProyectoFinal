@@ -6,7 +6,11 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-
+/**
+ * Entidad Pais
+ * @author LuchoBolivar
+ *
+ */
 @Entity
 @Table(name = "T_PAIS")
 @NamedQueries({ @NamedQuery(name = Pais.PAISES, query = "SELECT p FROM Pais p") })
@@ -17,13 +21,22 @@ public class Pais {
 	 */
 	public static final String PAISES = "Pais.listar";
 
+	/**
+	 * atributo nombre
+	 */
 	@Column(name = "nombre")
 	private String nombre;
 
+	/**
+	 * atributo cod
+	 */
 	@Id
 	@Column(name = "cod")
 	private int cod;
 
+	/**
+	 * constructor de la clase Pais
+	 */
 	public Pais() {
 		// TODO Auto-generated constructor stub
 	}
@@ -68,7 +81,8 @@ public class Pais {
 		this.cod = cod;
 	}
 
-	/* (non-Javadoc)
+	/**
+	 * (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override

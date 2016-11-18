@@ -2,10 +2,21 @@ package co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades;
 
 import java.io.Serializable;
 
+/**
+ * Entidad OfertaAplicadaEgresadoPK
+ * @author LuchoBolivar
+ *
+ */
 public class OfertaAplicadaEgresadoPK implements Serializable{
 
+	/**
+	 * atributo codigoEgresado
+	 */
 	private int codigoEgresado;
 	
+	/**
+	 * atributo codigoOferta
+	 */
 	private int codigoOferta;
 	
 	/**
@@ -46,7 +57,8 @@ public class OfertaAplicadaEgresadoPK implements Serializable{
 		this.codigoOferta = codigoOferta;
 	}
 
-	/* (non-Javadoc)
+	/**
+	 * (non-Javadoc)
 	 * @see java.lang.Object#hashCode()
 	 */
 	@Override
@@ -58,7 +70,8 @@ public class OfertaAplicadaEgresadoPK implements Serializable{
 		return result;
 	}
 
-	/* (non-Javadoc)
+	/**
+	 * (non-Javadoc)
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	@Override

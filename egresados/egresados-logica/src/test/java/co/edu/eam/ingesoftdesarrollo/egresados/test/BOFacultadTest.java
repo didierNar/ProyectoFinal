@@ -10,15 +10,29 @@ import org.junit.Test;
 import co.edu.eam.ingesoftdesarrollo.egresados.persistencia.modelo.entidades.Facultad;
 import co.edu.eam.ingesoftdesarrollo.logica.bo.BOFacultad;
 
+/**
+ * BO de prueba de la clase BOFacultad
+ * @author LuchoBolivar
+ *
+ */
 public class BOFacultadTest {
 
+	/**
+	 * Metodo BeforeClass
+	 */
 	@BeforeClass
 	public static void beforeClass() {
 		
 	}
 
+	/**
+	 * declara el BOAreaInteres
+	 */
 	private BOFacultad facultad;
 
+	/**
+	 * metodo setUp
+	 */
 	@Before
 	public void setUp() {
 
@@ -26,6 +40,9 @@ public class BOFacultadTest {
 
 	}
 
+	/**
+	 * Metodo que maneja las pruebas
+	 */
 	@Test
 	public void registrarEgresados() {
 
@@ -53,7 +70,10 @@ public class BOFacultadTest {
 		}
 
 	}
-
+	
+	/**
+	 * metodo AfterClass
+	 */
 	@AfterClass
 	public static void afterClass() {
 		TestDataUtil.ejecutarSQL("sqltest/PruebasFacultad-Test-del.sql");
