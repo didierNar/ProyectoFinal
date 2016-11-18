@@ -101,5 +101,14 @@ public class BOInformacionLaboral {
 	public List<InformacionLaboral> infoLabPro (Programa p) throws Exception{
 		return daoInfoLab.infoLabPrograma(p);
 	}
+	
+	/**
+	 * Obtiene la lista de información laboral
+	 * @return la lista de información laboral
+	 * @throws Exception si falla la operación
+	 */
+	public List<InformacionLaboral> listarInfoLab () throws Exception{
+		return daoInfoLab.listarInfoLab();
+	}
 
 }

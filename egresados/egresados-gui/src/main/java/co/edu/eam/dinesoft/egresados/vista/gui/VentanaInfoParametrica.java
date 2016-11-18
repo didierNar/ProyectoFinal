@@ -144,10 +144,10 @@ public class VentanaInfoParametrica extends javax.swing.JFrame implements Action
         jLabel2.setText("Nombre del programa");
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel3.setText("Creditos del programa");
+        jLabel3.setText("Créditos del programa");
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel6.setText("Codigo Del Programa :");
+        jLabel6.setText("Código Del Programa :");
 
         jLabel11.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel11.setText("Facultad");
@@ -193,47 +193,12 @@ public class VentanaInfoParametrica extends javax.swing.JFrame implements Action
         );
 
         jTPestania.addTab("Gestión De Programa", jPGestionProgra);
-        jTPestania.addTab("Gestion De Programa", jPGestionProgra);
-
-        jLabel5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel5.setText("Nombre Facultad :");
-
-        jLabel7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel7.setText("Codigo Facultad :");
-
-        jPGestionFacul.setLayout(jPGestionFaculLayout);
-        jPGestionFaculLayout.setHorizontalGroup(
-            jPGestionFaculLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPGestionFaculLayout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addGroup(jPGestionFaculLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTFCodFac, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7)
-                    .addComponent(jTFNomFac, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addContainerGap(195, Short.MAX_VALUE))
-        );
-        jPGestionFaculLayout.setVerticalGroup(
-            jPGestionFaculLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPGestionFaculLayout.createSequentialGroup()
-                .addGap(75, 75, 75)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTFCodFac, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTFNomFac, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(122, Short.MAX_VALUE))
-        );
-
-        jTPestania.addTab("Gestion Facultades", jPGestionFacul);
 
         jLabel8.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel8.setText("Nombre Del Area :");
 
         jLabel9.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel9.setText("Codigo Del Area :");
+        jLabel9.setText("Código Del Area :");
 
         javax.swing.GroupLayout jPGestionAreasIntreLayout = new javax.swing.GroupLayout(jPGestionAreasIntre);
         jPGestionAreasIntre.setLayout(jPGestionAreasIntreLayout);
@@ -262,10 +227,10 @@ public class VentanaInfoParametrica extends javax.swing.JFrame implements Action
                 .addContainerGap(105, Short.MAX_VALUE))
         );
 
-        jTPestania.addTab("Gestion Areas De Interes", jPGestionAreasIntre);
+        jTPestania.addTab("Gestión Areas De Interes", jPGestionAreasIntre);
 
         jLabel1.setFont(new java.awt.Font("Bernard MT Condensed", 0, 36)); // NOI18N
-        jLabel1.setText("Informacion Parametrica");
+        jLabel1.setText("Información Paramétrica");
 
         jBInicio.setBackground(new java.awt.Color(255, 255, 255));
         jBInicio.setFont(new java.awt.Font("Arial Narrow", 0, 14)); // NOI18N
@@ -353,11 +318,12 @@ public class VentanaInfoParametrica extends javax.swing.JFrame implements Action
                         .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(411, 411, 411))
                     .addGroup(jPPrincipalLayout.createSequentialGroup()
-                        .addGap(7, 7, 7)
                         .addGroup(jPPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPOpciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPPrincipalLayout.createSequentialGroup()
-                                .addGap(27, 27, 27)
+                                .addGap(7, 7, 7)
+                                .addComponent(jPOpciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPPrincipalLayout.createSequentialGroup()
+                                .addGap(35, 35, 35)
                                 .addComponent(jTPestania, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jBInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)

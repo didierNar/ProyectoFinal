@@ -641,15 +641,24 @@ public class VentanaEgresados extends javax.swing.JFrame implements ActionListen
 
 	private void jCBSituacionActualItemStateChanged(java.awt.event.ItemEvent evt) {// GEN-FIRST:event_jCBSituacionActualItemStateChanged
 		// TODO add your handling code here:
-//		if (jCBSituacionActual.getSelectedIndex() != 0) {
-//			int index = jCBSituacionActual.getSelectedIndex();
-//			if (index == 1 || index == 4) {
-//				jCBTipoEmp.setEnabled(false);
-//				jCBSectorLab.setEnabled(false);
-//			} else {
-//				jCBTipoEmp.setEnabled(true);
-//			}
-//		}
+		if (jCBSituacionActual.getSelectedIndex() != 0) {
+			int index = jCBSituacionActual.getSelectedIndex();
+			if (index == 1 || index == 4) {
+				jCBTipoEmp.setEnabled(false);
+				jCBSectorLab.setEnabled(false);
+				jCBEmpresaEgre.setEnabled(false);
+				jDFechaIngreso.setEnabled(false);
+				jDFechaSalida.setEnabled(false);
+				jTFCargo.setEditable(false);
+			} else {
+				jCBTipoEmp.setEnabled(true);
+				jCBSectorLab.setEnabled(true);
+				jCBEmpresaEgre.setEnabled(true);
+				jDFechaIngreso.setEnabled(true);
+				jDFechaSalida.setEnabled(true);
+				jTFCargo.setEditable(true);
+			}
+		}
 	}// GEN-LAST:event_jCBSituacionActualItemStateChanged
 
 	private void comboFacultadItemStateChanged(java.awt.event.ItemEvent evt) {// GEN-FIRST:event_comboFacultadItemStateChanged
@@ -756,13 +765,23 @@ public class VentanaEgresados extends javax.swing.JFrame implements ActionListen
 				// Llenando datos información laboral
 				InformacionLaboral infoLab = controlador.buscarInfoLab(e);
 
-				jCBSituacionActual.setSelectedItem(infoLab.getSituaActual());
-				jCBTipoEmp.setSelectedItem(infoLab.getTipoEmpresa());
-				jCBSectorLab.setSelectedItem(infoLab.getSectorLaboral());
-				jCBEmpresaEgre.setSelectedItem(infoLab.getEmpresa());
-				jDFechaIngreso.setDate(infoLab.getFechaIngreso());
-				jDFechaSalida.setDate(infoLab.getFechaSalida());
-				jTFCargo.setText(infoLab.getCargo());
+				if (infoLab.getSituaActual().equals(SituacionActual.DESEMPLEADO)
+						|| infoLab.getSituaActual().equals(SituacionActual.INDEPENDIENTE)) {
+					jCBTipoEmp.setSelectedIndex(0);
+					jCBSectorLab.setSelectedIndex(0);
+					jCBEmpresaEgre.setSelectedIndex(0);
+					jDFechaIngreso.setDate(null);
+					jDFechaSalida.setDate(null);
+					jTFCargo.setText(null);
+				} else {
+					jCBSituacionActual.setSelectedItem(infoLab.getSituaActual());
+					jCBTipoEmp.setSelectedItem(infoLab.getTipoEmpresa());
+					jCBSectorLab.setSelectedItem(infoLab.getSectorLaboral());
+					jCBEmpresaEgre.setSelectedItem(infoLab.getEmpresa());
+					jDFechaIngreso.setDate(infoLab.getFechaIngreso());
+					jDFechaSalida.setDate(infoLab.getFechaSalida());
+					jTFCargo.setText(infoLab.getCargo());
+				}
 
 			} catch (ExcepcionNegocio e) {
 				JOptionPane.showMessageDialog(null, e.getMessage());
@@ -777,6 +796,7 @@ public class VentanaEgresados extends javax.swing.JFrame implements ActionListen
 			int opc = JOptionPane.showConfirmDialog(null, "Esta seguro que desea cancelar");
 			if (opc == 0) {
 				// Limpiar campos
+				jTPPestanias.setSelectedIndex(0);
 			}
 
 		}
@@ -807,37 +827,43 @@ public class VentanaEgresados extends javax.swing.JFrame implements ActionListen
 
 					// Información laboral
 					SituacionActual situa = (SituacionActual) jCBSituacionActual.getSelectedItem();
-					TipoEmpresa tipoEmp = (TipoEmpresa) jCBTipoEmp.getSelectedItem();
-					SectorLaboral sectorLab = (SectorLaboral) jCBSectorLab.getSelectedItem();
 
-					Empresa nomEmp = (Empresa) jCBEmpresaEgre.getSelectedItem();
-					Date fechaIngreso = jDFechaIngreso.getDate();
-					Date fechaSalida = jDFechaSalida.getDate();
-					String cargo = jTFCargo.getText();
+					// Crear egresado
+					Egresado e = new Egresado(cod, programa, nombre, ape, tipoDoc, id, correo, tel);
 
-					if (nombre.isEmpty() || ape.isEmpty() || jCBTipoDoc.getSelectedIndex() == 0 || id.isEmpty()
-							|| correo.isEmpty() || tel.isEmpty() || jTFCodigoEgresado.getText().isEmpty()
-							|| comboFacultad.getSelectedIndex() == 0 || fechaGrado == null
-							|| jCBPrograma.getSelectedIndex() == 0 || numDiploma.isEmpty() || areasOferta.isEmpty()
-							|| jCBSituacionActual.getSelectedIndex() == 0 || jCBTipoEmp.getSelectedIndex() == 0
-							|| fechaIngreso == null || fechaSalida == null || cargo.isEmpty()) {
-						JOptionPane.showMessageDialog(null, "Debe diligenciar todos los campos");
+					// agregar Información laboral
+
+					InformacionLaboral infoLab = controlador.buscarInfoLab(egresadoEncontrado);
+
+					if (situa.equals(SituacionActual.DESEMPLEADO) || situa.equals(SituacionActual.INDEPENDIENTE)) {
+						infoLab.setEgresado(e);
+						infoLab.setSituaActual(situa);
 					} else {
+						TipoEmpresa tipoEmp = (TipoEmpresa) jCBTipoEmp.getSelectedItem();
+						SectorLaboral sectorLab = (SectorLaboral) jCBSectorLab.getSelectedItem();
 
-						// Crear egresado
-						Egresado e = new Egresado(cod, programa, nombre, ape, tipoDoc, id, correo, tel);
+						Empresa nomEmp = (Empresa) jCBEmpresaEgre.getSelectedItem();
+						Date fechaIngreso = jDFechaIngreso.getDate();
+						Date fechaSalida = jDFechaSalida.getDate();
+						String cargo = jTFCargo.getText();
 
-						// agregar Información laboral
-						InformacionLaboral infoLab = new InformacionLaboral(e, situa, tipoEmp, sectorLab, nomEmp,
-								fechaIngreso, fechaSalida, cargo);
-
-						// Agregar información académica
-						InfoAcademica info = new InfoAcademica(e, fechaGrado, facultad, nivel, programa, numDiploma,
-								areasOferta);
-
-						controlador.actualizar(e, info, infoLab);
-						JOptionPane.showMessageDialog(null, "Se ha actualizado la información correctamente");
+						infoLab.setEgresado(egresadoEncontrado);
+						infoLab.setTipoEmpresa(tipoEmp);
+						infoLab.setSectorLaboral(sectorLab);
+						infoLab.setEmpresa(nomEmp);
+						infoLab.setFechaIngreso(fechaIngreso);
+						infoLab.setFechaSalida(fechaSalida);
+						infoLab.setCargo(cargo);
+						infoLab.setSituaActual(situa);
 					}
+
+					// Agregar información académica
+					InfoAcademica info = new InfoAcademica(e, fechaGrado, facultad, nivel, programa, numDiploma,
+							areasOferta);
+
+					controlador.actualizar(e, info, infoLab);
+					JOptionPane.showMessageDialog(null, "Se ha actualizado la información correctamente");
+
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -871,37 +897,40 @@ public class VentanaEgresados extends javax.swing.JFrame implements ActionListen
 
 				// Información laboral
 				SituacionActual situa = (SituacionActual) jCBSituacionActual.getSelectedItem();
-				TipoEmpresa tipoEmp = (TipoEmpresa) jCBTipoEmp.getSelectedItem();
-				SectorLaboral sectorLab = (SectorLaboral) jCBSectorLab.getSelectedItem();
 
-				Empresa nomEmp = (Empresa) jCBEmpresaEgre.getSelectedItem();
-				Date fechaIngreso = jDFechaIngreso.getDate();
-				Date fechaSalida = jDFechaSalida.getDate();
-				String cargo = jTFCargo.getText();
+				// Crear egresado
+				Egresado e = new Egresado(cod, programa, nombre, ape, tipoDoc, id, correo, tel);
 
-				if (nombre.isEmpty() || ape.isEmpty() || jCBTipoDoc.getSelectedIndex() == 0 || id.isEmpty()
-						|| correo.isEmpty() || tel.isEmpty() || jTFCodigoEgresado.getText().isEmpty()
-						|| comboFacultad.getSelectedIndex() == 0 || fechaGrado == null
-						|| jCBPrograma.getSelectedIndex() == 0 || numDiploma.isEmpty() || areasOferta.isEmpty()
-						|| jCBSituacionActual.getSelectedIndex() == 0 || jCBTipoEmp.getSelectedIndex() == 0
-						|| fechaIngreso == null || fechaSalida == null || cargo.isEmpty()) {
-					JOptionPane.showMessageDialog(null, "Debe diligenciar todos los campos");
+				// agregar Información laboral
+				InformacionLaboral infoLab = new InformacionLaboral();
+
+				if (situa.equals(SituacionActual.DESEMPLEADO) || situa.equals(SituacionActual.INDEPENDIENTE)) {
+					infoLab.setEgresado(e);
+					infoLab.setSituaActual(situa);
 				} else {
+					TipoEmpresa tipoEmp = (TipoEmpresa) jCBTipoEmp.getSelectedItem();
+					SectorLaboral sectorLab = (SectorLaboral) jCBSectorLab.getSelectedItem();
 
-					// Crear egresado
-					Egresado e = new Egresado(cod, programa, nombre, ape, tipoDoc, id, correo, tel);
+					Empresa nomEmp = (Empresa) jCBEmpresaEgre.getSelectedItem();
+					Date fechaIngreso = jDFechaIngreso.getDate();
+					Date fechaSalida = jDFechaSalida.getDate();
+					String cargo = jTFCargo.getText();
 
-					// agregar Información laboral
-					InformacionLaboral infoLab = new InformacionLaboral(e, situa, tipoEmp, sectorLab, nomEmp,
-							fechaIngreso, fechaSalida, cargo);
-
-					// Agregar información académica
-					InfoAcademica info = new InfoAcademica(e, fechaGrado, facultad, nivel, programa, numDiploma,
-							areasOferta);
-
-					controlador.registrar(e, info, infoLab);
-					JOptionPane.showMessageDialog(null, "La información se ha agregado satisfactoriamente");
+					infoLab.setEgresado(e);
+					infoLab.setTipoEmpresa(tipoEmp);
+					infoLab.setSectorLaboral(sectorLab);
+					infoLab.setEmpresa(nomEmp);
+					infoLab.setFechaIngreso(fechaIngreso);
+					infoLab.setFechaSalida(fechaSalida);
+					infoLab.setCargo(cargo);
 				}
+
+				// Agregar información académica
+				InfoAcademica info = new InfoAcademica(e, fechaGrado, facultad, nivel, programa, numDiploma,
+						areasOferta);
+
+				controlador.registrar(e, info, infoLab);
+				JOptionPane.showMessageDialog(null, "La información se ha agregado satisfactoriamente");
 
 			} catch (ExcepcionNegocio e) {
 				JOptionPane.showMessageDialog(null, e.getMessage());
@@ -1012,8 +1041,8 @@ public class VentanaEgresados extends javax.swing.JFrame implements ActionListen
 			e.printStackTrace();
 		}
 	}
-	
-	private void refresacarComboEmpresas(){
+
+	private void refresacarComboEmpresas() {
 		try {
 			List<Empresa> lista = controlador.listaEmpresas();
 			jCBEmpresaEgre.removeAllItems();

@@ -22,7 +22,8 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name="T_OFERTALABORAL")
 @NamedQueries({
-	@NamedQuery(name = OfertaLaboral.OFERTAS_PROGRAMA, query = "SELECT o FROM OfertaLaboral o WHERE o.programa = ?1")
+	@NamedQuery(name = OfertaLaboral.OFERTAS_PROGRAMA, query = "SELECT o FROM OfertaLaboral o WHERE o.programa = ?1"),
+	@NamedQuery(name = OfertaLaboral.LISTAR_OFERTAS, query = "SELECT o FROM OfertaLaboral o")
 })
 public class OfertaLaboral implements Serializable{
 
@@ -31,6 +32,11 @@ public class OfertaLaboral implements Serializable{
 	 * ?1: el programa
 	 */
 	public static final String OFERTAS_PROGRAMA = "OfertaLaboral.OfertasPrograma";
+	
+	/**
+	 * Obtiene la lista de ofertas
+	 */
+	public static final String LISTAR_OFERTAS = "OfertaLaboral.listar";
 	
 	/**
 	 * atributo codigo
@@ -52,6 +58,9 @@ public class OfertaLaboral implements Serializable{
 	@JoinColumn(name="ID_CIUDAD")
 	@ManyToOne(cascade={})
 	private Ciudad ciudad;
+	
+	@Column(name="CERRAR_OFERTA")
+	private boolean cerrarOferta;
 	
 	/**
 	 * atributo Programa
@@ -146,6 +155,20 @@ public class OfertaLaboral implements Serializable{
 	}
 
 
+
+	/**
+	 * @return the cerrarOferta
+	 */
+	public boolean isCerrarOferta() {
+		return cerrarOferta;
+	}
+
+	/**
+	 * @param cerrarOferta the cerrarOferta to set
+	 */
+	public void setCerrarOferta(boolean cerrarOferta) {
+		this.cerrarOferta = cerrarOferta;
+	}
 
 	/**
 	 * @return the programa
