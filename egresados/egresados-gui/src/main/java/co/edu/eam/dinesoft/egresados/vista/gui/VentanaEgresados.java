@@ -32,7 +32,7 @@ import co.edu.eam.ingesoftdesarrollo.logica.excepcion.ExcepcionNegocio;
 
 /**
  *
- * @author Didier Narváez
+ * @author Didier Narvï¿½ez
  */
 public class VentanaEgresados extends javax.swing.JFrame implements ActionListener {
 
@@ -164,20 +164,20 @@ public class VentanaEgresados extends javax.swing.JFrame implements ActionListen
 		jLabel4.setText("Tipo de documento");
 
 		jLabel5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-		jLabel5.setText("Número de documento");
+		jLabel5.setText("Nï¿½mero de documento");
 
 		jLabel6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-		jLabel6.setText("Correo electrónico");
+		jLabel6.setText("Correo electrï¿½nico");
 
 		jLabel7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-		jLabel7.setText("Número telefónico");
+		jLabel7.setText("Nï¿½mero telefï¿½nico");
 
 		jCBTipoDoc.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-		jCBTipoDoc.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione una opción",
-				"Tarjeta de identidad", "Cédula de ciudadania", "Cédula de extranjería" }));
+		jCBTipoDoc.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione una opciï¿½n",
+				"Tarjeta de identidad", "Cï¿½dula de ciudadania", "Cï¿½dula de extranjerï¿½a" }));
 
 		jLabel22.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-		jLabel22.setText("Código");
+		jLabel22.setText("Cï¿½digo");
 
 		javax.swing.GroupLayout jPInfoPerLayout = new javax.swing.GroupLayout(jPInfoPer);
 		jPInfoPer.setLayout(jPInfoPerLayout);
@@ -244,22 +244,22 @@ public class VentanaEgresados extends javax.swing.JFrame implements ActionListen
 								javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE,
 								javax.swing.GroupLayout.PREFERRED_SIZE)));
 
-		jTPPestanias.addTab("1.INFORMACIÓN PERSONAL", jPInfoPer);
+		jTPPestanias.addTab("1.INFORMACIï¿½N PERSONAL", jPInfoPer);
 
 		jLabel8.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
 		jLabel8.setText("Facultad");
 
 		jLabel9.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-		jLabel9.setText("Programa académico");
+		jLabel9.setText("Programa acadï¿½mico");
 
 		jLabel10.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
 		jLabel10.setText("Feha de grado");
 
 		jLabel11.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-		jLabel11.setText("Nivel académico");
+		jLabel11.setText("Nivel acadï¿½mico");
 
 		jLabel12.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-		jLabel12.setText("Número del diploma");
+		jLabel12.setText("Nï¿½mero del diploma");
 
 		jCBPrograma.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
 
@@ -357,10 +357,10 @@ public class VentanaEgresados extends javax.swing.JFrame implements ActionListen
 												.addGap(14, 14, 14)))
 						.addContainerGap(28, Short.MAX_VALUE)));
 
-		jTPPestanias.addTab("2.INFORMACIÓN ACADÉMICA", jPInfoAcademica);
+		jTPPestanias.addTab("2.INFORMACIï¿½N ACADï¿½MICA", jPInfoAcademica);
 
 		jLabel13.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-		jLabel13.setText("Sitiación actual");
+		jLabel13.setText("Sitiaciï¿½n actual");
 
 		jLabel14.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
 		jLabel14.setText("Tipo de empresa");
@@ -499,7 +499,7 @@ public class VentanaEgresados extends javax.swing.JFrame implements ActionListen
 										javax.swing.GroupLayout.PREFERRED_SIZE)))
 						.addContainerGap(24, Short.MAX_VALUE)));
 
-		jTPPestanias.addTab("3.INFORMACIÓN LABORAL", jPInfoLaboral);
+		jTPPestanias.addTab("3.INFORMACIï¿½N LABORAL", jPInfoLaboral);
 
 		jBSiguiente.setBackground(new java.awt.Color(255, 255, 255));
 		jBSiguiente.setFont(new java.awt.Font("Arial Narrow", 0, 12)); // NOI18N
@@ -641,15 +641,15 @@ public class VentanaEgresados extends javax.swing.JFrame implements ActionListen
 
 	private void jCBSituacionActualItemStateChanged(java.awt.event.ItemEvent evt) {// GEN-FIRST:event_jCBSituacionActualItemStateChanged
 		// TODO add your handling code here:
-//		if (jCBSituacionActual.getSelectedIndex() != 0) {
-//			int index = jCBSituacionActual.getSelectedIndex();
-//			if (index == 1 || index == 4) {
-//				jCBTipoEmp.setEnabled(false);
-//				jCBSectorLab.setEnabled(false);
-//			} else {
-//				jCBTipoEmp.setEnabled(true);
-//			}
-//		}
+		// if (jCBSituacionActual.getSelectedIndex() != 0) {
+		// int index = jCBSituacionActual.getSelectedIndex();
+		// if (index == 1 || index == 4) {
+		// jCBTipoEmp.setEnabled(false);
+		// jCBSectorLab.setEnabled(false);
+		// } else {
+		// jCBTipoEmp.setEnabled(true);
+		// }
+		// }
 	}// GEN-LAST:event_jCBSituacionActualItemStateChanged
 
 	private void comboFacultadItemStateChanged(java.awt.event.ItemEvent evt) {// GEN-FIRST:event_comboFacultadItemStateChanged
@@ -730,7 +730,7 @@ public class VentanaEgresados extends javax.swing.JFrame implements ActionListen
 		if (arg0.getSource() == jBBuscar) {
 
 			try {
-				String id = JOptionPane.showInputDialog(null, "Ingrese número de identificación del egresado");
+				String id = JOptionPane.showInputDialog(null, "Ingrese nï¿½mero de identificaciï¿½n del egresado");
 				Egresado e = controlador.buscar(id);
 				egresadoEncontrado = e;
 
@@ -743,7 +743,7 @@ public class VentanaEgresados extends javax.swing.JFrame implements ActionListen
 				jTFTel.setText(e.getNumTel());
 				jTFCodigoEgresado.setText(e.getCodigoEgresado() + "");
 
-				// Llenando datos de información académica
+				// Llenando datos de informaciï¿½n acadï¿½mica
 				InfoAcademica info = controlador.buscarInfoAcademica(e);
 
 				comboFacultad.setSelectedItem(info.getFacultad());
@@ -753,7 +753,7 @@ public class VentanaEgresados extends javax.swing.JFrame implements ActionListen
 				jTFNumeroDiploma.setText(info.getNumDiploma());
 				jTAAreasLaborales.setText(info.getAreaOfertaLaboral());
 
-				// Llenando datos información laboral
+				// Llenando datos informaciï¿½n laboral
 				InformacionLaboral infoLab = controlador.buscarInfoLab(e);
 
 				jCBSituacionActual.setSelectedItem(infoLab.getSituaActual());
@@ -776,8 +776,8 @@ public class VentanaEgresados extends javax.swing.JFrame implements ActionListen
 
 			int opc = JOptionPane.showConfirmDialog(null, "Esta seguro que desea cancelar");
 			if (opc == 0) {
-				// Limpiar campos
-			}
+				LimpiarCampos();
+ 			}
 
 		}
 
@@ -797,7 +797,7 @@ public class VentanaEgresados extends javax.swing.JFrame implements ActionListen
 					String tel = jTFTel.getText();
 					String cod = jTFCodigoEgresado.getText();
 
-					// Información académica
+					// Informaciï¿½n acadï¿½mica
 					Facultad facultad = (Facultad) comboFacultad.getSelectedItem();
 					Date fechaGrado = jDFechaGrado.getDate();
 					NivelAcademico nivel = (NivelAcademico) jCBNivel.getSelectedItem();
@@ -805,7 +805,7 @@ public class VentanaEgresados extends javax.swing.JFrame implements ActionListen
 					String numDiploma = jTFNumeroDiploma.getText();
 					String areasOferta = jTAAreasLaborales.getText();
 
-					// Información laboral
+					// Informaciï¿½n laboral
 					SituacionActual situa = (SituacionActual) jCBSituacionActual.getSelectedItem();
 					TipoEmpresa tipoEmp = (TipoEmpresa) jCBTipoEmp.getSelectedItem();
 					SectorLaboral sectorLab = (SectorLaboral) jCBSectorLab.getSelectedItem();
@@ -827,16 +827,17 @@ public class VentanaEgresados extends javax.swing.JFrame implements ActionListen
 						// Crear egresado
 						Egresado e = new Egresado(cod, programa, nombre, ape, tipoDoc, id, correo, tel);
 
-						// agregar Información laboral
+						// agregar Informaciï¿½n laboral
 						InformacionLaboral infoLab = new InformacionLaboral(e, situa, tipoEmp, sectorLab, nomEmp,
 								fechaIngreso, fechaSalida, cargo);
 
-						// Agregar información académica
+						// Agregar informaciï¿½n acadï¿½mica
 						InfoAcademica info = new InfoAcademica(e, fechaGrado, facultad, nivel, programa, numDiploma,
 								areasOferta);
 
 						controlador.actualizar(e, info, infoLab);
-						JOptionPane.showMessageDialog(null, "Se ha actualizado la información correctamente");
+						JOptionPane.showMessageDialog(null, "Se ha actualizado la informaciï¿½n correctamente");
+						LimpiarCampos();
 					}
 				}
 			} catch (Exception e) {
@@ -861,7 +862,7 @@ public class VentanaEgresados extends javax.swing.JFrame implements ActionListen
 				String tel = jTFTel.getText();
 				String cod = jTFCodigoEgresado.getText();
 
-				// Información académica
+				// Informaciï¿½n acadï¿½mica
 				Facultad facultad = (Facultad) comboFacultad.getSelectedItem();
 				Date fechaGrado = jDFechaGrado.getDate();
 				NivelAcademico nivel = (NivelAcademico) jCBNivel.getSelectedItem();
@@ -869,7 +870,7 @@ public class VentanaEgresados extends javax.swing.JFrame implements ActionListen
 				String numDiploma = jTFNumeroDiploma.getText();
 				String areasOferta = jTAAreasLaborales.getText();
 
-				// Información laboral
+				// Informaciï¿½n laboral
 				SituacionActual situa = (SituacionActual) jCBSituacionActual.getSelectedItem();
 				TipoEmpresa tipoEmp = (TipoEmpresa) jCBTipoEmp.getSelectedItem();
 				SectorLaboral sectorLab = (SectorLaboral) jCBSectorLab.getSelectedItem();
@@ -891,16 +892,17 @@ public class VentanaEgresados extends javax.swing.JFrame implements ActionListen
 					// Crear egresado
 					Egresado e = new Egresado(cod, programa, nombre, ape, tipoDoc, id, correo, tel);
 
-					// agregar Información laboral
+					// agregar Informaciï¿½n laboral
 					InformacionLaboral infoLab = new InformacionLaboral(e, situa, tipoEmp, sectorLab, nomEmp,
 							fechaIngreso, fechaSalida, cargo);
 
-					// Agregar información académica
+					// Agregar informaciï¿½n acadï¿½mica
 					InfoAcademica info = new InfoAcademica(e, fechaGrado, facultad, nivel, programa, numDiploma,
 							areasOferta);
 
 					controlador.registrar(e, info, infoLab);
-					JOptionPane.showMessageDialog(null, "La información se ha agregado satisfactoriamente");
+					JOptionPane.showMessageDialog(null, "La informaciï¿½n se ha agregado satisfactoriamente");
+					LimpiarCampos();
 				}
 
 			} catch (ExcepcionNegocio e) {
@@ -953,7 +955,7 @@ public class VentanaEgresados extends javax.swing.JFrame implements ActionListen
 		try {
 			List<Facultad> lista = controlador.listaFacultades();
 			comboFacultad.removeAllItems();
-			comboFacultad.addItem("Seleccione opción");
+			comboFacultad.addItem("Seleccione opciï¿½n");
 			for (Facultad facultad : lista) {
 				comboFacultad.addItem(facultad);
 			}
@@ -968,7 +970,7 @@ public class VentanaEgresados extends javax.swing.JFrame implements ActionListen
 
 			List<Programa> lista = controlador.programasFacultad(f);
 			jCBPrograma.removeAllItems();
-			jCBPrograma.addItem("Seleccione opción");
+			jCBPrograma.addItem("Seleccione opciï¿½n");
 			for (Programa programa : lista) {
 				jCBPrograma.addItem(programa);
 			}
@@ -978,8 +980,57 @@ public class VentanaEgresados extends javax.swing.JFrame implements ActionListen
 		}
 	}
 
+	private void LimpiarCampos() {
+		if(comboFacultad.getSelectedIndex() > 0){
+			jTFNombres.setText(null);
+			jTFApellidos.setText(null);
+			jCBTipoDoc.setSelectedIndex(0);
+			jTFId.setText(null);
+			jTFCorreo.setText(null);
+			jTFTel.setText(null);
+			jTFCodigoEgresado.setText(null);
+			comboFacultad.setSelectedIndex(0);
+			jDFechaGrado.setDate(null);
+			jCBNivel.setSelectedIndex(0);
+			jCBPrograma.setSelectedIndex(0);
+			jTFNumeroDiploma.setText(null);
+			jTAAreasLaborales.setText(null);
+			jCBSituacionActual.setSelectedIndex(0);
+			jCBTipoEmp.setSelectedIndex(0);
+			jCBSectorLab.setSelectedIndex(0);
+			jCBEmpresaEgre.setSelectedIndex(0);
+			jDFechaIngreso.setDate(null);
+			jDFechaSalida.setDate(null);
+			jTFCargo.setText(null);
+			jTPPestanias.setSelectedIndex(0);
+			
+		}else{
+			jTFNombres.setText(null);
+			jTFApellidos.setText(null);
+			jCBTipoDoc.setSelectedIndex(0);
+			jTFId.setText(null);
+			jTFCorreo.setText(null);
+			jTFTel.setText(null);
+			jTFCodigoEgresado.setText(null);
+			comboFacultad.setSelectedIndex(0);
+			jDFechaGrado.setDate(null);
+			jCBNivel.setSelectedIndex(0);
+			jTFNumeroDiploma.setText(null);
+			jTAAreasLaborales.setText(null);
+			jCBSituacionActual.setSelectedIndex(0);
+			jCBTipoEmp.setSelectedIndex(0);
+			jCBSectorLab.setSelectedIndex(0);
+			jCBEmpresaEgre.setSelectedIndex(0);
+			jDFechaIngreso.setDate(null);
+			jDFechaSalida.setDate(null);
+			jTFCargo.setText(null);
+			jTPPestanias.setSelectedIndex(0);
+		}
+		
+	}
+
 	private void refrescarComboSituacionActual() {
-		jCBSituacionActual.addItem("Seleccione una opción");
+		jCBSituacionActual.addItem("Seleccione una opciï¿½n");
 		jCBSituacionActual.addItem(SituacionActual.DESEMPLEADO);
 		jCBSituacionActual.addItem(SituacionActual.EMPLEADO);
 		jCBSituacionActual.addItem(SituacionActual.EMPRESARIO);
@@ -987,14 +1038,14 @@ public class VentanaEgresados extends javax.swing.JFrame implements ActionListen
 	}
 
 	private void refrescarComboNivelAcademico() {
-		jCBNivel.addItem("Seleccione una opción");
+		jCBNivel.addItem("Seleccione una opciï¿½n");
 		jCBNivel.addItem(NivelAcademico.DIPLOMADO);
 		jCBNivel.addItem(NivelAcademico.POSTGRADO);
 		jCBNivel.addItem(NivelAcademico.PREGRADO);
 	}
 
 	private void refrescarComboTipoEmpresa() {
-		jCBTipoEmp.addItem("Seleccione una opción");
+		jCBTipoEmp.addItem("Seleccione una opciï¿½n");
 		jCBTipoEmp.addItem(TipoEmpresa.PRIVADA);
 		jCBTipoEmp.addItem(TipoEmpresa.PUBLICA);
 	}
@@ -1003,7 +1054,7 @@ public class VentanaEgresados extends javax.swing.JFrame implements ActionListen
 		try {
 			List<SectorLaboral> sectores = controlador.listaSectores();
 			jCBSectorLab.removeAllItems();
-			jCBSectorLab.addItem("Seleccione Opción");
+			jCBSectorLab.addItem("Seleccione Opciï¿½n");
 			for (SectorLaboral sectorLaboral : sectores) {
 				jCBSectorLab.addItem(sectorLaboral);
 			}
@@ -1012,12 +1063,12 @@ public class VentanaEgresados extends javax.swing.JFrame implements ActionListen
 			e.printStackTrace();
 		}
 	}
-	
-	private void refresacarComboEmpresas(){
+
+	private void refresacarComboEmpresas() {
 		try {
 			List<Empresa> lista = controlador.listaEmpresas();
 			jCBEmpresaEgre.removeAllItems();
-			jCBEmpresaEgre.addItem("Seleccione opción");
+			jCBEmpresaEgre.addItem("Seleccione opciï¿½n");
 			for (Empresa empresa : lista) {
 				jCBEmpresaEgre.addItem(empresa);
 			}

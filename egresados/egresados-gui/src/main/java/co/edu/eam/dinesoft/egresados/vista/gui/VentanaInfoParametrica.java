@@ -109,7 +109,7 @@ public class VentanaInfoParametrica extends javax.swing.JFrame implements Action
         jLabel5.setText("Nombre Facultad :");
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel7.setText("Código Facultad :");
+        jLabel7.setText("Cï¿½digo Facultad :");
 
         javax.swing.GroupLayout jPGestionFaculLayout = new javax.swing.GroupLayout(jPGestionFacul);
         jPGestionFacul.setLayout(jPGestionFaculLayout);
@@ -138,7 +138,7 @@ public class VentanaInfoParametrica extends javax.swing.JFrame implements Action
                 .addContainerGap(122, Short.MAX_VALUE))
         );
 
-        jTPestania.addTab("Gestión Facultades", jPGestionFacul);
+        jTPestania.addTab("Gestiï¿½n Facultades", jPGestionFacul);
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel2.setText("Nombre del programa");
@@ -192,7 +192,7 @@ public class VentanaInfoParametrica extends javax.swing.JFrame implements Action
                 .addGap(21, 21, 21))
         );
 
-        jTPestania.addTab("Gestión De Programa", jPGestionProgra);
+        jTPestania.addTab("Gestiï¿½n De Programa", jPGestionProgra);
         jTPestania.addTab("Gestion De Programa", jPGestionProgra);
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -467,6 +467,7 @@ public class VentanaInfoParametrica extends javax.swing.JFrame implements Action
 
 						controlador.editarPro(p);
 						JOptionPane.showMessageDialog(null, "El programa se ha editado exitosamente");
+						limpiarCampos();
 					}
 				} catch (Exception exc) {
 					exc.printStackTrace();
@@ -488,6 +489,7 @@ public class VentanaInfoParametrica extends javax.swing.JFrame implements Action
 
 						controlador.editarFac(f);
 						JOptionPane.showMessageDialog(null, "La facultad se ha editado exitosamente");
+						limpiarCampos();
 					}
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -508,6 +510,7 @@ public class VentanaInfoParametrica extends javax.swing.JFrame implements Action
 
 						controlador.editarArea(area);
 						JOptionPane.showMessageDialog(null, "El area se ha editado exitosamente");
+						limpiarCampos();
 					}
 				} catch (Exception exc) {
 					exc.printStackTrace();
@@ -600,6 +603,7 @@ public class VentanaInfoParametrica extends javax.swing.JFrame implements Action
 
 						controlador.registrarPro(p);
 						JOptionPane.showMessageDialog(null, "El programa se ha registrado exitosamente");
+						limpiarCampos();
 					}
 				} catch (ExcepcionNegocio e) {
 					JOptionPane.showMessageDialog(null, e.getMessage());
@@ -619,6 +623,7 @@ public class VentanaInfoParametrica extends javax.swing.JFrame implements Action
 
 					controlador.registrarFac(f);
 					JOptionPane.showMessageDialog(null, "La facultad se ha registrado exitosamente");
+					limpiarCampos();
 
 				} catch (ExcepcionNegocio exc) {
 					JOptionPane.showMessageDialog(null, exc.getMessage());
@@ -638,6 +643,7 @@ public class VentanaInfoParametrica extends javax.swing.JFrame implements Action
 
 					controlador.registrarArea(area);
 					JOptionPane.showMessageDialog(null, "El area se ha registrado exitosamente");
+					limpiarCampos();
 
 				} catch (ExcepcionNegocio e) {
 					JOptionPane.showMessageDialog(null, e.getMessage());
@@ -663,6 +669,19 @@ public class VentanaInfoParametrica extends javax.swing.JFrame implements Action
 			e.printStackTrace();
 		}
 	}
+	
+	private void limpiarCampos(){
+		jCBFacultad.setSelectedIndex(0);
+		jTFCodArea.setText(null);
+		jTFCodFac.setText(null);
+		jTFCodPro.setText(null);
+		jTFCreditos.setText(null);
+		jTFNomArea.setText(null);
+		jTFNombrePro.setText(null);
+		jTFNomFac.setText(null);
+		
+	}
+	
 
 	private void pintarPanelRegistro() {
 
