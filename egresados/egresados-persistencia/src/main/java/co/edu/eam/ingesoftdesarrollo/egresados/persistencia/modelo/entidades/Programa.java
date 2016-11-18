@@ -52,7 +52,7 @@ public class Programa implements Serializable {
 	 * atributo creditosPrograma
 	 */
 	@Column(name = "creditos_programa")
-	private String creditosPrograma;
+	private int creditosPrograma;
 
 	/**
 	 * constructor de la clase Programa
@@ -67,7 +67,7 @@ public class Programa implements Serializable {
 	 * @param nomPrograma
 	 * @param creditosPrograma
 	 */
-	public Programa(int codigo, Facultad facultad, String nomPrograma, String creditosPrograma) {
+	public Programa(int codigo, Facultad facultad, String nomPrograma, int creditosPrograma) {
 		super();
 		this.codigo = codigo;
 		this.facultad = facultad;
@@ -93,7 +93,7 @@ public class Programa implements Serializable {
 	/**
 	 * @return the creditosPrograma
 	 */
-	public String getCreditosPrograma() {
+	public int getCreditosPrograma() {
 		return creditosPrograma;
 	}
 
@@ -101,7 +101,7 @@ public class Programa implements Serializable {
 	 * @param creditosPrograma
 	 *            the creditosPrograma to set
 	 */
-	public void setCreditosPrograma(String creditosPrograma) {
+	public void setCreditosPrograma(int creditosPrograma) {
 		this.creditosPrograma = creditosPrograma;
 	}
 

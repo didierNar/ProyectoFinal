@@ -114,6 +114,7 @@ public class InformacionLaboral implements Serializable {
 	public InformacionLaboral(Egresado egresado, SituacionActual situaActual, TipoEmpresa tipoEmpresa,
 			SectorLaboral sectorLaboral, String nombreEmpresa, Date fechaIngreso, Date fechaSalida, String cargo) {
 		super();
+		codEgresado=egresado.getCodigoEgresado();
 		this.cargo = cargo;
 		this.egresado = egresado;
 		this.situaActual = situaActual;

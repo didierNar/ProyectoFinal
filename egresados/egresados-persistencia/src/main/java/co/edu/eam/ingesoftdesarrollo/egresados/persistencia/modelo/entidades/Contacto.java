@@ -22,7 +22,7 @@ public class Contacto implements Serializable {
 	/**
 	 * atributo de la clase empresa
 	 */
-	@JoinColumn(name="ID_EMPRESA", insertable=false, updatable=false)
+	@JoinColumn(name="NIT", insertable=false, updatable=false)
 	@OneToOne
 	@MapsId
 	private Empresa empresa;
@@ -31,7 +31,7 @@ public class Contacto implements Serializable {
 	 * atributo nit 
 	 */
 	@Id
-	@Column(name="ID_EMPRESA")
+	@Column(name="NIT")
 	private String nit;
 	
 	/**

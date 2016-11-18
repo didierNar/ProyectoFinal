@@ -51,7 +51,7 @@ public class InfoAcademica implements Serializable {
 	 * atributo de tipo Facultad
 	 */
 	@JoinColumn(name = "facultad")
-	@ManyToOne(cascade={})
+	@ManyToOne(cascade = {})
 	private Facultad facultad;
 
 	/**
@@ -64,7 +64,7 @@ public class InfoAcademica implements Serializable {
 	 * atributo de tipo programa
 	 */
 	@JoinColumn(name = "programa_academico")
-	@ManyToOne(cascade={})
+	@ManyToOne(cascade = {})
 	private Programa programaAcademico;
 
 	/**
@@ -98,6 +98,7 @@ public class InfoAcademica implements Serializable {
 	public InfoAcademica(Egresado egresado, Date fechaGrado, Facultad facultad, NivelAcademico nivelAcademico,
 			Programa programaAcademico, String numDiploma, String areaOfertaLaboral) {
 		super();
+		codEgresado = egresado.getCodigoEgresado();
 		this.egresado = egresado;
 		this.fechaGrado = fechaGrado;
 		this.facultad = facultad;
@@ -244,7 +245,5 @@ public class InfoAcademica implements Serializable {
 			return false;
 		return true;
 	}
-	
-	
 
 }
